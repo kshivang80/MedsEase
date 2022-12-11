@@ -5,7 +5,7 @@ Project-Details
 
 1) Shivang kumar  - Landing-Page
 
-2)Rajat          - Login Page,Checkout Page, Payment Page
+2) Rajat          - Login Page,Checkout Page, Payment Page
 
 3) Monojit        - footer ,Navbar
 

@@ -1,24 +1,13 @@
-import {
-  Box,
-  Container,
-  Image,
-  Text,
-  Grid,
-  SkeletonCircle,
-  SkeletonText,
-} from "@chakra-ui/react";
-import { useSelector } from "react-redux";
+import { Box } from "@chakra-ui/react";
+
 import SingleCard from "./SingleCard";
 
-export default function ProductCard({ item}) {
-
-
-
+export default function ProductCard({ item }) {
   return (
     <>
       <Box>
         <SingleCard key={item.id} item={item} />
-     </Box>
+      </Box>
     </>
   );
 }

@@ -1,7 +1,7 @@
 
 .Maindiv {
     border: 1px solid black;
-    height: 4000px
+    height: 8000px
 }
 
 
@@ -174,6 +174,7 @@
 /* Slide3  css card*/
 
 .Slide3{
+   
     border: 1px solid palevioletred;
     height:auto ;
     margin-top: 50px;
@@ -227,6 +228,7 @@
 
 .Data-prev{
     display: flex;
+    border: 1px solid red
 
 }
 
@@ -341,7 +343,7 @@
     border:1px solid #F47779;
     width:95%;
     margin: auto;
-    height: 240px;
+    height: 180px;
 }
 
 
@@ -468,6 +470,7 @@
    
     width: 100%;
     margin: auto;
+    margin-top: 15px;
 
 }
 
@@ -523,4 +526,278 @@
 }
 
 
+
+/* Shop by Concern */
+
+.ShopConcern{
+    margin: auto;
+    width: 95%;
+    border: 1px solid black;
+    height: auto;
+}
+
+
+.ShopConcernImgBox:hover{
+    -webkit-transform: translate(-5px);
+    transform: translate(-10px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+
+  
+
+ /* *****************Frequently CSS start ************* */
+
+ .Frequently{
+    border: 1px solid black;
+    width:95%;
+    margin:auto
+ }
+
+
+
+
+
+
+ /* ******************* Wellness  **********************/
+ .LiveTest2-wellness{
+    border: 1px solid palevioletred;
+    width: auto;
+    margin-top: 70px;
+    height: auto;
+   
+   
+   
+
+}
+ 
+
+ .Wellness{
+    border:1px solid black;
+    width:95%;
+    margin: auto;
+    height: auto;
+
+}
+.Wellness-card {
+    border: 1px solid yellow; 
+   
+    width: 100%;
+    margin: auto;
+  
+
+}
+
+.Wellness1-card {
+    border: 1px solid blue;
+   
+    height: 250px;
+    width: 100%;
+   
+    border-radius: 10px;
+  
+    
+    
+}
+
+.Wellness1-card:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.Wellness-top {
+    height: 100%;
+    border: 1px solid blue;
+    /* border: 0.4px solid white; */
+    border-radius: 10px;
+    width: 40%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.Wellness-top>img {
+    width: 100%;
+    height: 70%;
+    margin-top: 20px;
+   
+}
+
+.Wellness-bottom {
+    border: 1px solid blue;
+    width:60%;
+    height: 100%;
+   
+
+}
+
+
+
+   /*  *************Feature CSS ***************** */
+
+   .FeaturedMain {
+    border: 1px solid red; 
+   
+    width: 100%;
+    margin: auto;
+
+}
+
+.Featured:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.Featured {
+    /* border: 1px solid red; */
+   
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    overflow: hidden;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin-top: 35px
+    
+}
+
+.Featuredtop {
+    height: 80%;
+    margin: auto;
+    /* border: 1px solid black */
+}
+
+.Featuredtop>img {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.Featuredbottom {
+    /* border: 1px solid blue; */
+    height: 20%;
+    text-align: center;
+
+}
+
+.Featuredbottom>p {
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.Featuredbottom>h5 {
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 12.5px;
+    color: #F47779;
+}
+
+
+
+
+/********************** onlyImg    ++++++++++++ */
+
+.onlyImg{
+    border: 1px solid gray;
+    width: 95%;
+    margin: auto;
+}
+
+
+.onlyImg-cardImg:hover{
+    -webkit-transform: translate(5px);
+    transform: translateY(-5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.onlyImg-card{
+    margin-top:40px ;
+    border: 1px solid palevioletred;
+    width: 100%;
+   
+
+}
+.onlyImg-cardImg{
+    height: 230px;
+}
+.onlyImg-cardImg>img{
+    height: 100%;
+    width: 100%;
+}
+
+   /* Deals CSS */
+
+   .Deals{
+    border:1px solid black;
+    width:95%;
+    margin: auto;
+    height: 450px;
+
+}
+
+/*        Trending CSS                    */
+
+
+.Trending{
+    border:1px solid black;
+    width:95%;
+    margin: auto;
+    height: 450px;
+
+}
+
+
+/* 
+  Only Image part 2 */
+
+.onlyImg2{
+    border: 1px solid gray;
+    width: 95%;
+    margin: auto;
+}
+
+
+.onlyImg2-cardImg:hover{
+    -webkit-transform: translate(5px);
+    transform: translateY(-5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.onlyImg2-card{
+    margin-top:40px ;
+    border: 1px solid palevioletred;
+    width: 100%;
+    border-radius:20px ;
+   
+
+}
+.onlyImg2-cardImg{
+    height: 180px;
+    border-radius:20px ;
+}
+.onlyImg2-cardImg>img{
+    height: 100%;
+    width: 100%;
+    border-radius:20px ;
+}
 

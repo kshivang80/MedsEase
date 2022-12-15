@@ -1,0 +1,526 @@
+
+.Maindiv {
+    border: 1px solid black;
+    height: 4000px
+}
+
+
+
+/* ///////////////// *******************************/
+
+
+
+
+.slick-next {
+    /* right: 10px;
+    background: rgb(224, 5, 5) !important;
+    border-radius: 7px; */
+
+    /* font-family: 'slick';
+    font-size: 40px !important;
+    line-height: 1;
+    opacity: .75;
+    background-color: rgb(31, 29, 29) !important; */
+  }
+  
+  /* .slick-prev {
+    left: 10px;
+    z-index: 2;
+    background: black !important;
+    border-radius: 7px;
+    
+  } */
+  
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: 'slick';
+    font-size: 35px !important;
+    line-height: 1;
+    opacity: .75;
+    color: rgb(31, 29, 29) !important;  ;
+    /* color: yellow !important; */
+    margin-left: -5.5px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+/* ///////////////// *******************************/
+
+
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+.slick-list {
+    margin: 0 -10px;
+}
+
+
+.Discovercard {
+    border: 1px solid red; 
+   
+    width: 90%;
+    margin: auto;
+
+}
+
+.card:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.card {
+    /* border: 1px solid red; */
+   
+    height: 160px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    overflow: hidden;
+    border-radius: 10px;
+    justify-content: space-between;
+    
+}
+
+.cardtop {
+    height: 70%;
+    margin: auto;
+    /* border: 1px solid black */
+}
+
+.cardtop>img {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+.cardbottom {
+    /* border: 1px solid blue; */
+    height: 30%;
+    text-align: center;
+
+}
+
+.cardbottom>p {
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.cardbottom>h5 {
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 12.5px;
+    color: #F47779;
+}
+
+
+/*    Slider2  CSS code  */
+
+.Slide2{
+    border: 1px solid black;
+    margin-top: 160px;
+    width:96%;
+    margin: auto;
+
+}
+
+
+.Slider-card:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.Slider-card{
+    /* border: 1px solid rgb(227, 49, 78); */
+  
+       
+        height: 240px;
+        width:35%;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      
+        border-radius: 10px;
+        justify-content: space-between;
+        
+    
+
+}
+.Slider-card>img{
+    height: 100%;
+    width:100%;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* Slide3  css card*/
+
+.Slide3{
+    border: 1px solid palevioletred;
+    height:auto ;
+    margin-top: 50px;
+
+}
+
+.LiveTest{
+    border: 1px solid palevioletred;
+    width: auto;
+    margin-left: 30px;
+    height: auto;
+   
+   
+   
+
+}
+
+.Slide3-cardImg:hover{
+    -webkit-transform: translate(5px);
+    transform: translateY(-5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.Slide3-card{
+    margin-top:20px ;
+    border: 1px solid palevioletred;
+    width: 95%;
+    margin: auto;
+
+}
+.Slide3-cardImg{
+    height: 150px;
+}
+.Slide3-cardImg>img{
+    height: 100%;
+    width: 100%;
+}
+
+
+/* *********************Slide4  css working    ******************/
+
+.Slide4{
+    margin-top: 20px;
+    border: 1px solid black;
+
+}
+
+.Data-prev{
+    display: flex;
+
+}
+
+.oneDiv{
+    height: auto;
+    width: 22%;
+    border:1px solid blueviolet;
+    
+ 
+
+
+}
+
+
+.imgBox:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+
+
+
+  /* just for offer  section onn */
+
+  .LiveTest1{
+    border: 1px solid palevioletred;
+    width: auto;
+    /* margin-left: 30px; */
+    height: auto;
+   
+   
+   
+
+}
+
+.justOffer{
+    margin-top: 20px;
+    border: 1px solid red;
+    height:240px;
+    width:95%;
+    margin:auto
+}
+.justOffer-card{
+    border: 1px solid red;
+  
+}
+
+
+.justOffer-cardtop:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+
+
+.justOffer-cardtop{
+    /* height: 70px;
+    width: 30%;
+    margin: auto; */
+    /* border: 1px solid black; */
+    display:"flex";
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+.justOffer-cardtop1{
+    /* border: 1px solid black; */
+    width: 30%;
+   
+}
+
+.justOffer-cardtop1>img {
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+}
+
+.justOffer-cardbottom{
+   
+  height: 100%;
+  width: 60%;
+ 
+  margin-left: 15px;
+  overflow: hidden;
+  
+
+
+
+}
+.justOffer-cardbottom>p{
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+/* /////////////////Payment section CSS //////////*/
+
+.Payment{
+    border:1px solid #F47779;
+    width:95%;
+    margin: auto;
+    height: 240px;
+}
+
+
+.payment-slid{
+    border:1px solid black;
+    width:100%;
+
+}
+
+.paymant-card:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+
+.paymant-card{
+    /* border:1px solid blue; */
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+
+}
+
+.paymant-card>img{
+    /* border:1px solid blue; */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+
+
+/* Categories card the css */
+
+
+
+
+.Categories{
+    border:1px solid #F47779;
+    width:95%;
+    margin: auto;
+    height: 350px;
+
+}
+.Categories-card {
+    border: 1px solid red; 
+   
+    width: 100%;
+    margin: auto;
+
+}
+
+.Categories1-card {
+    /* border: 1px solid red; */
+   
+    height: 250px;
+  
+    overflow: hidden;
+    border-radius: 10px;
+    justify-content: space-between;
+    
+}
+
+.Categories-top:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.Categories-top {
+    height: 65%;
+    margin: auto;
+    border: 0.4px solid white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.Categories-top>img {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.Categories-bottom {
+    /* border: 1px solid blue; */
+    margin-top: 8px;
+    height: 30%;
+    text-align: center;
+
+}
+
+.Categories-bottom>p {
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #30363C;
+}
+
+
+
+ /* New Launches  html code */
+
+
+ .Launches{
+    border:1px solid black;
+    width:95%;
+    margin: auto;
+    height: 450px;
+
+}
+.Launches-card {
+    /* border: 1px solid yellow;  */
+   
+    width: 100%;
+    margin: auto;
+
+}
+
+.Launches1-card {
+    /* border: 1px solid blue; */
+   
+    height: 320px;
+  
+    overflow: hidden;
+    border-radius: 10px;
+    justify-content: space-between;
+    
+}
+
+.Launches-top:hover{
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.8s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+ }
+
+.Launches-top {
+    height: 60%;
+    margin: auto;
+    /* border: 0.4px solid white; */
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.Launches-top>img {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+}
+
+.Launches-bottom {
+    /* border: 1px solid blue; */
+    margin-top: 8px;
+    height: 40%;
+   
+
+}
+
+.Launches-bottom>p {
+  
+    font-family: sans-serif;
+    font-size: 16px;
+   
+   
+}
+
+
+

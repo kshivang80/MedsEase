@@ -1,0 +1,22 @@
+
+
+.dis-img{
+ 
+    position:relative;
+    margin: 3px;
+   
+}
+
+.dis-text{
+    position: absolute;
+  bottom: 8px;
+  left: 80px;
+  z-index: 1;
+  width:60px;
+}
+.main-box{
+    position: relative;
+}
+.top-container:hover{
+border: 2px solid grey;
+}

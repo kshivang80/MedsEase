@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import {store} from "./Redux/store"
 import { Provider } from 'react-redux';
-import { ChakraBaseProvider ,ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 
 
 

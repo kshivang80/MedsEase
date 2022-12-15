@@ -1735,8 +1735,8 @@
         "listingId": ""
       }
     ],
-    "healthCareProductsPage": {
-      "products": [
+    
+      "healthcare": [
         {
           "productId": 3514609,
           "name": "Supradyn Daily Multivitamin Tablets 15s",
@@ -1747,7 +1747,7 @@
           "salePriceDecimal": "49.41",
           "discountDecimal": "5.49",
           "discountPercent": "10",
-          "categoryId": null,
+          "categoryId": "medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/T70695/supradyn-daily-multivitamin-tablets-15s-1-1641793954.jpg",
@@ -1844,7 +1844,7 @@
           "salePriceDecimal": "228.00",
           "discountDecimal": "57.00",
           "discountPercent": "20",
-          "categoryId": null,
+          "categoryId": "medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/207833/calcimax-forte-plus-strip-of-30-tablets-2-1654078168.jpg",
@@ -1911,7 +1911,7 @@
           "salePriceDecimal": "72.00",
           "discountDecimal": null,
           "discountPercent": "0",
-          "categoryId": null,
+          "categoryId": "personalNeed",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/A75976/liveasy-essentials-handwash-pump-250-ml-2-1653312958.jpg",
@@ -1958,7 +1958,7 @@
           "salePriceDecimal": "304.00",
           "discountDecimal": "76.00",
           "discountPercent": "20",
-          "categoryId": null,
+          "categoryId":"medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/031531/calcimax-500-health-supplement-tablets-500-mg-of-calcium-box-of-30-2-1654077366.jpg",
@@ -2064,7 +2064,7 @@
           "salePriceDecimal": "118.49",
           "discountDecimal": "170.51",
           "discountPercent": "59",
-          "categoryId": null,
+          "categoryId": "personalNeed",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/K57596/nair-hair-remover-moisturizing-cream-110g-2-1667393582.jpg",
@@ -2128,7 +2128,7 @@
           "salePriceDecimal": "25.21",
           "discountDecimal": "2.19",
           "discountPercent": "8",
-          "categoryId": null,
+          "categoryId":"medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/022290/becozym-c-forte-vitamin-b-complex-biotin-vitamin-c-strip-of-15-tablets-1-1654077406.jpg",
@@ -2215,7 +2215,7 @@
           "salePriceDecimal": "1629.70",
           "discountDecimal": "265.30",
           "discountPercent": "14",
-          "categoryId": null,
+          "categoryId":"personalNeed",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/Q03727/philips-hair-dryer-bhd308-30-1600w-thermoprotect-airflower-3-heat-speed-settings-for-quick-drying-2-1653899709.jpg",
@@ -2279,7 +2279,7 @@
           "salePriceDecimal": "179.20",
           "discountDecimal": "100.80",
           "discountPercent": "36",
-          "categoryId": null,
+          "categoryId":"personalNeed",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/270382/scalpe-plus-anti-dandruff-shampoo-bottle-of-75-ml-2-1663587003.jpg",
@@ -2346,7 +2346,7 @@
           "salePriceDecimal": "67.59",
           "discountDecimal": "19.07",
           "discountPercent": "22",
-          "categoryId": null,
+          "categoryId":"personalNeed",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/I35308/arachitol-nano-60k-sugar-free-bottle-of-5ml-solution-2-1665749143.jpg",
@@ -2485,7 +2485,7 @@
           "salePriceDecimal": "516.36",
           "discountDecimal": "145.64",
           "discountPercent": "22",
-          "categoryId": null,
+          "categoryId":"personalNeed",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/263100/venusia-max-intensive-moisturizing-lotion-repairs-dry-skin-provides-soft-smooth-skin-300gm-2-1660816203.jpg",
@@ -2567,7 +2567,7 @@
           "salePriceDecimal": "329.45",
           "discountDecimal": "269.55",
           "discountPercent": "45",
-          "categoryId": null,
+          "categoryId":"medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/T22634/liveasy-wellness-calcium-magnesium-vitamin-d3-zinc-bones-dental-health-bottle-60-tabs-2-1661760061.jpg",
@@ -2617,7 +2617,7 @@
           "salePriceDecimal": "32.17",
           "discountDecimal": "5.68",
           "discountPercent": "15",
-          "categoryId": null,
+          "categoryId":"medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/P26899/ultra-d3-drops-vitamin-d3-for-infants-vitamin-drops-bottle-of-15-ml-2-1654250369.jpg",
@@ -2689,7 +2689,7 @@
           "salePriceDecimal": "24.13",
           "discountDecimal": "1.27",
           "discountPercent": "5",
-          "categoryId": null,
+          "categoryId": "medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/022610/benadon-vitamin-b6-40mg-tablet-10s-2-1658917336.jpg",
@@ -2761,7 +2761,7 @@
           "salePriceDecimal": "306.00",
           "discountDecimal": "54.00",
           "discountPercent": "15",
-          "categoryId": null,
+          "categoryId":"medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/I00596/revital-h-women-multivitamin-with-calcium-zinc-ginseng-for-immunity-strong-bones-energy-30-tablets-1-1654168794.jpg",
@@ -2848,7 +2848,7 @@
           "salePriceDecimal": "467.50",
           "discountDecimal": "82.50",
           "discountPercent": "15",
-          "categoryId": null,
+          "categoryId":"medicine",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/281751/revital-h-men-multivitamin-with-calcium-zinc-ginseng-for-immunity-strong-bones-energy-60-capsules-2-1654077644.jpg",
@@ -2920,7 +2920,7 @@
           "salePriceDecimal": "263.50",
           "discountDecimal": "46.50",
           "discountPercent": "15",
-          "categoryId": null,
+          "categoryId": "immunityBooster",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/270552/revital-h-men-multivitamin-with-calcium-zinc-ginseng-for-immunity-strong-bones-energy-30-capsules-2-1654077741.jpg",
@@ -3002,7 +3002,7 @@
           "salePriceDecimal": "341.43",
           "discountDecimal": "257.57",
           "discountPercent": "43",
-          "categoryId": null,
+          "categoryId":"immunityBooster",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/O31911/everherb-by-pharmeasy-ashwagandha-immunity-booster-capsules-anxiety-stress-relief-bottle-of-60-2-1661760071.jpg",
@@ -3057,7 +3057,7 @@
           "salePriceDecimal": "559.20",
           "discountDecimal": "139.80",
           "discountPercent": "20",
-          "categoryId": null,
+          "categoryId":"immunityBooster",
           "damImages": [
             {
               "url": "https://cdn01.pharmeasy.in/dam/products_otc/E79162/liveasy-wellness-multivitamin-multimineral-immunity-booster-complete-nutrition-bottle-of-60-2-1661760039.jpg",
@@ -3098,5 +3098,5 @@
           ]
         }
       ]
-    }
+    
   }

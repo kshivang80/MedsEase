@@ -10,7 +10,7 @@
 .dis-text{
     position: absolute;
   bottom: 8px;
-  left: 80px;
+  left: 110px;
   z-index: 1;
   width:60px;
 }
@@ -19,4 +19,13 @@
 }
 .top-container:hover{
 border: 2px solid grey;
+}
+
+.searchbar{
+    position: absolute;
+    z-index: 1;
+}
+.lense-img{
+    position: relative;
+    left:200px
 }

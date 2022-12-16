@@ -22,7 +22,6 @@ const AllRouter = () => {
             <Route   path='/Offer' element={<Offer/>} ></Route>
             <Route   path='/Login' element={<Login/>} ></Route>
             <Route   path='/Cart' element={<Cart/>} ></Route>
-            <Route   path='/PaymentForm' element={<PaymentForm/>} ></Route>
 
 
 

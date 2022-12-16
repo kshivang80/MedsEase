@@ -49,7 +49,9 @@ export function getProduct() {
 
 
 export function getProductUrl(params){
-return function(dispatch){
+
+
+    return function(dispatch){
 
     dispatch(get_url_req_fn())
     return axios.get('http://localhost:3001/healthcare',params).then((res)=>{

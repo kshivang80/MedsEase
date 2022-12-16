@@ -34,7 +34,12 @@ const get_url_req_failure=()=>{
 }
 
 
-export function getProduct() {
+export  const get_url_fn=(payload)=>{
+    return {type:types.GETURL,payload}
+}
+
+export function getProduct(params) {
+    
     return function (dispatch) {
         dispatch(get_product_req_fn())
         return axios.get('http://localhost:3001/healthcare/').then((res) => {
@@ -51,10 +56,12 @@ export function getProduct() {
 export function getProductUrl(params){
 
 
+    // console.log(params);
     return function(dispatch){
 
     dispatch(get_url_req_fn())
     return axios.get('http://localhost:3001/healthcare',params).then((res)=>{
+      
         dispatch(get_url_success_fn(res.data))
     }).catch((error)=>{
         dispatch(get_url_req_failure())

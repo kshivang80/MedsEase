@@ -6,20 +6,30 @@ import {
   Spacer,
   Input,
   Image,
+  useEventListener,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { getProductUrl } from "../../../Redux/Redux-Product/action";
+import { getProductUrl, get_url_fn } from "../../../Redux/Redux-Product/action";
 import CheckBox from "../checkBox/CheckBox";
 import magnifyLense from "../img/magnifyLense.webp";
 import "../pro.css";
+import InputSearch from "./InputSearch";
 
 export default function Filter() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const intcatagorie = searchParams.getAll("categoryId");
-  const [catagorie, setCatogorie] = useState(intcatagorie || []);
-const location=useLocation()
+
+  const [text,setText]=useState('')
+
+const dispatch=useDispatch()
+
+  const [catagorie,setCatogorie]=useState([])
+
+  const [searchParams,setSearchParams]=useSearchParams()
+  
+
+
+
   const handelFilter = (e) => {
     let newCatagorie = [...catagorie];
 
@@ -31,32 +41,30 @@ const location=useLocation()
     setCatogorie(newCatagorie);
   };
 
-  useEffect(() => {
-    let params = {};
-    params.categoryId = catagorie;
-    setSearchParams(params);
-  }, [catagorie]);
 
+
+
+  // const data=useSelector((store)=>store.reducer.dataOnfetch)
+
+  // const handelSearch=()=>{
+  
+  //     let newdata=data.filter((elm)=>elm.manufacturer==text)
+  //     console.log(newdata)
+  // }
+  
   
 
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    const sort = searchParams.get("_sort");
 
-    const getparams = {
-      params: {
-        categoryId: searchParams.getAll("categoryId"),
-_sort:sort&&'salePriceDecimal',
-_order:sort
-      }
-    };
+  const  handelChange=(e)=>{
+     setText(e.target.value)
+  }
 
-    dispatch(getProductUrl(getparams));
-  }, [location]);
 
-  const data = useSelector((store) => store.reducer.dataOnfetch);
-
+ 
+console.log(text,'2')
+  
+ 
   return (
     <Box>
       <Text as="b" color="grey" fontSize={"2xl"}>
@@ -84,9 +92,9 @@ _order:sort
                 Medicine
               </Text>
               <CheckBox
-                ckvalue={catagorie.includes("medicine")}
+                // ckvalue={catagorie.includes("medicine")}
                 value="medicine"
-                onchange={handelFilter}
+               onchange={handelFilter}
                 
               />
             </Box>
@@ -95,9 +103,10 @@ _order:sort
                 Personal Care
               </Text>
               <CheckBox
-                ckvalue={catagorie.includes("personalNeed")}
+                // ckvalue={catagorie.includes("personalNeed")}
                 value="personalNeed"
                 onchange={handelFilter}
+
               />
             </Box>
             <Box display={"flex"} justifyContent="space-between">
@@ -106,9 +115,9 @@ _order:sort
                 Immunity Booster
               </Text>
               <CheckBox
-                ckvalue={catagorie.includes("immunityBooster")}
+                // ckvalue={catagorie.includes("immunityBooster")}
                 value="immunityBooster"
-                onchange={handelFilter}
+               onchange={handelFilter}
               />
             </Box>
           </Box>
@@ -124,7 +133,7 @@ _order:sort
         <Box mt="20px" display={"flex"}>
           <Box className="searchbar">
             {" "}
-            <Input />
+           <InputSearch  text={text} setText={setText} onchange={handelChange}   />
           </Box>
           <Box className="lense-img">
             {" "}

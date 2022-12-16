@@ -1,44 +1,40 @@
 import { Grid, Box, Center, Stack, Select, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getProduct, getProductUrl } from "../../Redux/Redux-Product/action";
-import { store } from "../../Redux/store";
-import Filter from "./filterComp/Filter";
+
+import Filter from "./Comp/Filter";
 import ProductCard from "./ProductCard";
 
 export default function ProductPage() {
  
- const [searchparams,setSearchParams]=useSearchParams()
- 
- 
-  const { data, loading } = useSelector((store) => {
+  const dispatch=useDispatch()
+const  [option,setOption]=useState('')
+
+ const { data, loading,optionvalue} = useSelector((store) => {
     return {
       data: store.reducer.dataOnfetch,
       loading: store.reducer.isLoading,
+      
+      
     };
   });
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []);
-
-  const [option,setOption]=useState('')
-
-  const handelSort=(e)=>{
-setOption(e.target.value)
-  }
-
+ 
 
   useEffect(()=>{
-    const param={}
-    param._sort=option
-    setSearchParams(param)
-console.log(param,'param');
-  },[option])
+if(data.length==0){
+  dispatch(getProductUrl())
+}
 
+  },[data])
+
+  const handelOptionChange=()=>{
+  //setOption(e.target.value)
+
+  }
+  
 
 
 
@@ -74,7 +70,7 @@ console.log(param,'param');
                 <Text fontSize={"xl"} color="grey">
                   SortBy:
                 </Text>
-                <Select  onChange={handelSort} >
+                <Select  onChange={handelOptionChange}  >
                   <option  >Popularity</option>
                   <option value={'asc'} >Price Low to high</option>
                   <option value={'desc'} >Price High to Low</option>
@@ -95,7 +91,7 @@ console.log(param,'param');
           </Box>
         </Box>
       </Center>
-      {/* <Skeleton/> */}
+     
     </>
   );
 }

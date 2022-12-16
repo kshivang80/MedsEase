@@ -1746,7 +1746,7 @@
           "mrpDecimal": "54.90",
           "salePriceDecimal": "49.41",
           "discountDecimal": "5.49",
-          "discountPercent": "10",
+          "discountPercent": 10,
           "categoryId": "medicine",
           "damImages": [
             {
@@ -1843,7 +1843,7 @@
           "mrpDecimal": "285.00",
           "salePriceDecimal": 228.00,
           "discountDecimal": "57.00",
-          "discountPercent": "20",
+          "discountPercent": 20,
           "categoryId": "medicine",
           "damImages": [
             {
@@ -1910,7 +1910,7 @@
           "mrpDecimal": "72.00",
           "salePriceDecimal": 72.00,
           "discountDecimal": null,
-          "discountPercent": "0",
+          "discountPercent": 0,
           "categoryId": "personalNeed",
           "damImages": [
             {
@@ -1957,7 +1957,7 @@
           "mrpDecimal": "380.00",
           "salePriceDecimal": 304.00,
           "discountDecimal": "76.00",
-          "discountPercent": "20",
+          "discountPercent": 20,
           "categoryId":"medicine",
           "damImages": [
             {
@@ -2009,7 +2009,7 @@
           "mrpDecimal": "600.00",
           "salePriceDecimal": 288.00,
           "discountDecimal": "312.00",
-          "discountPercent": "52",
+          "discountPercent": 52,
           "categoryId": null,
           "damImages": [
             {
@@ -2063,7 +2063,7 @@
           "mrpDecimal": "289.00",
           "salePriceDecimal": 118.49,
           "discountDecimal": "170.51",
-          "discountPercent": "59",
+          "discountPercent": 59,
           "categoryId": "personalNeed",
           "damImages": [
             {
@@ -2127,7 +2127,7 @@
           "mrpDecimal": "27.40",
           "salePriceDecimal": "25.21",
           "discountDecimal": "2.19",
-          "discountPercent": "8",
+          "discountPercent": 8,
           "categoryId":"medicine",
           "damImages": [
             {
@@ -2214,7 +2214,7 @@
           "mrpDecimal": "1895.00",
           "salePriceDecimal": 1629.70,
           "discountDecimal": "265.30",
-          "discountPercent": "14",
+          "discountPercent": 14,
           "categoryId":"personalNeed",
           "damImages": [
             {
@@ -2278,7 +2278,7 @@
           "mrpDecimal": "280.00",
           "salePriceDecimal": 179.20,
           "discountDecimal": "100.80",
-          "discountPercent": "36",
+          "discountPercent": 36,
           "categoryId":"personalNeed",
           "damImages": [
             {
@@ -2345,7 +2345,7 @@
           "mrpDecimal": "86.66",
           "salePriceDecimal": 67.59,
           "discountDecimal": "19.07",
-          "discountPercent": "22",
+          "discountPercent": 22,
           "categoryId":"personalNeed",
           "damImages": [
             {
@@ -2397,7 +2397,7 @@
           "mrpDecimal": "504.00",
           "salePriceDecimal": 393.12,
           "discountDecimal": "110.88",
-          "discountPercent": "22",
+          "discountPercent": 22,
           "categoryId": null,
           "damImages": [
             {
@@ -2484,7 +2484,7 @@
           "mrpDecimal": "662.00",
           "salePriceDecimal": 516.36,
           "discountDecimal": "145.64",
-          "discountPercent": "22",
+          "discountPercent": 22,
           "categoryId":"personalNeed",
           "damImages": [
             {
@@ -2566,7 +2566,7 @@
           "mrpDecimal": "599.00",
           "salePriceDecimal": 329.45,
           "discountDecimal": "269.55",
-          "discountPercent": "45",
+          "discountPercent": 45,
           "categoryId":"medicine",
           "damImages": [
             {
@@ -2616,7 +2616,7 @@
           "mrpDecimal": "37.85",
           "salePriceDecimal": 32.17,
           "discountDecimal": "5.68",
-          "discountPercent": "15",
+          "discountPercent": 15,
           "categoryId":"medicine",
           "damImages": [
             {
@@ -2688,7 +2688,7 @@
           "mrpDecimal": "25.40",
           "salePriceDecimal": 24.13,
           "discountDecimal": "1.27",
-          "discountPercent": "5",
+          "discountPercent": 5,
           "categoryId": "medicine",
           "damImages": [
             {
@@ -2760,7 +2760,7 @@
           "mrpDecimal": "360.00",
           "salePriceDecimal": 306.00,
           "discountDecimal": "54.00",
-          "discountPercent": "15",
+          "discountPercent": 15,
           "categoryId":"medicine",
           "damImages": [
             {
@@ -2847,7 +2847,7 @@
           "mrpDecimal": "550.00",
           "salePriceDecimal": 467.50,
           "discountDecimal": "82.50",
-          "discountPercent": "15",
+          "discountPercent": 15,
           "categoryId":"medicine",
           "damImages": [
             {
@@ -2919,7 +2919,7 @@
           "mrpDecimal": "310.00",
           "salePriceDecimal": 263.50,
           "discountDecimal": "46.50",
-          "discountPercent": "15",
+          "discountPercent": 15,
           "categoryId": "immunityBooster",
           "damImages": [
             {

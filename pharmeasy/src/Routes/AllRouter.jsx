@@ -3,7 +3,7 @@ import {Route, Routes} from 'react-router-dom'
 import Home from '../Components/Landing/Home'
 import Login from '../Components/Login/Login'
 import Cart from '../Pages/Cart/Cart'
-
+import { PaymentForm } from '../Pages/Payment/PaymentForm'
 import Offer from '../Pages/Offers/Offer'
 import Plus from '../Pages/Plus/Plus'
 
@@ -23,6 +23,7 @@ const AllRouter = () => {
             <Route   path='/Offer' element={<Offer/>} ></Route>
             <Route   path='/Login' element={<Login/>} ></Route>
             <Route   path='/Cart' element={<Cart/>} ></Route>
+            <Route   path='/PaymentForm' element={<PaymentForm/>} ></Route>
 
 
 

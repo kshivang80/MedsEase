@@ -1,4 +1,5 @@
 import React from 'react'
+import './Cart.css';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -6,9 +7,11 @@ import {
     BreadcrumbSeparator,
     Container,
     Box,
-    Flex,Spacer
+    Flex,
+    Spacer,
+    Button,
+    ButtonGroup, 
 } from '@chakra-ui/react'
-
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 import { Link } from 'react-router-dom'
@@ -37,38 +40,47 @@ const Cart = () => {
         </BreadcrumbItem> */}
                 </Breadcrumb>
             </div>
+            {/* cart page body */}
+            <div id='cartcontainer' style={{display:"flex", width:"90%", margin:"auto"}}>
+
+              {/* cart item  */}
+              <div id='cartitem' style={{border:"1px solid red", width:"70%"}}>
+                <div id='cartitemcontainer' style={{border:"1px solid gray",borderRadius:"8px"}}>
+                  <div id='cartitemheader' style={{borderBottom:"1px solid gray",padding:"10px"}}>
+                  <h1>0 Item in the Cart</h1>
+                  </div>
+                  <div id='cartaddress' style={{borderBottom:"1px solid gray",padding:"10px"}}>
+                    <h2>Deliver to: <a>Select Pincode</a></h2>
+                  </div>
+                  <div id='cartItem' style={{margin:"auto",padding:"10px"}}>
+                    if(!cart){
+                        <div style={{alignItem:"center",justifyContent:"center"}}>
+                          <img src="https://assets.pharmeasy.in/web-assets/images/emptyCart.png" alt="" width="50%"style={{alignItem:"center",justifyContent:"center",width:"50%"}} />
+                          <h3>Your Medicine/Healthcare cart is empty</h3>
+                        </div>
+                    }
+                    {/* get cart item from local storage */}
+                  </div>
+                  
+                </div>
+              </div>
+
+              {/* cart Total */}
+              <div id='cartTotal' style={{border:"1px solid red",width:"40%"}}>
+                    <div id="cartTotalContainer"style={{border:"1px solid gray",borderRadius:"8px",marginLeft:"20px"}}>
+                      <div id="cartTotalbox" style={{padding:"10px",borderBottom:"1px solid gray"}}>
+                        <h1>Cart Total:00.00</h1>
+                      </div>
+                      <div id='cartTotalButton' style={{padding:"10px"}}>
+                        <button style={{padding:"10px",backgroundColor:"gray", borderRadius:"8px",width:"100% "}}>Proceed to Checkout</button>
+                      </div>
+                    </div>
+              </div>
 
 
-            {/* body of cart items */}
-            {/* <Container display={"flex"} mx="120" border='2px' borderColor='green' w="100%"> */}
-            <Box display={"flex"} >
+            </div>
 
-
-                {/* itemcart */}
-                <Container id="itemcart" border='0px' borderColor='gray.200' w="100%" ml="3" borderRadius="8" p={"0"}>
-                    <Box id="no_of_items"border='1px' borderColor='gray.200' borderBottomColor="gray.200" borderTopLeftRadius="8" borderTopRightRadius="8" p="0" m="0" >
-                        <h3 style={{fontSize:26}}> 4 Item in your Cart</h3>
-                    </Box>
-                    <Box id='itemList' border='1px' borderColor='gray.200'>
-                        <CartItem/>
-                    </Box>
-
-                </Container>
-
-
-                {/* cart Total */}
-                <Container id='cartTotal' border='0px' borderColor='gray.200' w="60%" display={"flex"} flexDirection="column" gap={"5"}>
-                    <Box bg='tomato' w='100%' p={4} color='white'borderRadius="8">
-                        This is the Box
-                    </Box>
-                    <Box bg='green' w='100%' p={4} color='white' borderRadius="8">
-                        This is the Box
-                    </Box>
-
-                </Container>
-
-            </Box>
-            {/* </Container> */}
+            
         </div>
     )
 }

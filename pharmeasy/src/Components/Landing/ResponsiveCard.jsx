@@ -1,4 +1,4 @@
-import { SampleNextArrow, SamplePrevArrow } from "./HomeCards";
+
 
 import React, { Component } from "react";
 
@@ -11,8 +11,7 @@ export let settings = {
     slidesToShow: 7,
     slidesToScroll: 1,
     initialSlide: 0,
-    // nextArrow: <SampleNextArrow />,
-    //   prevArrow: <SamplePrevArrow/>,
+  
     responsive: [
       {
         breakpoint: 1024,
@@ -25,7 +24,17 @@ export let settings = {
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 850,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      }
+      ,
+      {
+        breakpoint: 650,
         settings: {
           focusOnSelect: true,
           slidesToShow: 4,
@@ -93,8 +102,7 @@ export let settings = {
     slidesToShow: 7,
     slidesToScroll: 1,
     initialSlide: 0,
-    // nextArrow: <SampleNextArrow />,
-    //   prevArrow: <SamplePrevArrow/>,
+  
     responsive: [
       {
         breakpoint: 1024,
@@ -318,8 +326,7 @@ export let settings = {
     slidesToShow: 6,
     slidesToScroll: 1,
     initialSlide: 0,
-    // nextArrow: <SampleNextArrow />,
-    //   prevArrow: <SamplePrevArrow/>,
+  
     responsive: [
       {
         breakpoint: 1024,
@@ -360,8 +367,7 @@ export let settings = {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    // nextArrow: <SampleNextArrow />,
-    //   prevArrow: <SamplePrevArrow/>,
+  
     responsive: [
       {
         breakpoint: 1024,
@@ -402,5 +408,142 @@ export let settings = {
     ]
   };
 
+
+  export let settings10 = {
+    //dots: true,
+    focusOnSelect: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    initialSlide: 0,
+  
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          infinite: true,
+          // dots: true
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+
+
+  export let settings11 = {
+   
+    focusOnSelect: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    rows: 1,
+   
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          // dots: true
+          rows: 1,
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+          rows: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          rows: 1,
+        }
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 1,
+        }
+      }
+
+    ]
+  };
+
+
+  export let settings12 = {
+    //dots: true,
+    focusOnSelect: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+  
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          // dots: true
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          focusOnSelect: true,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
 
   

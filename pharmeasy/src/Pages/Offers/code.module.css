@@ -1,0 +1,16 @@
+.coupenHeading{
+    width: 80%;
+    margin: auto;
+    border: 2px solid red;
+    padding: 20px;
+}
+.coupenHeading>h1{
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(83, 83, 83);
+}
+.coupenHeading>h2{
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(83, 83, 83);
+}

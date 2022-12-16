@@ -2,7 +2,7 @@
     /* display:flex; */
     /* justify-content:space-between;
 color:teal; */
-width:80%;
+width:100%;
 margin:auto;
 }
 .title{
@@ -10,7 +10,7 @@ margin:auto;
     align-items: center;
     justify-content: space-between;
     padding:0px 15px;
-    margin:-10px 0px -10px 0px;
+    margin:10px 0px 10px 0px;
     cursor: pointer;
     color: rgb(98, 98, 98);
 }
@@ -33,7 +33,10 @@ margin:auto;
 }
 .ans.show{
     height: auto;
-    margin-top: -25px;
+    margin-top: -20px;
     max-height: 100%;
+    padding-top: 20px;
+    font-size: 14px;
+    padding-bottom: 10px;
     /* transition: all 0.1s cubic-bezier(1,0,1,0); */
 }

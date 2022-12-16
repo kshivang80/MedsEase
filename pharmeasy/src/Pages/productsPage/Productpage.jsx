@@ -1,13 +1,17 @@
 import { Grid, Box, Center, Stack, Select, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { getProduct, getProductUrl } from "../../Redux/Redux-Product/action";
 import { store } from "../../Redux/store";
 import Filter from "./filterComp/Filter";
 import ProductCard from "./ProductCard";
 
 export default function ProductPage() {
+ 
+ const [searchparams,setSearchParams]=useSearchParams()
+ 
+ 
   const { data, loading } = useSelector((store) => {
     return {
       data: store.reducer.dataOnfetch,
@@ -26,16 +30,17 @@ export default function ProductPage() {
   const handelSort=(e)=>{
 setOption(e.target.value)
   }
-  const [searchParams,setSearchParams]=useSearchParams()
+
+
   useEffect(()=>{
-const param={
-  _sort:option
-};
-
-setSearchParams(param)
-
-getProductUrl(param)
+    const param={}
+    param._sort=option
+    setSearchParams(param)
+console.log(param,'param');
   },[option])
+
+
+
 
   return (
     <>
@@ -71,7 +76,7 @@ getProductUrl(param)
                 </Text>
                 <Select  onChange={handelSort} >
                   <option  >Popularity</option>
-                  <option value={'mrpDecimal'} >Price Low to high</option>
+                  <option value={'asc'} >Price Low to high</option>
                   <option value={'desc'} >Price High to Low</option>
                   <option value={'discountPercent'} >Discount %</option>
                 </Select>

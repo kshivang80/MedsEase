@@ -3,7 +3,7 @@ import { Checkbox } from "@chakra-ui/react";
 export default function CheckBox({
   size = "md",
   colorScheme = "green",
-  border = "blue",
+  border = "grey",
   onchange,
   value,
   ckvalue,

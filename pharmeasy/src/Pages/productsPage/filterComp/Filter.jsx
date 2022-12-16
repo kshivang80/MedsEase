@@ -19,7 +19,7 @@ export default function Filter() {
   const [searchParams, setSearchParams] = useSearchParams();
   const intcatagorie = searchParams.getAll("categoryId");
   const [catagorie, setCatogorie] = useState(intcatagorie || []);
-
+const location=useLocation()
   const handelFilter = (e) => {
     let newCatagorie = [...catagorie];
 
@@ -37,16 +37,19 @@ export default function Filter() {
     setSearchParams(params);
   }, [catagorie]);
 
-  const location = useLocation();
+  
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const sort = searchParams.get("sort");
+    const sort = searchParams.get("_sort");
+
     const getparams = {
       params: {
         categoryId: searchParams.getAll("categoryId"),
-      },
+_sort:sort&&'salePriceDecimal',
+_order:sort
+      }
     };
 
     dispatch(getProductUrl(getparams));
@@ -84,6 +87,7 @@ export default function Filter() {
                 ckvalue={catagorie.includes("medicine")}
                 value="medicine"
                 onchange={handelFilter}
+                
               />
             </Box>
             <Box display={"flex"} justifyContent="space-between">

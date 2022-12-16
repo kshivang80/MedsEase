@@ -61,4 +61,4 @@ export default function SingleCard({ item }) {
     </>
   );
 }
-// :<Text  as='mark' className="dis-text"  >0</Text>
+

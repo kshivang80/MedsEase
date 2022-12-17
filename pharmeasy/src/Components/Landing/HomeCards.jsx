@@ -1311,3 +1311,158 @@ export const OnlyImg2Link=[
 ]
 
 
+
+
+export const HealthArticlesLink=[
+
+    {
+        id:1,
+      
+        image:"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2022/12/15110420/1-9.jpg?dim=1440x0",
+        name:"Avighna Medicare Pvt Ltd"
+
+    },
+    {
+        id:2,
+      
+        image:"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2022/10/06124619/10-2.jpg?dim=1440x0",
+        name:"Benefits of Shalabhasana (Locust Pose) and How to Do it By Dr. Himani Bisht"
+
+    },
+    {
+        id:3,
+      
+        image:"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2022/12/12104633/1-8.jpg?dim=1440x0",
+        name:"How Exercise Can Help You Deal With Breast Cancer"
+
+    },
+    {
+        id:4,
+      
+        image:"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2022/12/06111050/11-1.jpg?dim=1440x0",
+        name:"Benefits of Natarajasana (Dancer Pose) and How to Do it By Dr. Ankit Sankhe"
+
+    },
+    {
+        id:5,
+      
+        image:"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2022/11/06122433/28.jpg?dim=1440x0",
+        name:"Goji Berry: Uses, Benefits, Side Effects By Dr. Rajeev Singh"
+
+    },
+    {
+        id:6,
+      
+        image:"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2022/11/06122833/4-15.jpg?dim=1440x0",
+        name:"Avocado Oil: Uses, Benefits, Side Effects By Dr. Rajeev Singh"
+
+    }
+
+
+]
+
+
+export const ChooseLink=[
+
+    {
+        id:1,
+      
+        image:"https://assets.pharmeasy.in/apothecary/images/family.svg?dim=96x0",
+        name:"32 Million+",
+        des:"Registered users as of Mar 31, 2022"
+    },
+    {
+        id:2,
+      
+        image:"https://assets.pharmeasy.in/apothecary/images/deliveryBoy.svg?dim=96x0",
+        name:"36 Million+",
+        des:"Orders on Pharmeasy till date "
+    },
+    {
+        id:3,
+      
+        image:"https://assets.pharmeasy.in/apothecary/images/pincodeServed.svg?dim=96x0",
+        name:"99000+",
+        des:"Unique items sold last 3 months"
+    },
+    {
+        id:4,
+      
+        image:"https://assets.pharmeasy.in/apothecary/images/locationMarker.svg?dim=96x0",
+        name:"19500+",
+        des:"Pin codes serviced last 3 months"
+    },
+    ,
+    {
+        id:5,
+      
+        image:"https://assets.pharmeasy.in/apothecary/images/locationMarker.svg?dim=96x0",
+        name:"29500+",
+        des:"Pined codes serviced last 8 months"
+    }
+    
+   
+
+
+]
+
+
+
+export const CustomerLink=[
+
+    {
+        id:1,
+      
+        date:"April 22, 2022",
+        name:"Rajarshi Sarkar ",
+        des:"The app is really wonderful. Being a Product Manager myself, I would say that the User experience (UI/UX) of the app is top notch (easy to use, simple and convenient). Coming to services and delivery, I would say Pharmeasy is doing a tremendous job even during this unprecedented pandemic situation."
+    },
+    {
+        id:2,
+      
+        date:"April 23, 2022",
+        name:"Darpan Dholakia",
+        des:"Best service and app amongst all available. I have been using it for more than 3 years, and even during the pandemic, they have kept their standards high and are delivering the order within 24 hours. Keep up the good work."
+    },
+    {
+        id:3,
+      
+        date:"April 15, 2022",
+        name:"Lipi Chaudhuri",
+        des:"This app is a game changer for me. I am unable to go out always to buy medicinal products. Pharmeasy gives me the last liberty to shop essential healthcare products from home. The app is very user friendly and me being an elderly person do not find any difficulty in using it. They deliver well in time. Thanks😊"
+    },
+    {
+        id:4,
+      
+        date:"April 23, 2022",
+        name:"Tirthankar Das Purkayastha",
+        des:"Very good app. Would recommend it to everyone requiring fast and efficient delivery of medicinal products at the doorstep."
+    },
+    {
+        id:5,
+      
+        date:"April 23, 2022",
+        name:"Varun Sonagra",
+        des:"I've had a good experience. The consultation with a doctor feature works well too. The prices and discounts are great too. Overall the simplicity of the app is a plus too. I recommend this app. Will always be a customer/user now! Genuinely!"
+    },
+    {
+        id:6,
+      
+        date:"April 18, 2022",
+        name:"Debanjan Roy",
+        des:"Excellent experience. Pharmeasy has not let it's customers down during lockdown. Thanks team. Great job. The application is also very smooth. And does its job well with an attractive UI and easy to use features. Good job developer."
+    },
+    {
+        id:7,
+      
+        date:"April 21, 2022",
+        name:"Rohini Sarkar",
+        des:"Very helpful and friendly app in terms of usability, customer support & money saving from the point of medical necessity of every person."
+    }
+
+
+]
+
+
+
+

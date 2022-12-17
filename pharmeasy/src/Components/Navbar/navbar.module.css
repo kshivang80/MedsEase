@@ -1,12 +1,15 @@
 .navbar {
-    display: flex;
     width: 92%;
     margin: auto;
-    background-color: white;
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 0px 10px 25px;
     gap: 15px;
     color: black;
+    border: 5px solid green;
+    background-color: white;
 }
 .LinkDiv {
     display: flex;
@@ -43,6 +46,9 @@
 }
 .imageDiv{
     width: 190px;
+    height: 60px;
+    margin: auto;
     border-right: 1px solid #b5b5b5;
+    border: 1px solid red;
 }
   

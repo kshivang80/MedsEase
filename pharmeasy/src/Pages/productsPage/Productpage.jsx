@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getProduct, getProductUrl } from "../../Redux/Redux-Product/action";
 import { store } from "../../Redux/store";
-import Filter from "./filterComp/Filter";
+import Filter from "./Comp/Filter"
 import ProductCard from "./ProductCard";
 import{Link} from "react-router-dom"
 

@@ -1,10 +1,12 @@
 import React from 'react'
 import FAQ from '../Plus/FAQ';
+import Code from './code';
 
 export default function Offer() {
   return (
     <div>
-      <FAQ arr={offerFAQ}/>
+      {/* <FAQ arr={offerFAQ}/> */}
+      <Code/>
     </div>
   )
 }

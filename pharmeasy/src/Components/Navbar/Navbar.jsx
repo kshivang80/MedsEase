@@ -8,6 +8,7 @@ import { TbDiscount2 } from "react-icons/tb";
 import { Button } from "@chakra-ui/react";
 import styles from "./navbar.module.css";
 import Pincode from '../PincodeDrawer/Pincode';
+import logo from '../../Assets/Meds Ease-Logo.png'; 
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -29,10 +30,10 @@ const Navbar = () => {
       <div className={styles.navbar}>
         <div className={styles.imageDiv}>
           <img
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", height: "55px", width: "50%" }}
             onClick={handleClick}
-            src="https://assets.pharmeasy.in/apothecary/images/logo_big.svg?dim=256x0"
-            alt=""
+            src={logo}
+            alt="Home logo"
           />
         </div>
         <div className={styles.LinkDiv}>
@@ -43,7 +44,7 @@ const Navbar = () => {
           <div className={styles.links2}>
             <div>
               <a
-                href="https://apps.apple.com/in/app/pharmeasy-healthcare-app/id982432643"
+                href="https://apps.apple.com/IN/app/id982432643?mt=8"
                 target={"_blank"}
                 rel="noreferrer"
               >

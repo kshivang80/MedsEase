@@ -14,3 +14,25 @@
     font-weight: 700;
     color: rgb(83, 83, 83);
 }
+.read{
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 700;
+    color: teal;
+}
+.ans{
+    padding:0px 15px;
+    max-height: 10;
+    overflow: hidden;
+    color: gray;
+    /* transition: all 0.5s cubic-bezier(0,1,0,1); */
+}
+/* .ans.show{
+    height: auto;
+    margin-top: -20px;
+    max-height: 100%;
+    padding-top: 20px;
+    font-size: 14px;
+    padding-bottom: 10px; */
+    /* transition: all 0.1s cubic-bezier(1,0,1,0); */
+/* } */

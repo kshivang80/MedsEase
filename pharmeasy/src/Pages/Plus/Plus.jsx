@@ -203,7 +203,7 @@ const Plus = () => {
                   on all my medicine orders & lab test bookings too.”
                 </div>
               </div>
-              {/* <div>
+              <div>
                   <p>Rahul Singh</p>
                   <h2>Saved ₹3782 in 6 months</h2>
                   <div>I must admit that I've made huge savings since I became a member of Pharmeasy Plus. There's not just free deliveries but extra cashback on every order too! It makes ordering monthly medicines a truly satisfying experience.”</div>
@@ -212,7 +212,7 @@ const Plus = () => {
                   <p>Preeti Sharma</p>
                   <h2>Saved ₹2142 in 3 months</h2>
                   <div>I feel like a premium customer as a PharmEasy plus member. All the extra discounts, free deliveries, it can't get any better than this! Also, since lockdown, I didn't have to step out for my medical and healthcare needs anymore.”</div>
-                </div>          */}
+                </div>         
             </div>
           </div>
         </div>

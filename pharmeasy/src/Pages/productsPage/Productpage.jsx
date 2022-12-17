@@ -6,6 +6,7 @@ import { getProduct, getProductUrl } from "../../Redux/Redux-Product/action";
 import { store } from "../../Redux/store";
 import Filter from "./filterComp/Filter";
 import ProductCard from "./ProductCard";
+import{Link} from "react-router-dom"
 
 export default function ProductPage() {
  
@@ -86,16 +87,17 @@ console.log(param,'param');
               {data &&
                 data.map((elm) => {
                   return (
-                    <div key={elm.productId}>
+                   <Link  key={elm.productId} to={`/product/${elm.productId
+                   }`} > <div key={elm.productId}   >
                       <ProductCard key={elm.id} item={elm} />
-                    </div>
+                    </div></Link>
                   );
                 })}
             </Grid>
           </Box>
         </Box>
       </Center>
-      {/* <Skeleton/> */}
+      
     </>
   );
 }

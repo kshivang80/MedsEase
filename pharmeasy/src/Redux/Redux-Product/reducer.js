@@ -7,6 +7,7 @@ const intState={
     isError:false,
 
     dataOnfetch:[],
+    singleProduct:[]
 }
 
 
@@ -29,7 +30,13 @@ case types.GET_PRODUCT_DATA_REQ:return {...state,isLoading:true, isError:false}
         case types.GET_URL_SUCCESS:return {...state,isLoading:false,dataOnfetch:payload}
 
         case types.GET_URL_FAILURE:return {...state,isError:true}
-        
+
+
+        case types.GET_SINGLE_PR_REQ:return {...state,isLoading:true}
+        case types.GET_SINGLE_PR_SUCCESS:return {...state,isLoading:false ,singleProduct:payload}
+        case types.GET_SINGLE_PR_FAILURE:return {...state,isError:false}
+
+
         default :return state
      }
 }

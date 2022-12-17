@@ -38,7 +38,7 @@ export default function SingleCard({ item }) {
           {item.discountPercent == "0" ? (
             <Box>
               <Text fontSize={10}>MRP:</Text>
-              <Text fontSize={10} >
+              <Text fontSize={10} fontWeight='bold' >
                 {item.mrpDecimal}
               </Text>
             </Box>
@@ -51,12 +51,12 @@ export default function SingleCard({ item }) {
             >
               {item.discountPercent}% OFF
             </Text>
-            <Text  as='del' >MRP: {item.mrpDecimal}</Text>
+            <Text  as='del'  >MRP: {item.mrpDecimal}</Text>
             </Box>
           )}
           <Image className="dis-img" w={"100px"} h="30px" src={edit3}></Image>
         </Box>
-        <Text>₹{finalPrice.toFixed(2)}</Text>
+        <Text color='gray.500' as={'b'} >₹{finalPrice.toFixed(2)}</Text>
       </Box>
     </>
   );

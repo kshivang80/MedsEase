@@ -1,40 +1,45 @@
 import { Grid, Box, Center, Stack, Select, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getProduct, getProductUrl } from "../../Redux/Redux-Product/action";
-
-import Filter from "./Comp/Filter";
+import { store } from "../../Redux/store";
+import Filter from "./Comp/Filter"
 import ProductCard from "./ProductCard";
+import{Link} from "react-router-dom"
 
 export default function ProductPage() {
  
-  const dispatch=useDispatch()
-const  [option,setOption]=useState('')
-
- const { data, loading,optionvalue} = useSelector((store) => {
+ const [searchparams,setSearchParams]=useSearchParams()
+ 
+ 
+  const { data, loading } = useSelector((store) => {
     return {
       data: store.reducer.dataOnfetch,
       loading: store.reducer.isLoading,
-      
-      
     };
   });
 
- 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProduct());
+  }, []);
+
+  const [option,setOption]=useState('')
+
+  const handelSort=(e)=>{
+setOption(e.target.value)
+  }
+
 
   useEffect(()=>{
-if(data.length==0){
-  dispatch(getProductUrl())
-}
+    const param={}
+    param._sort=option
+    setSearchParams(param)
+console.log(param,'param');
+  },[option])
 
-  },[data])
-
-  const handelOptionChange=()=>{
-  //setOption(e.target.value)
-
-  }
-  
 
 
 
@@ -70,7 +75,7 @@ if(data.length==0){
                 <Text fontSize={"xl"} color="grey">
                   SortBy:
                 </Text>
-                <Select  onChange={handelOptionChange}  >
+                <Select  onChange={handelSort} >
                   <option  >Popularity</option>
                   <option value={'asc'} >Price Low to high</option>
                   <option value={'desc'} >Price High to Low</option>
@@ -82,16 +87,17 @@ if(data.length==0){
               {data &&
                 data.map((elm) => {
                   return (
-                    <div key={elm.productId}>
+                   <Link  key={elm.productId} to={`/product/${elm.productId
+                   }`} > <div key={elm.productId}   >
                       <ProductCard key={elm.id} item={elm} />
-                    </div>
+                    </div></Link>
                   );
                 })}
             </Grid>
           </Box>
         </Box>
       </Center>
-     
+      
     </>
   );
 }

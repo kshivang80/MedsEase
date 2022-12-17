@@ -1,3 +1,5 @@
+
+
 import {
   Box,
   Heading,
@@ -6,30 +8,28 @@ import {
   Spacer,
   Input,
   Image,
-  useEventListener,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useSearchParams } from "react-router-dom";
-import { getProductUrl, get_url_fn } from "../../../Redux/Redux-Product/action";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+
+import { getProductUrl } from "../../../Redux/Redux-Product/action";
 import CheckBox from "../checkBox/CheckBox";
+import InputSearch from "../Comp/InputSearch";
 import magnifyLense from "../img/magnifyLense.webp";
 import "../pro.css";
-import InputSearch from "./InputSearch";
+import { get_url_success_fn } from "../../../Redux/Redux-Product/action";
 
 export default function Filter() {
 
-  const [text,setText]=useState('')
-
-const dispatch=useDispatch()
-
-  const [catagorie,setCatogorie]=useState([])
-
-  const [searchParams,setSearchParams]=useSearchParams()
-  
+const [text,setText]=useState('')
 
 
 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const intcatagorie = searchParams.getAll("categoryId");
+  const [catagorie, setCatogorie] = useState(intcatagorie || []);
+const location=useLocation()
   const handelFilter = (e) => {
     let newCatagorie = [...catagorie];
 
@@ -41,30 +41,74 @@ const dispatch=useDispatch()
     setCatogorie(newCatagorie);
   };
 
+  useEffect(() => {
+    let params = {};
+    params.categoryId = catagorie;
+    setSearchParams(params);
+  }, [catagorie]);
 
-
-
-  // const data=useSelector((store)=>store.reducer.dataOnfetch)
-
-  // const handelSearch=()=>{
-  
-  //     let newdata=data.filter((elm)=>elm.manufacturer==text)
-  //     console.log(newdata)
-  // }
-  
   
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const sort = searchParams.get("_sort");
+
+    const getparams = {
+      params: {
+        categoryId: searchParams.getAll("categoryId"),
+_sort:sort&&'salePriceDecimal',
+_order:sort
+      }
+    };
+
+    dispatch(getProductUrl(getparams));
+  }, [location]);
+
+  let data = useSelector((store) => store.reducer.dataOnfetch);
 
 
-  const  handelChange=(e)=>{
-     setText(e.target.value)
+const [suggestion,setSuggestion]=useState([])
+  const handelChange=(e)=>{
+    setText(e.target.value)
   }
+  const navigate=useNavigate()
+
+  const cata1=data.filter((elm)=>elm.categoryId=="medicine")
+const cata2=data.filter((elm)=>elm.categoryId=="personalNeed")
+const cata3=data.filter((elm)=>elm.categoryId=="immunityBooster")
 
 
- 
-console.log(text,'2')
-  
- 
+useEffect(()=>{
+// console.log(data);
+
+ let arr=[]
+ let textQuery=text.trim().toLowerCase();
+
+
+ if(textQuery==''){
+  dispatch(getProductUrl())
+ }
+
+   arr=data.filter((elm)=>{
+    return elm.manufacturer.toLowerCase().indexOf(textQuery)!==-1?true:false
+   })
+
+   if(arr.length>0){
+    
+   dispatch(get_url_success_fn(arr))
+   }
+
+   if(arr.length==0){
+    navigate('*')
+   }
+
+},[text])
+
+
+
+
+
   return (
     <Box>
       <Text as="b" color="grey" fontSize={"2xl"}>
@@ -91,10 +135,11 @@ console.log(text,'2')
               <Text fontSize={"10px"} as="b" color={"grey"}>
                 Medicine
               </Text>
+              <Text pl='200px'  color={'grey'}  >({cata1.length})</Text>
               <CheckBox
-                // ckvalue={catagorie.includes("medicine")}
+                ckvalue={catagorie.includes("medicine")}
                 value="medicine"
-               onchange={handelFilter}
+                onchange={handelFilter}
                 
               />
             </Box>
@@ -102,11 +147,11 @@ console.log(text,'2')
               <Text fontSize={"10px"} as="b" color={"grey"}>
                 Personal Care
               </Text>
+              <Text pl='170px' color={'grey'} >({cata2.length})</Text>
               <CheckBox
-                // ckvalue={catagorie.includes("personalNeed")}
+                ckvalue={catagorie.includes("personalNeed")}
                 value="personalNeed"
                 onchange={handelFilter}
-
               />
             </Box>
             <Box display={"flex"} justifyContent="space-between">
@@ -114,10 +159,11 @@ console.log(text,'2')
                 {" "}
                 Immunity Booster
               </Text>
+              <Text pl='150px' color={'grey'} >({cata3.length})</Text>
               <CheckBox
-                // ckvalue={catagorie.includes("immunityBooster")}
+                ckvalue={catagorie.includes("immunityBooster")}
                 value="immunityBooster"
-               onchange={handelFilter}
+                onchange={handelFilter}
               />
             </Box>
           </Box>
@@ -133,7 +179,7 @@ console.log(text,'2')
         <Box mt="20px" display={"flex"}>
           <Box className="searchbar">
             {" "}
-           <InputSearch  text={text} setText={setText} onchange={handelChange}   />
+            <InputSearch  onchange={(e)=>handelChange(e)}  />
           </Box>
           <Box className="lense-img">
             {" "}
@@ -141,7 +187,7 @@ console.log(text,'2')
           </Box>
         </Box>
 
-        <Box mt="30px" border={"1px solid grey"}></Box>
+        <Box mt="30px" bg='grey' border={"1px solid grey"}></Box>
 
         <Box mt="20px">
           <Text as="b" color={"gray.600"}>

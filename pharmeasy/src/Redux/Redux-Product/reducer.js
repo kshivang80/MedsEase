@@ -7,13 +7,7 @@ const intState={
     isError:false,
 
     dataOnfetch:[],
-
-    param:{
-     catagoryId:[],
-     sort:''
-    }
-   
-    
+    singleProduct:[]
 }
 
 
@@ -38,15 +32,10 @@ case types.GET_PRODUCT_DATA_REQ:return {...state,isLoading:true, isError:false}
         case types.GET_URL_FAILURE:return {...state,isError:true}
 
 
+        case types.GET_SINGLE_PR_REQ:return {...state,isLoading:true}
+        case types.GET_SINGLE_PR_SUCCESS:return {...state,isLoading:false ,singleProduct:payload}
+        case types.GET_SINGLE_PR_FAILURE:return {...state,isError:false}
 
-
-        //experiment
-
-        case  types.GETURL:
-        
-        const newparam={...state.param,catagoryId:payload.cat,sort:payload.sort}
-        
-        return {...state.param,newparam}
 
         default :return state
      }

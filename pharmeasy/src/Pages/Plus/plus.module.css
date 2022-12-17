@@ -306,11 +306,19 @@ input[type="range"] {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-between;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  overflow: scroll;
+}
+.plusMembers::-webkit-scrollbar{
+  display: none;
 }
 .plusMembers > div {
-  width: 32%;
-  margin: 5px;
+  width: 33%;
+  height: auto;
+  flex: 0 0 33%;
+  margin: 5px; 
+  scroll-snap-align: start;
 }
 .plusMembers > div:nth-child(1) > div,
 .plusMembers > div:nth-child(4) > div {

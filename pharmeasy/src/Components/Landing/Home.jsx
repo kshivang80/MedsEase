@@ -929,18 +929,7 @@ const Home = () => {
 
     </Box>
 
-    {/* <Box bg='red.200' w={[300, 400, 500]}>
-  This is a box
-  <br />
-  This is a box
-  <br />
-  This is a box
-  <br />
-  This is a box
-  <br />
-  This is a box
-  <br />
-</Box> */}
+  
 
 
 

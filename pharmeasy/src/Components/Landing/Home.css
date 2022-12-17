@@ -1,1031 +1,841 @@
-
 .Maindiv {
-    margin-top: 30px;
-    border: 2px solid black;
-    height: auto;
+  margin-top: 30px;
+  border: 2px solid black;
+  height: auto;
 }
-
-
 
 /* ///////////////// *******************************/
 
-
-
-
 .slick-next {
-    /* right: 10px;
+  /* right: 10px;
     background: rgb(224, 5, 5) !important;
     border-radius: 7px; */
 
-    /* font-family: 'slick';
+  /* font-family: 'slick';
     font-size: 40px !important;
     line-height: 1;
     opacity: .75;
     background-color: rgb(31, 29, 29) !important; */
-  }
-  
-  /* .slick-prev {
+}
+
+/* .slick-prev {
     left: 10px;
     z-index: 2;
     background: black !important;
     border-radius: 7px;
     
   } */
-  
 
-  .slick-prev:before,
-  .slick-next:before {
-    font-family: 'slick';
-    font-size: 35px !important;
-    line-height: 1;
-    opacity: .75;
-    color: rgb(31, 29, 29) !important;  ;
-    /* color: yellow !important; */
-    margin-left: -5.5px;
-  }
-  
-
-
-
-
-
-
-
-
-
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 35px !important;
+  line-height: 1;
+  opacity: 0.75;
+  color: rgb(31, 29, 29) !important;
+  /* color: yellow !important; */
+  margin-left: -5.5px;
+}
 
 /* ///////////////// *******************************/
 
-
 .slick-slide > div {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .slick-list {
-    margin: 0 -10px;
+  margin: 0 -10px;
 }
-
 
 .Discovercard {
-    /* border: 1px solid red;  */
-   
-    width: 90%;
-    margin: auto;
+  /* border: 1px solid red;  */
 
+  width: 90%;
+  margin: auto;
 }
 
-.card:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
+.card:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .card {
-    /* border: 1px solid red; */
-   
-    height: 160px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    overflow: hidden;
-    border-radius: 10px;
-    justify-content: space-between;
-    
+  /* border: 1px solid red; */
+
+  height: 160px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  overflow: hidden;
+  border-radius: 10px;
+  justify-content: space-between;
 }
 
 .cardtop {
-    height: 70%;
-    margin: auto;
-    /* border: 1px solid black */
+  height: 70%;
+  margin: auto;
+  /* border: 1px solid black */
 }
 
-.cardtop>img {
-    width: 80%;
-    height: 100%;
-    margin: auto;
+.cardtop > img {
+  width: 80%;
+  height: 100%;
+  margin: auto;
 }
 
 .cardbottom {
-    /* border: 1px solid blue; */
-    height: 30%;
-    text-align: center;
-
+  /* border: 1px solid blue; */
+  height: 30%;
+  text-align: center;
 }
 
-.cardbottom>p {
-    margin: auto;
-    font-family: sans-serif;
-    font-size: 16px;
+.cardbottom > p {
+  margin: auto;
+  font-family: sans-serif;
+  font-size: 16px;
 }
-.cardbottom>h5 {
-    margin: auto;
-    font-family: sans-serif;
-    font-size: 12.5px;
-    color: #F47779;
+.cardbottom > h5 {
+  margin: auto;
+  font-family: sans-serif;
+  font-size: 12.5px;
+  color: #f47779;
 }
-
 
 /*    Slider2  CSS code  */
 
-.Slide2{
-    /* border: 1px solid black; */
-    margin-top: 160px;
-    width:96%;
-    margin: auto;
-
+.Slide2 {
+  /* border: 1px solid black; */
+  margin-top: 160px;
+  width: 96%;
+  margin: auto;
 }
 
-
-.Slider-card:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
-
-.Slider-card{
-    /* border: 1px solid rgb(227, 49, 78); */
-  
-       
-        height: 240px;
-        width:35%;
-        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-      
-        border-radius: 10px;
-        justify-content: space-between;
-        
-    
-
-}
-.Slider-card>img{
-    height: 100%;
-    width:100%;
-    border-radius: 10px;
+.Slider-card:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.Slider-card {
+  /* border: 1px solid rgb(227, 49, 78); */
 
+  height: 240px;
+  width: 35%;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
-
+  border-radius: 10px;
+  justify-content: space-between;
+}
+.Slider-card > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
 
 /* Slide3  css card*/
 
-.Slide3{
-   
-    border: 1px solid white;
-    height:auto ;
-    margin-top: 50px;
-
+.Slide3 {
+  border: 1px solid white;
+  height: auto;
+  margin-top: 50px;
 }
 
-.LiveTest{
-    /* border: 1px solid palevioletred; */
-    width: auto;
-    margin-left: 30px;
-    height: auto;
-   
-   
-   
-
+.LiveTest {
+  /* border: 1px solid palevioletred; */
+  width: auto;
+  margin-left: 30px;
+  height: auto;
 }
 
-.Slide3-cardImg:hover{
-    -webkit-transform: translate(5px);
-    transform: translateY(-5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
-
-.Slide3-card{
-    margin-top:20px ;
-    /* border: 1px solid palevioletred; */
-    width: 95%;
-    margin: auto;
-
-}
-.Slide3-cardImg{
-    height: 150px;
-}
-.Slide3-cardImg>img{
-    height: 100%;
-    width: 100%;
+.Slide3-cardImg:hover {
+  -webkit-transform: translate(5px);
+  transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.Slide3-card {
+  margin-top: 20px;
+  /* border: 1px solid palevioletred; */
+  width: 95%;
+  margin: auto;
+}
+.Slide3-cardImg {
+  height: 150px;
+}
+.Slide3-cardImg > img {
+  height: 100%;
+  width: 100%;
+}
 
 /* *********************Slide4  css working    ******************/
 
-.Slide4{
-    margin-top: 20px;
-    /* border: 1px solid black; */
-
+.Slide4 {
+  margin-top: 20px;
+  /* border: 1px solid black; */
 }
 
-.Data-prev{
-    display: flex;
-    /* border: 1px solid red */
-
+.Data-prev {
+  display: flex;
+  /* border: 1px solid red */
 }
 
-.oneDiv{
-    height: auto;
-    width: 25%;
-    /* border:1px solid blueviolet; */
-    
- 
-
-
+.oneDiv {
+  height: auto;
+  width: 25%;
+  /* border:1px solid blueviolet; */
 }
 
-
-.imgBox:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
-
-
-
-
-  /* just for offer  section onn */
-
-  .LiveTest1{
-    /* border: 1px solid palevioletred; */
-    width: auto;
-    /* margin-left: 30px; */
-    height: auto;
-   
-   
-   
-
+.imgBox:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.justOffer{
-   
-    border: 1px solid white;
-    height:240px;
-    width:95%;
-    margin:auto
-}
-.justOffer-card{
-    margin-top: 20px;
-    /* border: 1px solid red; */
-  
+/* just for offer  section onn */
+
+.LiveTest1 {
+  /* border: 1px solid palevioletred; */
+  width: auto;
+  /* margin-left: 30px; */
+  height: auto;
 }
 
+.justOffer {
+  border: 1px solid white;
+  height: 240px;
+  width: 95%;
+  margin: auto;
+}
+.justOffer-card {
+  margin-top: 20px;
+  /* border: 1px solid red; */
+}
 
-.justOffer-cardtop:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.justOffer-cardtop:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
-
- }
-
-
-
-.justOffer-cardtop{
-    /* height: 70px;
+.justOffer-cardtop {
+  /* height: 70px;
     width: 30%;
     margin: auto; */
-    /* border: 1px solid black; */
-    display:"flex";
-    height: 80px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 10px;
+  /* border: 1px solid black; */
+  display: "flex";
+  height: 80px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
 }
-.justOffer-cardtop1{
-    /* border: 1px solid black; */
-    width: 30%;
-   
-}
-
-.justOffer-cardtop1>img {
-    width: 100%;
-    height: 90%;
-    margin: auto;
-    border-radius: 10px;
-    /* border: 1px solid black; */
+.justOffer-cardtop1 {
+  /* border: 1px solid black; */
+  width: 30%;
 }
 
-.justOffer-cardbottom{
-   
+.justOffer-cardtop1 > img {
+  width: 100%;
+  height: 90%;
+  margin: auto;
+  border-radius: 10px;
+  /* border: 1px solid black; */
+}
+
+.justOffer-cardbottom {
   height: 100%;
   width: 60%;
- 
+
   margin-left: 15px;
   overflow: hidden;
-  
-
-
-
 }
-.justOffer-cardbottom>p{
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.justOffer-cardbottom > p {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
 
 /* /////////////////Payment section CSS //////////*/
 
-.Payment{
-    /* border:1px solid #F47779; */
-    width:95%;
-    margin: auto;
-    height: 180px;
+.Payment {
+  /* border:1px solid #F47779; */
+  width: 95%;
+  margin: auto;
+  height: 180px;
 }
 
-
-.payment-slid{
-    margin-top: 20px;
-    /* border:1px solid black; */
-    width:100%;
-
+.payment-slid {
+  margin-top: 20px;
+  /* border:1px solid black; */
+  width: 100%;
 }
 
-.paymant-card:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
-
-
-.paymant-card{
-    /* border:1px solid blue; */
-    width: 100%;
-    height: 80px;
-    border-radius: 10px;
-
+.paymant-card:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.paymant-card>img{
-    /* border:1px solid blue; */
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-
+.paymant-card {
+  /* border:1px solid blue; */
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
 }
 
-
+.paymant-card > img {
+  /* border:1px solid blue; */
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
 
 /* Categories card the css */
 
-
-
-
-.Categories{
-    border:1px solid white;
-    width:95%;
-    margin: auto;
-    height: 350px;
-
+.Categories {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+  height: 350px;
 }
 .Categories-card {
-    /* border: 1px solid red;  */
-   
-    width: 100%;
-    margin: auto;
+  /* border: 1px solid red;  */
 
+  width: 100%;
+  margin: auto;
 }
 
 .Categories1-card {
-    margin-top: 20px;
-    /* border: 1px solid red; */
-   
-    height: 250px;
-  
-    overflow: hidden;
-    border-radius: 10px;
-    justify-content: space-between;
-    
+  margin-top: 20px;
+  /* border: 1px solid red; */
+
+  height: 250px;
+
+  overflow: hidden;
+  border-radius: 10px;
+  justify-content: space-between;
 }
 
-.Categories-top:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
+.Categories-top:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .Categories-top {
-    height: 65%;
-    margin: auto;
-    border: 0.4px solid white;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  height: 65%;
+  margin: auto;
+  border: 0.4px solid white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.Categories-top>img {
-    width: 80%;
-    height: 80%;
-    margin: auto;
+.Categories-top > img {
+  width: 80%;
+  height: 80%;
+  margin: auto;
 }
 
 .Categories-bottom {
-    /* border: 1px solid blue; */
-    margin-top: 8px;
-    height: 30%;
-    text-align: center;
-
+  /* border: 1px solid blue; */
+  margin-top: 8px;
+  height: 30%;
+  text-align: center;
 }
 
-.Categories-bottom>p {
-    margin: auto;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #30363C;
+.Categories-bottom > p {
+  margin: auto;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #30363c;
 }
 
+/* New Launches  html code */
 
-
- /* New Launches  html code */
-
-
- .Launches{
-    border:1px solid white;
-    width:95%;
-    margin: auto;
-    height: 450px;
-
+.Launches {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+  height: 450px;
 }
 .Launches-card {
-    /* border: 1px solid yellow;  */
-   
-    width: 100%;
-    margin: auto;
-    margin-top: 15px;
+  /* border: 1px solid yellow;  */
 
+  width: 100%;
+  margin: auto;
+  margin-top: 15px;
 }
 
 .Launches1-card {
-    /* border: 1px solid blue; */
-   margin-top: 20px;
-    height: 320px;
-  
-    overflow: hidden;
-    border-radius: 10px;
-    justify-content: space-between;
-    
+  /* border: 1px solid blue; */
+  margin-top: 20px;
+  height: 320px;
+
+  overflow: hidden;
+  border-radius: 10px;
+  justify-content: space-between;
 }
 
-.Launches-top:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
+.Launches-top:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .Launches-top {
-    height: 60%;
-    margin: auto;
-    /* border: 0.4px solid white; */
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  height: 60%;
+  margin: auto;
+  /* border: 0.4px solid white; */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.Launches-top>img {
-    width: 70%;
-    height: 70%;
-    margin: auto;
+.Launches-top > img {
+  width: 70%;
+  height: 70%;
+  margin: auto;
 }
 
 .Launches-bottom {
-    /* border: 1px solid blue; */
-    margin-top: 8px;
-    height: 40%;
-   
-
+  /* border: 1px solid blue; */
+  margin-top: 8px;
+  height: 40%;
 }
 
-.Launches-bottom>p {
-  
-    font-family: sans-serif;
-    font-size: 16px;
-   
-   
+.Launches-bottom > p {
+  font-family: sans-serif;
+  font-size: 16px;
 }
-
-
 
 /* Shop by Concern */
 
-.ShopConcern{
-    margin: auto;
-    width: 95%;
-    border: 1px solid white;
-    height: auto;
+.ShopConcern {
+  margin: auto;
+  width: 95%;
+  border: 1px solid white;
+  height: auto;
 }
 
-
-.ShopConcernImgBox:hover{
-    -webkit-transform: translate(-5px);
-    transform: translate(-10px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
-
-
-  
-
- /* *****************Frequently CSS start ************* */
-
- .Frequently{
-    border: 1px solid white;
-    width:95%;
-    margin:auto
- }
-
- .Frequently-card:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
-
-
-
-
- /* ******************* Wellness  **********************/
- .LiveTest2-wellness{
-    /* border: 1px solid palevioletred; */
-    width: auto;
-    margin-top: 70px;
-    height: auto;
-   
-   
-   
-
+.ShopConcernImgBox:hover {
+  -webkit-transform: translate(-5px);
+  transform: translate(-10px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
- 
 
- .Wellness{
-    border:1px solid white;
-    width:95%;
-    margin: auto;
-    height: auto;
+/* *****************Frequently CSS start ************* */
 
+.Frequently {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+}
+
+.Frequently-card:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* ******************* Wellness  **********************/
+.LiveTest2-wellness {
+  /* border: 1px solid palevioletred; */
+  width: auto;
+  margin-top: 70px;
+  height: auto;
+}
+
+.Wellness {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+  height: auto;
 }
 .Wellness-card {
-    /* border: 1px solid yellow;  */
-   
-    width: 100%;
-    margin: auto;
-  
+  /* border: 1px solid yellow;  */
 
+  width: 100%;
+  margin: auto;
 }
 
 .Wellness1-card {
-    margin-top: 20px;
-    /* border: 1px solid blue; */
-   
-    height: 250px;
-    width: 100%;
-   
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  
-    
-    
+  margin-top: 20px;
+  /* border: 1px solid blue; */
+
+  height: 250px;
+  width: 100%;
+
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.Wellness1-card:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
+.Wellness1-card:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .Wellness-top {
-    height: 100%;
-    /* border: 1px solid blue; */
-    /* border: 0.4px solid white; */
-    border-radius: 10px;
-    width: 40%;
-    margin: auto;
+  height: 100%;
+  /* border: 1px solid blue; */
+  /* border: 0.4px solid white; */
+  border-radius: 10px;
+  width: 40%;
+  margin: auto;
 }
 
-.Wellness-top>img {
-    width: 100%;
-    height: 70%;
-    margin-top: 20px;
-   
+.Wellness-top > img {
+  width: 100%;
+  height: 70%;
+  margin-top: 20px;
 }
 
 .Wellness-bottom {
-    /* border: 1px solid blue; */
-    width:60%;
-    height: 100%;
-   
-
+  /* border: 1px solid blue; */
+  width: 60%;
+  height: 100%;
 }
 
+/*  *************Feature CSS ***************** */
 
-
-   /*  *************Feature CSS ***************** */
-
-   .FeaturedMain {
-    /* border: 1px solid red; 
+.FeaturedMain {
+  /* border: 1px solid red; 
     */
-    width: 100%;
-    margin: auto;
-
+  width: 100%;
+  margin: auto;
 }
 
-.Featured:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
+.Featured:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .Featured {
-    /* border: 1px solid red; */
-   
-    height: 200px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    overflow: hidden;
-    border-radius: 10px;
-    justify-content: space-between;
-    margin-top: 35px
-    
+  /* border: 1px solid red; */
+
+  height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  overflow: hidden;
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-top: 35px;
 }
 
 .Featuredtop {
-    height: 80%;
-    margin: auto;
-    /* border: 1px solid black */
+  height: 80%;
+  margin: auto;
+  /* border: 1px solid black */
 }
 
-.Featuredtop>img {
-    width: 90%;
-    height: 100%;
-    margin: auto;
+.Featuredtop > img {
+  width: 90%;
+  height: 100%;
+  margin: auto;
 }
 
 .Featuredbottom {
-    /* border: 1px solid blue; */
-    height: 20%;
-    text-align: center;
-
+  /* border: 1px solid blue; */
+  height: 20%;
+  text-align: center;
 }
 
-.Featuredbottom>p {
-    margin: auto;
-    font-family: sans-serif;
-    font-size: 16px;
+.Featuredbottom > p {
+  margin: auto;
+  font-family: sans-serif;
+  font-size: 16px;
 }
-.Featuredbottom>h5 {
-    margin: auto;
-    font-family: sans-serif;
-    font-size: 12.5px;
-    color: #F47779;
+.Featuredbottom > h5 {
+  margin: auto;
+  font-family: sans-serif;
+  font-size: 12.5px;
+  color: #f47779;
 }
-
-
-
 
 /********************** onlyImg    ++++++++++++ */
 
-.onlyImg{
-    border: 1px solid white;
-    width: 95%;
-    margin: auto;
+.onlyImg {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
 }
 
-
-.onlyImg-cardImg:hover{
-    -webkit-transform: translate(5px);
-    transform: translateY(-5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
-
-.onlyImg-card{
-    margin-top:40px ;
-    /* border: 1px solid palevioletred; */
-    width: 100%;
-   
-
-}
-.onlyImg-cardImg{
-    height: 230px;
-}
-.onlyImg-cardImg>img{
-    height: 100%;
-    width: 100%;
+.onlyImg-cardImg:hover {
+  -webkit-transform: translate(5px);
+  transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-   /* Deals CSS */
+.onlyImg-card {
+  margin-top: 40px;
+  /* border: 1px solid palevioletred; */
+  width: 100%;
+}
+.onlyImg-cardImg {
+  height: 230px;
+}
+.onlyImg-cardImg > img {
+  height: 100%;
+  width: 100%;
+}
 
-   .Deals{
-    border:1px solid white;
-    width:95%;
-    margin: auto;
-    height: 450px;
+/* Deals CSS */
 
+.Deals {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+  height: 450px;
 }
 
 /*        Trending CSS                    */
 
-
-.Trending{
-    border:1px solid white;
-    width:95%;
-    margin: auto;
-    height: 450px;
-
+.Trending {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+  height: 450px;
 }
-
 
 /* 
   Only Image part 2 */
 
-.onlyImg2{
-    border: 1px solid white;
-    width: 95%;
-    margin: auto;
+.onlyImg2 {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
 }
 
-
-.onlyImg2-cardImg:hover{
-    -webkit-transform: translate(5px);
-    transform: translateY(-5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
-
-.onlyImg2-card{
-    margin-top:40px ;
-    /* border: 1px solid palevioletred; */
-    width: 100%;
-    border-radius:20px ;
-   
-
-}
-.onlyImg2-cardImg{
-    height: 180px;
-    border-radius:20px ;
-}
-.onlyImg2-cardImg>img{
-    height: 100%;
-    width: 100%;
-    border-radius:20px ;
+.onlyImg2-cardImg:hover {
+  -webkit-transform: translate(5px);
+  transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-
-
- /* *************** Health Articles *************/
-
-
-
-
-.Health{
-    border:1px solid white;
-    width:95%;
-    margin: auto;
-    height: 500px;
-
+.onlyImg2-card {
+  margin-top: 40px;
+  /* border: 1px solid palevioletred; */
+  width: 100%;
+  border-radius: 20px;
+}
+.onlyImg2-cardImg {
+  height: 180px;
+  border-radius: 20px;
+}
+.onlyImg2-cardImg > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
 }
 
+/* *************** Health Articles *************/
+
+.Health {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+  height: 500px;
+}
 
 .HealthMain {
-    /* border: 1px solid blue;  */
-   
-    width: 100%;
-    margin: auto;
+  /* border: 1px solid blue;  */
 
+  width: 100%;
+  margin: auto;
 }
 
-.Health-card:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
+.Health-card:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .Health-card {
-    /* border: 1px solid red; */
-   
-    height: 300px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    overflow: hidden;
-    border-radius: 10px;
-    justify-content: space-between;
-    margin-top: 35px
-    
+  /* border: 1px solid red; */
+
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  overflow: hidden;
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-top: 35px;
 }
 
 .Healthtop {
-    height: 60%;
-    margin: auto;
-    /* border: 1px solid black */
+  height: 60%;
+  margin: auto;
+  /* border: 1px solid black */
 }
 
-.Healthtop>img {
-    width: 100%;
-    height: 100%;
-    margin: auto;
+.Healthtop > img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 .Healthbottom {
-    /* border: 1px solid blue; */
-    height: 40%;
-    /* text-align: center; */
-    width: 90%;
-    margin: auto;
-
+  /* border: 1px solid blue; */
+  height: 40%;
+  /* text-align: center; */
+  width: 90%;
+  margin: auto;
 }
 
+/* Choose the user section */
 
-
-  /* Choose the user section */
-
-
-  .Choose{
-    border:1px solid  white;
-    width:95%;
-    margin: auto;
-    height: auto;
-
+.Choose {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+  height: auto;
 }
 .Choose-card {
-    /* border: 1px solid yellow;  */
-   
-    width: 100%;
-   
-  
+  /* border: 1px solid yellow;  */
 
+  width: 100%;
 }
 
 .Choose1-card {
-    /* border: 1px solid blue; */
-   
-    height: 150px;
-  
-    margin-top:30px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  
-    
-    
+  /* border: 1px solid blue; */
+
+  height: 150px;
+
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.Choose1-card:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
- }
+.Choose1-card:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .Choose-top {
-    height: 100%;
-    /* border: 1px solid blue; */
-    /* border: 0.4px solid white; */
-    border-radius: 10px;
-    width: 40%;
-    margin: auto;
-   
+  height: 100%;
+  /* border: 1px solid blue; */
+  /* border: 0.4px solid white; */
+  border-radius: 10px;
+  width: 40%;
+  margin: auto;
 }
 
-.Choose-top>img {
-    width: 100%;
-    height: 70%;
-    margin-top: 20px;
-   
+.Choose-top > img {
+  width: 100%;
+  height: 70%;
+  margin-top: 20px;
 }
 
 .Choose-bottom {
-    /* border: 1px solid blue; */
-    width:60%;
-    height: 100%;
-   
-
+  /* border: 1px solid blue; */
+  width: 60%;
+  height: 100%;
 }
 
- /* Big Image section */
+/* Big Image section */
 
- .BigImg:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-   cursor: pointer;
-
- }
-
-
-  /* What Our Customers have to Say */
-
-
-  .CustomersTopMain{
-    border:1px solid white;
-    width:95%;
-    margin: auto;
-    height: auto;
-
+.BigImg:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
 }
 
-  .CustomersMain {
-    /* border: 1px solid red;  */
-   
-    width: 100%;
-    margin: auto;
+/* What Our Customers have to Say */
 
+.CustomersTopMain {
+  border: 1px solid white;
+  width: 95%;
+  margin: auto;
+  height: auto;
 }
 
-.Customers:hover{
-    -webkit-transform: translate(5px);
-    transform: translate(5px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.8s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.CustomersMain {
+  /* border: 1px solid red;  */
 
+  width: 100%;
+  margin: auto;
+}
 
- }
+.Customers:hover {
+  -webkit-transform: translate(5px);
+  transform: translate(5px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.8s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 .Customers {
-    /* border: 1px solid red; */
-   
-    height: 300px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    overflow: hidden;
-    border-radius: 10px;
-    justify-content: space-between;
-    margin-top: 35px;
-     /* background-color  :#F2FFF8;
+  /* border: 1px solid red; */
+
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  overflow: hidden;
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-top: 35px;
+  /* background-color  :#F2FFF8;
       */
 }
 
 .Customerstop {
-    height: 20%;
-    margin: auto;
-    /* border: 1px solid black */
+  height: 20%;
+  margin: auto;
+  /* border: 1px solid black */
 }
 
-.Customerstop>img {
-    width: 90%;
-    height: 100%;
-    margin: auto;
+.Customerstop > img {
+  width: 90%;
+  height: 100%;
+  margin: auto;
 }
 
 .Customersbottom {
-    /* border: 1px solid blue; */
-    width: 92%;
-    height: 80%;
-   margin: auto;
-   background-color  :#F2FFF8;
-   border-radius: 10px;
-   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-   
-
+  /* border: 1px solid blue; */
+  width: 92%;
+  height: 80%;
+  margin: auto;
+  background-color: #f2fff8;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
-

@@ -1,0 +1,8 @@
+.nav2-main{
+    height: 62px;
+    position: sticky;
+    top: 0px;
+    z-index: 500;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dfdfdf;
+}

@@ -7,7 +7,20 @@ import Slider from "react-slick";
 import { FeaturedLink } from "../../../Components/Landing/HomeCards";
 
 export default function SingleProductCard({ items }) {
+  
+
+  
   let date1 = new Date().toLocaleString();
+  let arr1=JSON.parse(localStorage.getItem('checkout-arr'))||[]
+  const handelAddCart=()=>{  
+   
+  let previtem=JSON.parse(localStorage.getItem('cart'))
+
+  arr1.push(previtem)
+localStorage.setItem('checkout-arr',JSON.stringify(arr1))
+
+console.log(arr1)
+  }
 
 
   return (
@@ -33,7 +46,7 @@ export default function SingleProductCard({ items }) {
               </Box>
             </Box>
             <Box
-             
+
               w="90%"
               display="flex"
               flexDirection={"column"}
@@ -80,7 +93,7 @@ export default function SingleProductCard({ items }) {
                 <Text fontSize={"xs"}>{date1}</Text>
               </Box>
              <Box  w={'80%'}  display={'flex'} 
-           justifyContent='flex-end'  m='auto'  > <Button variant={'solid'}  colorScheme='teal' bg='teal.600'   size='lg' >Add To Cart</Button></Box>
+           justifyContent='flex-end'  m='auto'  > <Button variant={'solid'}  colorScheme='teal' bg='teal.600' size='lg' onClick={handelAddCart} >Add To Cart</Button></Box>
             </Box>
           </Box>
           <Box  w='80%' bg='grey' m={'auto'} border={'gray'} mt='20px' h='1px'></Box>
@@ -111,14 +124,19 @@ export default function SingleProductCard({ items }) {
         <div className="FeaturedMain">
           <Slider {...settings8}>
             {FeaturedLink.map((item) => (
-              <div className="Featured">
+             
+             
+              <div key={item.productId}  className="Featured">
+                 
                 <div className="Featuredtop">
                   <img src={item.image} />
                 </div>
                 <div className="Featuredbottom">
+                console.log(item);
                   <p>{item.name}</p>
                   <h5>{item.off}</h5>
                 </div>
+               
               </div>
             ))}
           </Slider>

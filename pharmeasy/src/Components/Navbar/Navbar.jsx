@@ -5,6 +5,7 @@ import { AiOutlineMobile } from "react-icons/ai";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineUser } from "react-icons/hi";
 import { TbDiscount2 } from "react-icons/tb";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
@@ -30,6 +31,7 @@ const Navbar = () => {
       }}
     >
       <div className={styles.navbar}>
+        <GiHamburgerMenu className = {styles.ham} />
         <div className={styles.imageDiv}>
           <img
             style={{ cursor: "pointer" }}
@@ -44,7 +46,7 @@ const Navbar = () => {
             <MdKeyboardArrowDown className={styles.downArrowIcon} />
           </div>
           <div className={styles.links2}>
-            <div>
+            <div className={styles.download}>
               <Link
                 to="https://apps.apple.com/IN/app/id982432643?mt=8"
               >
@@ -56,7 +58,7 @@ const Navbar = () => {
                 </Button>
               </Link>
             </div>
-            <div className={styles.links2Icons}>
+            <div className={`${styles.links2Icons} ${styles.login}`}>
               <HiOutlineUser style={{ fontSize: "20px", marginRight: "0px" }} />
               <Login />
             </div>

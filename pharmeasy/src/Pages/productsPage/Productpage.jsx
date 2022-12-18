@@ -40,12 +40,12 @@ setOption(e.target.value)
   },[option])
 
 
-  const [option, setOption] = useState("");
+  // const [option, setOption] = useState("");
 
 
-  const handelSort = (e) => {
-    setOption(e.target.value);
-  };
+  // const handelSort = (e) => {
+  //   setOption(e.target.value);
+  // };
 
   useEffect(() => {
     const param = {};

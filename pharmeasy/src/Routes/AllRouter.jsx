@@ -17,6 +17,7 @@ import Product from "../Pages/Admin/Product/Product";
 import ProductList from "../Pages/Admin/ProductList/ProductList";
 import User from "../Pages/Admin/User/User";
 import UserList from "../Pages/Admin/UserList/UserList";
+import { Payment } from "../Pages/Payment/Payment";
 
 const AllRouter = () => {
   return (
@@ -32,6 +33,7 @@ const AllRouter = () => {
         <Route path="/adminUser/:userId" element={<User />}></Route>
         <Route path="/adminUsers" element={<UserList />}></Route>
         
+        
         <Route path="/Login" element={<Login />}></Route>
         <Route path={"/product"} element={<ProductPage />}></Route>
         <Route path={"/product/:id"} element={<SinglePageProduct />}></Route>
@@ -39,9 +41,10 @@ const AllRouter = () => {
         <Route path="/Plus" element={<Plus />}></Route>
         <Route path="/Offer" element={<Offer />}></Route>
         <Route path="*" element={<NoProduct />}></Route>
+        <Route path="/payment" element={<Payment />}></Route>
       </Routes>
     </div>
   );
 };
 
-export default AllRouter;
+export default AllRouter;

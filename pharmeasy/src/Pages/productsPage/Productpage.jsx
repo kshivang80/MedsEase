@@ -37,7 +37,7 @@ setOption(e.target.value)
     const param={}
     param._sort=option
     setSearchParams(param)
-console.log(param,'param');
+
   },[option])
 
 
@@ -83,7 +83,7 @@ console.log(param,'param');
                 </Select>
               </Box>
             </Box>
-            <Grid templateColumns="repeat(3,1fr)" gridGap={10}>
+            <Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} gridGap={10}>
               {data &&
                 data.map((elm) => {
                   return (

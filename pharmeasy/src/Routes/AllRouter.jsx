@@ -8,13 +8,15 @@ import Cart from "../Pages/Cart/Cart";
 import Offer from "../Pages/Offers/Offer";
 import Plus from "../Pages/Plus/Plus";
 import NoProduct from "./NoProduct";
+import AdminRoutes from "./AdminRoutes";
 
 const AllRouter = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-
+        <Route path="/admin" element={<AdminRoutes />}></Route>
+        
         <Route path="/Login" element={<Login />}></Route>
         <Route path={"/product"} element={<ProductPage />}></Route>
         <Route path={"/product/:id"} element={<SinglePageProduct />}></Route>

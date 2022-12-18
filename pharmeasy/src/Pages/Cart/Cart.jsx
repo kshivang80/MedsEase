@@ -1,5 +1,5 @@
 import React from 'react'
-import './Cart.css';
+import "./Cart.css"
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -41,21 +41,21 @@ const Cart = () => {
                 </Breadcrumb>
             </div>
             {/* cart page body */}
-            <div id='cartcontainer' style={{display:"flex", width:"90%", margin:"auto"}}>
+            <div id='cartcontainer' >
 
               {/* cart item  */}
-              <div id='cartitem' style={{border:"1px solid red", width:"70%"}}>
-                <div id='cartitemcontainer' style={{border:"1px solid gray",borderRadius:"8px"}}>
-                  <div id='cartitemheader' style={{borderBottom:"1px solid gray",padding:"10px"}}>
+              <div id='cartitem' >
+                <div id='cartitemcontainer' >
+                  <div id='cartitemheader'>
                   <h1>0 Item in the Cart</h1>
                   </div>
-                  <div id='cartaddress' style={{borderBottom:"1px solid gray",padding:"10px"}}>
+                  <div id='cartaddress' >
                     <h2>Deliver to: <a>Select Pincode</a></h2>
                   </div>
-                  <div id='cartItem' style={{margin:"auto",padding:"10px"}}>
+                  <div id='cartItem' >
                     if(!cart){
-                        <div style={{alignItem:"center",justifyContent:"center"}}>
-                          <img src="https://assets.pharmeasy.in/web-assets/images/emptyCart.png" alt="" width="50%"style={{alignItem:"center",justifyContent:"center",width:"50%"}} />
+                        <div style={{margin:"auto",width:"50%"}}>
+                          <img src="https://assets.pharmeasy.in/web-assets/images/emptyCart.png" alt="" width="100%"style={{alignItem:"center",justifyContent:"center",width:"100%" }} />
                           <h3>Your Medicine/Healthcare cart is empty</h3>
                         </div>
                     }
@@ -66,8 +66,8 @@ const Cart = () => {
               </div>
 
               {/* cart Total */}
-              <div id='cartTotal' style={{border:"1px solid red",width:"40%"}}>
-                    <div id="cartTotalContainer"style={{border:"1px solid gray",borderRadius:"8px",marginLeft:"20px"}}>
+              <div id='cartTotal'>
+                    <div id="cartTotalContainer">
                       <div id="cartTotalbox" style={{padding:"10px",borderBottom:"1px solid gray"}}>
                         <h1>Cart Total:00.00</h1>
                       </div>

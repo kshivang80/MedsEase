@@ -7,6 +7,7 @@ import Cart from '../Pages/Cart/Cart'
 import Offer from '../Pages/Offers/Offer'
 import Plus from '../Pages/Plus/Plus'
 import ProductPage from '../Pages/productsPage/Productpage'
+import { Payment } from '../Pages/Payment/Payment'
 
 
 
@@ -22,6 +23,7 @@ const AllRouter = () => {
             <Route   path='/Offer' element={<Offer/>} ></Route>
             <Route   path='/Login' element={<Login/>} ></Route>
             <Route   path='/Cart' element={<Cart/>} ></Route>
+            <Route   path='/Payment' element={<Payment/>} ></Route>
 
 
 

@@ -24,7 +24,24 @@ export default function ProductPage() {
     dispatch(getProduct());
   }, []);
 
+
+  const [option,setOption]=useState('')
+
+  const handelSort=(e)=>{
+setOption(e.target.value)
+  }
+
+
+  useEffect(()=>{
+    const param={}
+    param._sort=option
+    setSearchParams(param)
+
+  },[option])
+
+
   const [option, setOption] = useState("");
+
 
   const handelSort = (e) => {
     setOption(e.target.value);
@@ -75,7 +92,7 @@ export default function ProductPage() {
                 </Select>
               </Box>
             </Box>
-            <Grid templateColumns="repeat(3,1fr)" gridGap={10}>
+            <Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} gridGap={10}>
               {data &&
                 data.map((elm) => {
                   return (

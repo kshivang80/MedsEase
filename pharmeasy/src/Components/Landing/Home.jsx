@@ -41,6 +41,7 @@ import {
 import { Avatar, Box, Image, Text, SimpleGrid, Button } from "@chakra-ui/react";
 import Plus from "./Images/PlusImg.png";
 import Play from "./Images/appStore.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -49,9 +50,12 @@ const Home = () => {
         <Slider {...settings}>
           {Discover.map((item) => (
             <div className="card">
-              <div className="cardtop">
-                <img src={item.image} />
-              </div>
+              <Link to="/product">
+                <div className="cardtop">
+                  <img src={item.image} />
+                </div>
+              </Link>
+             
               <div className="cardbottom">
                 <p>{item.name}</p>
                 <h5>{item.off}</h5>

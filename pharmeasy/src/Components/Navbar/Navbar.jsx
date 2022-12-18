@@ -9,7 +9,7 @@ import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 import Pincode from '../PincodeDrawer/Pincode';
-import logo from '../../Assets/Meds Ease-Logo.png'; 
+import logo from '../../Assets/logo192.png'; 
 import Login from '../Login/Login';
 
 const Navbar = () => {
@@ -25,21 +25,21 @@ const Navbar = () => {
         position: "sticky",
         top: "0px",
         zIndex: "1000",
-        borderBottom: "1px solid #dfdfdf",
-        height: "62px",
+        borderBottom: "2px solid #dfdfdf",
+        height: "72px",
       }}
     >
       <div className={styles.navbar}>
         <div className={styles.imageDiv}>
           <img
-            style={{ cursor: "pointer", height: "55px", width: "50%" }}
+            style={{ cursor: "pointer" }}
             onClick={handleClick}
             src={logo}
             alt="Home logo"
           />
         </div>
         <div className={styles.LinkDiv}>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <Pincode />
             <MdKeyboardArrowDown className={styles.downArrowIcon} />
           </div>

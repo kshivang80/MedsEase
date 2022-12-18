@@ -23,7 +23,7 @@ const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <Link to="/" className="link">
+            <Link to="/adminHome" className="link">
               <li className="sidebarListItem active">
                 <MdLineStyle className="sidebarIcon" />
                 Home
@@ -42,13 +42,13 @@ const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-            <Link to="/users" className="link">
+            <Link to="/adminUsers" className="link">
               <li className="sidebarListItem">
                 <MdPermIdentity className="sidebarIcon" />
                 Users
               </li>
             </Link>
-            <Link to="/products" className="link">
+            <Link to="/adminProducts" className="link">
               <li className="sidebarListItem">
                 <MdStorefront className="sidebarIcon" />
                 Products

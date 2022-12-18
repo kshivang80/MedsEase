@@ -1,5 +1,5 @@
 import React from "react";
-import Chart from "../../../Components/Admin/Chart/Chart.js";
+import Chart from "../../../Components/Admin/Chart/Chart";
 import FeaturedInfo from "../../../Components/Admin/FeaturedInfo/FeaturedInfo";
 import WidgetSm from "../../../Components/Admin/WidgetSm/WidgetSm";
 import WidgetLg from "../../../Components/Admin/WidgetLg/WidgetLg";

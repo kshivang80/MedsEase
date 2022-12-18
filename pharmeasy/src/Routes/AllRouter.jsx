@@ -10,12 +10,27 @@ import Plus from "../Pages/Plus/Plus";
 import NoProduct from "./NoProduct";
 import AdminRoutes from "./AdminRoutes";
 
+import AdminHome from "../Pages/Admin/Home/Home";
+import NewProduct from "../Pages/Admin/NewProduct/NewProduct";
+import NewUser from "../Pages/Admin/NewUser/NewUser";
+import Product from "../Pages/Admin/Product/Product";
+import ProductList from "../Pages/Admin/ProductList/ProductList";
+import User from "../Pages/Admin/User/User";
+import UserList from "../Pages/Admin/UserList/UserList";
+
 const AllRouter = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/admin" element={<AdminRoutes />}></Route>
+        <Route path="/adminHome" element={<AdminHome />}></Route>
+        <Route path="/newproduct" element={<NewProduct />}></Route>
+        <Route path="/newUser" element={<NewUser />}></Route>
+        <Route path="/adminProduct/:productId" element={<Product />}></Route>
+        <Route path="/adminProducts" element={<ProductList />}></Route>
+        <Route path="/adminUser/:userId" element={<User />}></Route>
+        <Route path="/adminUsers" element={<UserList />}></Route>
         
         <Route path="/Login" element={<Login />}></Route>
         <Route path={"/product"} element={<ProductPage />}></Route>

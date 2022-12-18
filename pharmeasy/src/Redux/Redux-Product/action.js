@@ -39,7 +39,7 @@ export function getProduct(params) {
   return function (dispatch) {
     dispatch(get_product_req_fn());
     return axios
-      .get("http://localhost:3001/healthcare/")
+      .get("https://medsease-api.onrender.com/healthcare")
       .then((res) => {
         dispatch(get_product_success_fn(res.data));
       })
@@ -54,7 +54,7 @@ export function getProductUrl(params) {
   return function (dispatch) {
     dispatch(get_url_req_fn());
     return axios
-      .get("http://localhost:3001/healthcare", params)
+      .get("https://medsease-api.onrender.com/healthcare", params)
       .then((res) => {
         dispatch(get_url_success_fn(res.data));
       })
@@ -68,7 +68,7 @@ export function getSinglePr(id) {
   return function (dispatch) {
     dispatch(get_single_pr_req_fn());
     return axios
-      .get(`http://localhost:3001/healthcare/${id}`)
+      .get(`https://medsease-api.onrender.com/healthcare/${id}`)
       .then((res) => {
         dispatch(get_single_pr_success_fn(res.data));
       })

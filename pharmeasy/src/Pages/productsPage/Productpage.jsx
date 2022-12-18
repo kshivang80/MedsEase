@@ -7,6 +7,7 @@ import { store } from "../../Redux/store";
 import Filter from "./Comp/Filter";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
+import { Loading } from "./LoadingIndicator/Loding";
 
 export default function ProductPage() {
   const [searchparams, setSearchParams] = useSearchParams();
@@ -40,12 +41,6 @@ setOption(e.target.value)
   },[option])
 
 
-  // const [option, setOption] = useState("");
-
-
-  // const handelSort = (e) => {
-  //   setOption(e.target.value);
-  // };
 
   useEffect(() => {
     const param = {};
@@ -92,7 +87,7 @@ setOption(e.target.value)
                 </Select>
               </Box>
             </Box>
-            <Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} gridGap={10}>
+          { loading?<Loading/>:<Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} gridGap={10}>
               {data &&
                 data.map((elm) => {
                   return (
@@ -104,7 +99,7 @@ setOption(e.target.value)
                     </Link>
                   );
                 })}
-            </Grid>
+            </Grid>}
           </Box>
         </Box>
       </Center>

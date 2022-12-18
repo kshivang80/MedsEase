@@ -2,6 +2,9 @@ import { Center, Box, Image, Text, Select ,Button} from "@chakra-ui/react";
 import DamImages from "./DamImages";
 import edit3 from "../img/edit3.jpg";
 import "./singlecart.css";
+import { settings8 } from "../../../Components/Landing/ResponsiveCard";
+import Slider from "react-slick";
+import { FeaturedLink } from "../../../Components/Landing/HomeCards";
 
 export default function SingleProductCard({ items }) {
   let date1 = new Date().toLocaleString();
@@ -81,9 +84,46 @@ export default function SingleProductCard({ items }) {
             </Box>
           </Box>
           <Box  w='80%' bg='grey' m={'auto'} border={'gray'} mt='20px' h='1px'></Box>
-<Box  mt='10px' h='100px'  border='1px solid red' > <Text pl='20px' >similar Product</Text>
+<Box mt='10px'   > 
 
+<Box className="Wellness">
+        <Box className="LiveTest2-wellness">
+          <p
+            style={{
+              fontSize: "26px",
+              color: "#30363C",
+              width: "auto",
+              fontWeight: "bolder",
+            }}>
+           Similar Product
+          </p>
+          <p
+            style={{
+              fontSize: "18px",
+              color: "#4F585E",
+              width: "auto",
+              fontWeight: "600",
+            }}>
+            Pick from our favourite brands
+          </p>
+        </Box>
 
+        <div className="FeaturedMain">
+          <Slider {...settings8}>
+            {FeaturedLink.map((item) => (
+              <div className="Featured">
+                <div className="Featuredtop">
+                  <img src={item.image} />
+                </div>
+                <div className="Featuredbottom">
+                  <p>{item.name}</p>
+                  <h5>{item.off}</h5>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </Box>
 </Box>
 
 

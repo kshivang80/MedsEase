@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./userList.css";
+import "./UserList.css";
 import DataGrid from "react-data-grid";
 import { MdDeleteOutline } from "react-icons/md";
 import { userRows } from "../dummyData";
@@ -45,7 +45,7 @@ const UserList = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/user/" + params.row.id}>
+            <Link to={"/adminUser" + params.row.id}>
               <button className="userListEdit">Edit</button>
             </Link>
             <MdDeleteOutline

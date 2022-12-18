@@ -45,7 +45,7 @@ const ProductList = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row.id}>
+            <Link to={"/adminProduct" + params.row.id}>
               <button className="productListEdit">Edit</button>
             </Link>
             <MdDeleteOutline

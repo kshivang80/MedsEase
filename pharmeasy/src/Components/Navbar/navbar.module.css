@@ -55,3 +55,31 @@
     width: 100%;
     height: 55px;
 }
+.ham{
+    display: none;
+}
+
+
+@media screen and (max-width: 468px) {
+    .download{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+    .ham{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .download{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+    .ham{
+        display: block;
+    }
+}

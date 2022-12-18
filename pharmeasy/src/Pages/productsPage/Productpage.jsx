@@ -4,15 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getProduct, getProductUrl } from "../../Redux/Redux-Product/action";
 import { store } from "../../Redux/store";
-import Filter from "./Comp/Filter"
+import Filter from "./Comp/Filter";
 import ProductCard from "./ProductCard";
-import{Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export default function ProductPage() {
- 
- const [searchparams,setSearchParams]=useSearchParams()
- 
- 
+  const [searchparams, setSearchParams] = useSearchParams();
+
   const { data, loading } = useSelector((store) => {
     return {
       data: store.reducer.dataOnfetch,
@@ -25,6 +23,7 @@ export default function ProductPage() {
   useEffect(() => {
     dispatch(getProduct());
   }, []);
+
 
   const [option,setOption]=useState('')
 
@@ -41,7 +40,19 @@ setOption(e.target.value)
   },[option])
 
 
+  const [option, setOption] = useState("");
 
+
+  const handelSort = (e) => {
+    setOption(e.target.value);
+  };
+
+  useEffect(() => {
+    const param = {};
+    param._sort = option;
+    setSearchParams(param);
+    console.log(param, "param");
+  }, [option]);
 
   return (
     <>
@@ -56,8 +67,7 @@ setOption(e.target.value)
               h="100px"
               display={"flex"}
               alignItems="center"
-              justifyContent="space-between"
-            >
+              justifyContent="space-between">
               <Box>
                 {" "}
                 <Text fontSize={"2xl"} color="grey">
@@ -70,16 +80,15 @@ setOption(e.target.value)
                 display="flex"
                 gap={10}
                 justifyContent="center"
-                alignItems={"center"}
-              >
+                alignItems={"center"}>
                 <Text fontSize={"xl"} color="grey">
                   SortBy:
                 </Text>
-                <Select  onChange={handelSort} >
-                  <option  >Popularity</option>
-                  <option value={'asc'} >Price Low to high</option>
-                  <option value={'desc'} >Price High to Low</option>
-                  <option value={'discountPercent'} >Discount %</option>
+                <Select onChange={handelSort}>
+                  <option>Popularity</option>
+                  <option value={"asc"}>Price Low to high</option>
+                  <option value={"desc"}>Price High to Low</option>
+                  <option value={"discountPercent"}>Discount %</option>
                 </Select>
               </Box>
             </Box>
@@ -87,17 +96,18 @@ setOption(e.target.value)
               {data &&
                 data.map((elm) => {
                   return (
-                   <Link  key={elm.productId} to={`/product/${elm.productId
-                   }`} > <div key={elm.productId}   >
-                      <ProductCard key={elm.id} item={elm} />
-                    </div></Link>
+                    <Link key={elm.productId} to={`/product/${elm.productId}`}>
+                      {" "}
+                      <div key={elm.productId}>
+                        <ProductCard key={elm.id} item={elm} />
+                      </div>
+                    </Link>
                   );
                 })}
             </Grid>
           </Box>
         </Box>
       </Center>
-      
     </>
   );
 }

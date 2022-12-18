@@ -1,5 +1,3 @@
-
-
 import {
   Box,
   Heading,
@@ -21,15 +19,12 @@ import "../pro.css";
 import { get_url_success_fn } from "../../../Redux/Redux-Product/action";
 
 export default function Filter() {
-
-const [text,setText]=useState('')
-
-
+  const [text, setText] = useState("");
 
   const [searchParams, setSearchParams] = useSearchParams();
   const intcatagorie = searchParams.getAll("categoryId");
   const [catagorie, setCatogorie] = useState(intcatagorie || []);
-const location=useLocation()
+  const location = useLocation();
   const handelFilter = (e) => {
     let newCatagorie = [...catagorie];
 
@@ -47,8 +42,6 @@ const location=useLocation()
     setSearchParams(params);
   }, [catagorie]);
 
-  
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -57,9 +50,9 @@ const location=useLocation()
     const getparams = {
       params: {
         categoryId: searchParams.getAll("categoryId"),
-_sort:sort&&'salePriceDecimal',
-_order:sort
-      }
+        _sort: sort && "salePriceDecimal",
+        _order: sort,
+      },
     };
 
     dispatch(getProductUrl(getparams));
@@ -67,47 +60,40 @@ _order:sort
 
   let data = useSelector((store) => store.reducer.dataOnfetch);
 
+  const [suggestion, setSuggestion] = useState([]);
+  const handelChange = (e) => {
+    setText(e.target.value);
+  };
+  const navigate = useNavigate();
 
-const [suggestion,setSuggestion]=useState([])
-  const handelChange=(e)=>{
-    setText(e.target.value)
-  }
-  const navigate=useNavigate()
+  const cata1 = data.filter((elm) => elm.categoryId == "medicine");
+  const cata2 = data.filter((elm) => elm.categoryId == "personalNeed");
+  const cata3 = data.filter((elm) => elm.categoryId == "immunityBooster");
 
-  const cata1=data.filter((elm)=>elm.categoryId=="medicine")
-const cata2=data.filter((elm)=>elm.categoryId=="personalNeed")
-const cata3=data.filter((elm)=>elm.categoryId=="immunityBooster")
+  useEffect(() => {
+    // console.log(data);
 
+    let arr = [];
+    let textQuery = text.trim().toLowerCase();
 
-useEffect(()=>{
-// console.log(data);
+    if (textQuery == "") {
+      dispatch(getProductUrl());
+    }
 
- let arr=[]
- let textQuery=text.trim().toLowerCase();
+    arr = data.filter((elm) => {
+      return elm.manufacturer.toLowerCase().indexOf(textQuery) !== -1
+        ? true
+        : false;
+    });
 
+    if (arr.length > 0) {
+      dispatch(get_url_success_fn(arr));
+    }
 
- if(textQuery==''){
-  dispatch(getProductUrl())
- }
-
-   arr=data.filter((elm)=>{
-    return elm.manufacturer.toLowerCase().indexOf(textQuery)!==-1?true:false
-   })
-
-   if(arr.length>0){
-    
-   dispatch(get_url_success_fn(arr))
-   }
-
-   if(arr.length==0){
-    navigate('*')
-   }
-
-},[text])
-
-
-
-
+    if (arr.length == 0) {
+      navigate("*");
+    }
+  }, [text]);
 
   return (
     <Box>
@@ -135,19 +121,22 @@ useEffect(()=>{
               <Text fontSize={"10px"} as="b" color={"grey"}>
                 Medicine
               </Text>
-              <Text pl='200px'  color={'grey'}  >({cata1.length})</Text>
+              <Text pl="200px" color={"grey"}>
+                ({cata1.length})
+              </Text>
               <CheckBox
                 ckvalue={catagorie.includes("medicine")}
                 value="medicine"
                 onchange={handelFilter}
-                
               />
             </Box>
             <Box display={"flex"} justifyContent="space-between">
               <Text fontSize={"10px"} as="b" color={"grey"}>
                 Personal Care
               </Text>
-              <Text pl='170px' color={'grey'} >({cata2.length})</Text>
+              <Text pl="170px" color={"grey"}>
+                ({cata2.length})
+              </Text>
               <CheckBox
                 ckvalue={catagorie.includes("personalNeed")}
                 value="personalNeed"
@@ -159,7 +148,9 @@ useEffect(()=>{
                 {" "}
                 Immunity Booster
               </Text>
-              <Text pl='150px' color={'grey'} >({cata3.length})</Text>
+              <Text pl="150px" color={"grey"}>
+                ({cata3.length})
+              </Text>
               <CheckBox
                 ckvalue={catagorie.includes("immunityBooster")}
                 value="immunityBooster"
@@ -179,7 +170,7 @@ useEffect(()=>{
         <Box mt="20px" display={"flex"}>
           <Box className="searchbar">
             {" "}
-            <InputSearch  onchange={(e)=>handelChange(e)}  />
+            <InputSearch onchange={(e) => handelChange(e)} />
           </Box>
           <Box className="lense-img">
             {" "}
@@ -187,7 +178,7 @@ useEffect(()=>{
           </Box>
         </Box>
 
-        <Box mt="30px" bg='grey' border={"1px solid grey"}></Box>
+        <Box mt="30px" bg="grey" border={"1px solid grey"}></Box>
 
         <Box mt="20px">
           <Text as="b" color={"gray.600"}>

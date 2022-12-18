@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import {Box} from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react";
 import { getProductUrl } from "../../../Redux/Redux-Product/action";
 import SingleProductCard from "./SingleProductCard";
 
@@ -20,6 +20,7 @@ export default function SinglePageProduct() {
 
 
 
+
   return <>
   
 
@@ -28,4 +29,13 @@ export default function SinglePageProduct() {
   
   
   </>;
+
+  //let lsarr = JSON.parse(localStorage.getItem("cart"));
+
+  return (
+    <>
+      <h1>single page product Card</h1>
+    </>
+  );
+
 }

@@ -6,9 +6,11 @@ import { BsCart2 } from "react-icons/bs";
 import { HiOutlineUser } from "react-icons/hi";
 import { TbDiscount2 } from "react-icons/tb";
 import { Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 import Pincode from '../PincodeDrawer/Pincode';
 import logo from '../../Assets/Meds Ease-Logo.png'; 
+import Login from '../Login/Login';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -43,10 +45,8 @@ const Navbar = () => {
           </div>
           <div className={styles.links2}>
             <div>
-              <a
-                href="https://apps.apple.com/IN/app/id982432643?mt=8"
-                target={"_blank"}
-                rel="noreferrer"
+              <Link
+                to="https://apps.apple.com/IN/app/id982432643?mt=8"
               >
                 <Button backgroundColor={"#EEF4FE"} fontSize="14px">
                   <AiOutlineMobile
@@ -54,23 +54,23 @@ const Navbar = () => {
                   />
                   Download App
                 </Button>
-              </a>
+              </Link>
             </div>
             <div className={styles.links2Icons}>
               <HiOutlineUser style={{ fontSize: "20px", marginRight: "0px" }} />
-              {/* <Login /> */}
+              <Login />
             </div>
             <div className={styles.links2Icons}>
               <TbDiscount2 style={{ fontSize: "20px", marginRight: "10px" }} />
-              <a href="#offers" style={{ fontSize: "14px", fontWeight: "500" }}>
+              <Link to="/Offer" style={{ fontSize: "14px", fontWeight: "500" }}>
                 Offers
-              </a>
+              </Link>
             </div>
             <div className={styles.links2Icons}>
               <BsCart2 style={{ fontSize: "20px", marginRight: "10px" }} />
-              <a href="/cart" style={{ fontSize: "14px", fontWeight: "500" }}>
+              <Link to="/Cart" style={{ fontSize: "14px", fontWeight: "500" }}>
                 Cart
-              </a>
+              </Link>
             </div>
           </div>
         </div>

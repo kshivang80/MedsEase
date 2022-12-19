@@ -16,8 +16,15 @@ const Cartdata = ({data}) => {
         })      
         localStorage.setItem("checkout-arr",JSON.stringify(x));
     }
+
         
   
+
+    // useEffect(()=>{
+        
+    // })
+   
+
   return (
     <div>        
         {

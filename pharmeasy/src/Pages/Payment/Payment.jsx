@@ -3,10 +3,19 @@ import "./payment.css"
 import { Button,Radio,RadioGroup,Alert,AlertIcon,AlertTitle,AlertDescription } from '@chakra-ui/react'
 import {ChevronRightIcon} from "@chakra-ui/icons"
 
+let data=JSON.parse(localStorage.getItem("checkout-arr"));
 const Payment = () => {
   const [rad, setRad]=useState(false)
+  let sum=0;
+  const totalcartprice=data.map((item)=>{
+    return Number(item.mrpDecimal-item.discountDecimal)
+  })
+  for(let i=0;i<totalcartprice.length;i++){
+    sum+=totalcartprice[i];
+  }
 
   const handlePayment=()=>{
+
     console.log("inside handlepayment");
   //   <Alert
   //   status='success'
@@ -42,6 +51,11 @@ const Payment = () => {
   </AlertDescription>
 </Alert>
 
+
+
+    
+    console.log("inside handlepayment");    
+   alert("payment successful");
 
   }
   return (
@@ -190,7 +204,7 @@ const Payment = () => {
             <div id="amountdesc">
               <div className='cartvalue'>
               <div><h1>Cart Value</h1></div>
-              <div>{429}</div>
+              <div>{sum}</div>
               </div>
               <div className='cartvalue'>
                   <div><h1>Delivery charges</h1></div>
@@ -200,7 +214,7 @@ const Payment = () => {
             <div id='totalpaidamount'>
               <div className='cartvalue'>
                   <div><h1>Amount to be paid</h1></div>
-                  <div>408.54</div>
+                  <div>{sum+129}</div>
               </div>
               
             </div>

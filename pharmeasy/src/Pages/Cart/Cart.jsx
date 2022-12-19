@@ -19,15 +19,18 @@ import { Link } from 'react-router-dom'
 // import CartItem from '../../Components/CartItem/CartItem'
 
 const Cart = () => { 
-  let data=JSON.parse(localStorage.getItem("checkout-arr"));
-  console.log(data);
+  let data=JSON.parse(localStorage.getItem("checkout-arr"))||[]
+  
   const totalcartitem=data.length;
   let sum=0;
-  const totalcartprice=data.map((item)=>{
-    return Number(item.mrpDecimal-item.discountDecimal)
-  })
-  for(let i=0;i<totalcartprice.length;i++){
-    sum+=totalcartprice[i];
+  if(data!==null){
+
+    const totalcartprice=data.map((item)=>{
+      return Number(item.mrpDecimal-item.discountDecimal)
+    })
+    for(let i=0;i<totalcartprice.length;i++){
+      sum+=totalcartprice[i];
+    }
   }
   console.log("price",sum)
 

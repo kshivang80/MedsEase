@@ -89,7 +89,8 @@ const Cart = () => {
                         <h1>Cart Total:{sum}</h1>
                       </div>
                       <div id='cartTotalButton' style={{padding:"10px"}}>
-                        <button style={{padding:"10px",backgroundColor:"gray", borderRadius:"8px",width:"100% "}}>Proceed to Checkout</button>
+                        <Link to="/Payment">
+                        <button style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button></Link>
                       </div>
                     </div>
               </div>

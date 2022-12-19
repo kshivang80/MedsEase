@@ -6,6 +6,7 @@ import { getProductUrl } from "../../../Redux/Redux-Product/action";
 import SingleProductCard from "./SingleProductCard";
 
 export default function SinglePageProduct() {
+
   const params = useParams();
 
  
@@ -31,12 +32,9 @@ export default function SinglePageProduct() {
 
 
   return <>
-  
 
 <SingleProductCard key={arr.productId}  items={arr}  />
 
-  
-  
   </>;
 
  

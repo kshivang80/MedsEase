@@ -7,25 +7,10 @@ const Payment = () => {
   const [rad, setRad]=useState(false)
 
   const handlePayment=()=>{
+
     console.log("inside handlepayment");
-    <Alert
-    status='success'
-    variant='subtle'
-    flexDirection='column'
-    alignItems='center'
-    justifyContent='center'
-    textAlign='center'
-    height='200px'
-  >
-    <AlertIcon boxSize='40px' mr={0} />
-    <AlertTitle mt={4} mb={1} fontSize='lg'>
-      Payment Successful
-    </AlertTitle>
-    <AlertDescription maxWidth='sm'>
-      Thanks for Shoping with us. Your order will be delivered with in 3 working days.
-    </AlertDescription>
-  </Alert>
-  
+   alert("payment successful");
+
   }
   return (
     <div>

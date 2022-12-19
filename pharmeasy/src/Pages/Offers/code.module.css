@@ -1,7 +1,7 @@
 .coupenHeading{
     width: 80%;
     margin: auto;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 20px;
 }
 .coupenHeading>h1{

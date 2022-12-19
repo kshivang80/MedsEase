@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import { FeaturedLink } from "../../../Components/Landing/HomeCards";
 import { useNavigate } from "react-router-dom";
 
+
 export default function SingleProductCard({ items }) {
   const toast = useToast()
   let navigate = useNavigate(); 

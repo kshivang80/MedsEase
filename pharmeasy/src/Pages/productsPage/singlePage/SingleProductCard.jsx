@@ -6,6 +6,7 @@ import { settings8 } from "../../../Components/Landing/ResponsiveCard";
 import Slider from "react-slick";
 import { FeaturedLink } from "../../../Components/Landing/HomeCards";
 
+
 export default function SingleProductCard({ items }) {
   
 

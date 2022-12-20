@@ -1,10 +1,16 @@
 import React,{useState} from 'react'
 import "./payment.css"
-import { Button,Radio,RadioGroup,Alert,AlertIcon,AlertTitle,AlertDescription } from '@chakra-ui/react'
+import { Button,Radio,RadioGroup,Alert,AlertIcon,AlertTitle,AlertDescription, useToast } from '@chakra-ui/react'
 import {ChevronRightIcon} from "@chakra-ui/icons"
+import { useNavigate } from 'react-router-dom';
 
 let data=JSON.parse(localStorage.getItem("checkout-arr"))||[];
 const Payment = () => {
+  const toast = useToast()
+  let navigate = useNavigate(); 
+
+
+
   const [rad, setRad]=useState(false)
   let sum=0;
  
@@ -17,10 +23,25 @@ const Payment = () => {
     }
   }
 
+ 
+
   const handlePayment=()=>{
     
-    console.log("inside handlepayment");    
-   alert("payment successful");
+  //   console.log("inside handlepayment");    
+  //  alert("payment successful");
+  toast({
+    title: 'Payment Successful',
+    description: "Your Order are Placed Successfully ",
+    status: 'success',
+    duration: 2000,
+    isClosable: true,
+  })
+
+  setTimeout(() => {
+    navigate("/")
+  }, 2000);
+
+  
   }
   return (
     <div>

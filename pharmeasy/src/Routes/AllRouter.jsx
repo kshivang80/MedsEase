@@ -40,7 +40,7 @@ const AllRouter = () => {
         <Route path="/Cart" element={<Cart />}></Route>
         <Route path="/Plus" element={<Plus />}></Route>
         <Route path="/Offer" element={<Offer />}></Route>
-        <Route path="*" element={<NoProduct />}></Route>
+        {/* <Route path="*" element={<NoProduct />}></Route> */}
         <Route path="/payment" element={<Payment />}></Route>
       </Routes>
     </div>

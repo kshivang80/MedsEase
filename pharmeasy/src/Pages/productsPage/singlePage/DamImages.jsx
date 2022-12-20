@@ -13,7 +13,7 @@ export default function DamImages({images}){
 
     return <>
 
-<div className='crousel-div'    >
+<div className='crousel-div'  style={{border:"2px solid black"}}   >
         <Slider    {...crousel}>
           {images.map((item) => (
             <div className="crousel-card">

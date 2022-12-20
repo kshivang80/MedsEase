@@ -37,12 +37,6 @@ export default function SinglePageProduct() {
 
   </>;
 
- 
 
-  return (
-    <>
-      <h1>single page product Card</h1>
-    </>
-  );
 
 }

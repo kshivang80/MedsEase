@@ -1,6 +1,6 @@
 import { Image, Input } from "@chakra-ui/react";
 
-export default function InputSearch({ text, onchange, setText }) {
+export default function InputSearch({ text, onchange, setText,placeholder}) {
   let id;
   const debounce = (cb, delay) => {
     return () => {
@@ -15,5 +15,5 @@ export default function InputSearch({ text, onchange, setText }) {
     debounce(() => onchange(e), 1000)();
   };
 
-  return <Input onChange={(e) => test(e)} />;
+  return <Input   placeholder={placeholder} onChange={(e) => test(e)} />;
 }

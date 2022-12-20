@@ -42,15 +42,15 @@ export default function SingleProductCard({ items }) {
 
   return (
     <>
-      <Center mt='100px'  >
+      <Center mt='100px'   >
         <Box w='80%' >
-          <Box display={"flex"} gap={3} p="10px">
-            <Box w="40%" p={10} >
-              <Image h='50%' w='50%' src={items.images} />
+          <Box w='full' display={"flex"} gap={3} p="10px"  border={'1px solid red'} className='cart-main'>
+            <Box  id="first-box"  w="40%" p={10} border={'1px solid teal'}  >
+             <Box className="item-img" > <img  className="item-img-child" style={{width:"70%",margin:"auto"}}  src={items.images} /></Box>
               <Box mt='30px' >
                 <DamImages images={items.damImages} />
               </Box>
-              <Box mt="30px" p="10px" display={"flex"} gap={3}>
+              <Box mt="30px" p="10px" display={"flex"} gap={3}  >
                 {" "}
                 <Text fontSize={"xs"} color="gray.500">
                   5 day return policy
@@ -64,11 +64,12 @@ export default function SingleProductCard({ items }) {
             </Box>
             <Box
 
-              w="90%"
+              w="60%"
               display="flex"
               flexDirection={"column"}
               gap="20px"
               p={10}
+              className='second-box'
             >
               <Text as="b" color="gray.600">
                 {items.name}
@@ -116,7 +117,7 @@ export default function SingleProductCard({ items }) {
           <Box w='80%' bg='grey' m={'auto'} border={'gray'} mt='20px' h='1px'></Box>
           <Box mt='10px'   >
 
-            <Box className="Wellness">
+            <Box className="Wellness"  >
               <Box className="LiveTest2-wellness">
                 <p
                   style={{

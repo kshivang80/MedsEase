@@ -17,11 +17,23 @@ margin-left: 200px;
     position:relative;
     width: 100px;
     height: 30px;
-    
-
    
 }
+@media only screen and (max-width: 600px) {
+    .inner-box{
+        
+        width:1%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
 
+    }
+    .box-img2{
+        width: 80px;
+        
+    
+    }
+    }
 
 /* sliders css :crousel */
  
@@ -56,7 +68,7 @@ margin-left: 200px;
         width:25%;
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
       
-        border-radius: 10px;
+       
         justify-content: space-between;
         
     
@@ -81,10 +93,10 @@ margin-left: 200px;
    }
    .item-img{
     width:100%;
-   border: 1px solid violet;
+  
    }
    .item-img-child{
-  border: 1px solid red;
+  
     
    }
 

@@ -22,8 +22,10 @@ export default function SingleCard({ item }) {
         flexDirection="column"
         alignItems={"center"}
         boxShadow={"xs"}
-        w="full"
+        w="100%"
         h="300px"
+       border={'1px solid grey'}
+       _hover={{border:"1px solid black"}}
        
         borderRadius={10}
         className="top-container">
@@ -52,7 +54,7 @@ export default function SingleCard({ item }) {
               <Text as="del">MRP: {item.mrpDecimal}</Text>
             </Box>
           )}
-          <Image className="dis-img" w={[50,80,100]} h="30px" src={edit3}></Image>
+          <Image className="dis-img"  h="30px" src={edit3}></Image>
         </Box>
         <Text color="gray.500" as={"b"}>
           ₹{finalPrice.toFixed(2)}

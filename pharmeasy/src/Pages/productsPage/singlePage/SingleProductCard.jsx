@@ -6,12 +6,13 @@ import { settings8 } from "../../../Components/Landing/ResponsiveCard";
 import Slider from "react-slick";
 import { FeaturedLink } from "../../../Components/Landing/HomeCards";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 
 export default function SingleProductCard({ items }) {
   const toast = useToast()
   let navigate = useNavigate(); 
-
+const clearref=useRef()
 
   let date1 = new Date().toLocaleString();
   let arr1 = JSON.parse(localStorage.getItem('checkout-arr')) || []
@@ -30,22 +31,30 @@ export default function SingleProductCard({ items }) {
       duration: 2000,
       isClosable: true,
     })
+    
+    
 
-    setTimeout(() => {
+    clearref.current=setTimeout(() => {
       navigate("/Cart")
     }, 2000);
     
-   
+  
 
   }
+  useEffect(()=>{
+   return ()=>{
+    clearTimeout(clearref.current)
+   }
+        },[])
+       
 
 
   return (
     <>
       <Center mt='100px'   >
         <Box w='80%' >
-          <Box w='full' display={"flex"} gap={3} p="10px"  border={'1px solid red'} className='cart-main'>
-            <Box  id="first-box"  w="40%" p={10} border={'1px solid teal'}  >
+          <Box w='full' display={"flex"} gap={3} p="10px"   className='cart-main'>
+            <Box  id="first-box"  w="40%" p={10}  >
              <Box className="item-img" > <img  className="item-img-child" style={{width:"70%",margin:"auto"}}  src={items.images} /></Box>
               <Box mt='30px' >
                 <DamImages images={items.damImages} />
@@ -64,18 +73,20 @@ export default function SingleProductCard({ items }) {
             </Box>
             <Box
 
-              w="60%"
+         
               display="flex"
               flexDirection={"column"}
               gap="20px"
               p={10}
               className='second-box'
+            
+              w='full'
             >
               <Text as="b" color="gray.600">
                 {items.name}
               </Text>
               <Box display="flex" gap={3} justifyContent="space-between">
-                <Box display="flex" gap={3} w={"500px"}>
+                <Box display="flex" gap={3} w={"500px"} className='inner-box' >
                   <Text as='b' color={'gray.500'} >
                     ₹
                     {(
@@ -85,7 +96,7 @@ export default function SingleProductCard({ items }) {
                   <Text as="del" color={"gray.500"}>
                     MRP: {items.mrpDecimal}
                   </Text>
-                  <Image className="ct-image" src={edit3} />
+                 <Box className="box-img2"   > <Image className="ct-image" w='full'  src={edit3} /></Box>
                   <Text fontSize={"14px"} className="ct-text">
                     {items.discountPercent}% OFF
                   </Text>

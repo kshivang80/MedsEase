@@ -12,7 +12,7 @@ export default function SinglePageProduct() {
  
 
   const data = useSelector((store) => store.reducer.dataOnfetch);
-  let arr = JSON.parse(localStorage.getItem('cart'))||[]
+  let arr = JSON.parse(localStorage.getItem('cart'))||[];
    if(data.length!==0){
     arr=data.find((elm)=>elm.productId==params.id)
     localStorage.setItem('cart',JSON.stringify(arr))

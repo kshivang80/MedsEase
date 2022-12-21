@@ -9,11 +9,11 @@ const Payment = () => {
   const toast = useToast()
   let navigate = useNavigate(); 
 
-
-
+const [tot,setTot]=useState(0)
+  
   const [rad, setRad]=useState(false)
-  let sum=0;
- 
+  
+ let sum=0
   if(data.length!==0){
     const totalcartprice=data.map((item)=>{
       return Number(item.mrpDecimal-item.discountDecimal)
@@ -22,8 +22,9 @@ const Payment = () => {
       sum+=totalcartprice[i];
     }
   }
+  sum=sum.toFixed(2)
 
- 
+
 
   const handlePayment=()=>{
     
@@ -40,7 +41,7 @@ const Payment = () => {
   setTimeout(() => {
     navigate("/")
   }, 2000);
-
+localStorage.clear('checkout-arr')
   
   }
   return (
@@ -193,13 +194,13 @@ const Payment = () => {
               </div>
               <div className='cartvalue'>
                   <div><h1>Delivery charges</h1></div>
-                  <div>{129}</div>
+                  <div>{sum==0?0:129}</div>
               </div>
             </div>
             <div id='totalpaidamount'>
               <div className='cartvalue'>
                   <div><h1>Amount to be paid</h1></div>
-                  <div>{sum+129}</div>
+                  <div>{sum<=0?"0":(sum+129)}</div>
               </div>
               
             </div>

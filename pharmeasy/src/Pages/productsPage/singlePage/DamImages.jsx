@@ -16,7 +16,8 @@ export default function DamImages({images}){
 <div className='crousel-div'    >
         <Slider    {...crousel}>
           {images.map((item) => (
-            <div className="crousel-card">
+            <div key={images} className="crousel-card">
+              
               <Image src={item.url}  />
             </div>
           ))}

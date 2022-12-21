@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Cart.css"
 import Cartdata from "./Cartdata"
 import {
@@ -20,20 +20,24 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => { 
   let data=JSON.parse(localStorage.getItem("checkout-arr"))||[]
-  
+  const [sum1,setSum1]=useState(0)
   const totalcartitem=data.length;
-  let sum=0;
+let sum=0;  
   if(data!==null){
 
     const totalcartprice=data.map((item)=>{
-      return Number(item.mrpDecimal-item.discountDecimal)
+   return  Number(item.mrpDecimal-item.discountDecimal)
+     
     })
-    for(let i=0;i<totalcartprice.length;i++){
-      sum+=totalcartprice[i];
-    }
-  }
-  console.log("price",sum)
+    let total=totalcartprice.reduce((acc,cur)=>{
+      return acc+cur
+    })
+    
+sum=total.toFixed(2)
 
+
+
+  }
 
     return (
         <div >
@@ -52,9 +56,9 @@ const Cart = () => {
                         </Link>
                     </BreadcrumbItem>
 
-                    {/* <BreadcrumbItem isCurrentPage>
+                    <BreadcrumbItem isCurrentPage>
             <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
-        </BreadcrumbItem> */}
+        </BreadcrumbItem>
                 </Breadcrumb>
             </div>
             {/* cart page body */}
@@ -93,7 +97,9 @@ const Cart = () => {
                       </div>
                       <div id='cartTotalButton' style={{padding:"10px"}}>
                         <Link to="/Payment">
-                        <button style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button></Link>
+                        <button  
+                         disabled={sum=0}
+                        style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button></Link>
                       </div>
                     </div>
               </div>

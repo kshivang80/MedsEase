@@ -7,8 +7,6 @@ import { Button } from '@chakra-ui/react';
 const Cartdata = ({data}) => {
     const [state, setState] = useState([]);
     
-    
-    console.log("cartdata:",data)    
     const handleDelete=(id)=>{
         let arr=JSON.parse(localStorage.getItem("checkout-arr"))
         let x=arr.filter((elm)=>{
@@ -17,20 +15,15 @@ const Cartdata = ({data}) => {
         localStorage.setItem("checkout-arr",JSON.stringify(x));
     }
 
-        
-  
 
-    // useEffect(()=>{
-        
-    // })
-   
+
 
   return (
     <div>        
         {
             data.map((elm)=>{
-                console.log(elm)
-                return <div  >
+               
+                return <div key={elm.productId} >
                     <div className='prod'style={{display:"flex" }}>
             <div className='prodimg' style={{width:"10%"}}>
                 <img src={elm.images} alt="" />

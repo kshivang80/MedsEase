@@ -82,7 +82,7 @@ setOption(e.target.value)
     const param = {};
     param._sort = option;
     setSearchParams(param);
-    console.log(param, "param");
+   
   }, [option]);
 
   return (

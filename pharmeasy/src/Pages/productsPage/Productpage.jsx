@@ -1,17 +1,19 @@
-import { Grid, Box, Center, Stack, Select, Text } from "@chakra-ui/react";
+import { Grid, Box, Center, Stack, Select, Text,useMediaQuery } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useSearchParams } from "react-router-dom";
-import { getProduct, getProductUrl } from "../../Redux/Redux-Product/action";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { getProduct, getProductUrl, get_url_success_fn } from "../../Redux/Redux-Product/action";
 import { store } from "../../Redux/store";
 import Filter from "./Comp/Filter";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingIndicator/Loding";
+import InputSearch from "./Comp/InputSearch";
+
 
 export default function ProductPage() {
   const [searchparams, setSearchParams] = useSearchParams();
-
+  const [text,setText]=useState('')
   const { data, loading } = useSelector((store) => {
     return {
       data: store.reducer.dataOnfetch,
@@ -41,6 +43,40 @@ setOption(e.target.value)
   },[option])
 
 
+  const [show] = useMediaQuery('(min-width: 1200px)')
+  const navigate=useNavigate();
+  useEffect(() => {
+    // console.log(data);
+
+    let arr = [];
+    let textQuery = text.trim().toLowerCase();
+
+    if (textQuery == "") {
+      dispatch(getProductUrl());
+    }
+
+    arr = data.filter((elm) => {
+      return elm.manufacturer.toLowerCase().indexOf(textQuery) !== -1
+        ? true
+        : false;
+    });
+
+    if (arr.length > 0) {
+      dispatch(get_url_success_fn(arr));
+    }
+
+    if (arr.length == 0) {
+      // navigate("*");
+    }
+  }, [text]);
+
+
+  const handelChange = (e) => {
+    setText(e.target.value);
+  
+  };
+ 
+
 
   useEffect(() => {
     const param = {};
@@ -51,12 +87,12 @@ setOption(e.target.value)
 
   return (
     <>
-      <Center>
+      <Center m='auto' >
         <Box display={"flex"} gap="100px">
-          <Box mt="30px" w="300px">
+        {show? <Box mt="30px" w="300px">
             {" "}
-            <Filter />
-          </Box>
+           {show?<Filter/>:null}
+          </Box>:null}
           <Box>
             <Box
               h="100px"
@@ -65,10 +101,14 @@ setOption(e.target.value)
               justifyContent="space-between">
               <Box>
                 {" "}
-                <Text fontSize={"2xl"} color="grey">
-                  Health Care Product
-                </Text>
+              { show? <Box> <Text fontSize={"2xl"} color="grey">
+                Health Care Product
+              </Text></Box>:null}
+               
               </Box>
+             <Box>
+             {   show?null:<InputSearch  placeholder={"Search"} onchange={(e) => handelChange(e)} />}
+                </Box>
 
               <Box
                 w="300px"
@@ -87,7 +127,7 @@ setOption(e.target.value)
                 </Select>
               </Box>
             </Box>
-          { loading?<Loading/>:<Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} gridGap={10}>
+          { loading?<Loading/>:<Grid  border='1px solid red'  templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} gridGap={10}>
               {data &&
                 data.map((elm) => {
                   return (

@@ -17,13 +17,14 @@ export default function SingleCard({ item }) {
   return (
     <>
       <Box
+     
         display={"flex"}
         flexDirection="column"
         alignItems={"center"}
         boxShadow={"xs"}
-        w="230px"
+        w="full"
         h="300px"
-        border={"1px solid grey"}
+       
         borderRadius={10}
         className="top-container">
         <Image w="100px" h="150px" src={item.images} mt="10%" />
@@ -51,7 +52,7 @@ export default function SingleCard({ item }) {
               <Text as="del">MRP: {item.mrpDecimal}</Text>
             </Box>
           )}
-          <Image className="dis-img" w={"100px"} h="30px" src={edit3}></Image>
+          <Image className="dis-img" w={[50,80,100]} h="30px" src={edit3}></Image>
         </Box>
         <Text color="gray.500" as={"b"}>
           ₹{finalPrice.toFixed(2)}

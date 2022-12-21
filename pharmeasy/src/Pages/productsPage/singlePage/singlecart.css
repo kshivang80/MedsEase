@@ -27,12 +27,14 @@ margin-left: 200px;
  
 
 .crousel-div{
-   
-  
     width:300px;
     margin: auto;
-  
+}
 
+@media only screen and (max-width: 600px) {
+.crousel-div{
+    width: 100%;
+}
 }
 
 
@@ -65,5 +67,28 @@ margin-left: 200px;
     width:100%;
     border-radius: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+ .cart-main{
+    flex-wrap: wrap;
+ }
+ #first-box{
+   
+    width: 100%;
+   }
+   .second-box{
+    width: 100%;
+   }
+   .item-img{
+    width:100%;
+   border: 1px solid violet;
+   }
+   .item-img-child{
+  border: 1px solid red;
+    
+   }
+
+ 
+  }
 
 

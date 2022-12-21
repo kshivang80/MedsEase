@@ -89,10 +89,9 @@ export default function Filter() {
     if (arr.length > 0) {
       dispatch(get_url_success_fn(arr));
     }
+    
 
-    if (arr.length == 0) {
-      navigate("*");
-    }
+    
   }, [text]);
 
   return (

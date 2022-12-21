@@ -15,10 +15,10 @@ export default function SingleProductCard({ items }) {
 const clearref=useRef()
 
   let date1 = new Date().toLocaleString();
-  let arr1 = JSON.parse(localStorage.getItem('checkout-arr')) || []
+  
 
   const handelAddCart = () => {
-
+    let arr1 = JSON.parse(localStorage.getItem('checkout-arr'))||[];
     let previtem = JSON.parse(localStorage.getItem('cart'))
 
     arr1.push(previtem)
@@ -31,14 +31,10 @@ const clearref=useRef()
       duration: 2000,
       isClosable: true,
     })
-    
-    
 
     clearref.current=setTimeout(() => {
       navigate("/Cart")
     }, 2000);
-    
-  
 
   }
   useEffect(()=>{

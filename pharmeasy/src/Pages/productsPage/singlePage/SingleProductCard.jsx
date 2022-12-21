@@ -44,8 +44,8 @@ export default function SingleProductCard({ items }) {
     <>
       <Center mt='100px'   >
         <Box w='80%' >
-          <Box w='full' display={"flex"} gap={3} p="10px"  border={'1px solid red'} className='cart-main'>
-            <Box  id="first-box"  w="40%" p={10} border={'1px solid teal'}  >
+          <Box w='full' display={"flex"} gap={3} p="10px"   className='cart-main'>
+            <Box  id="first-box"  w="40%" p={10}  >
              <Box className="item-img" > <img  className="item-img-child" style={{width:"70%",margin:"auto"}}  src={items.images} /></Box>
               <Box mt='30px' >
                 <DamImages images={items.damImages} />

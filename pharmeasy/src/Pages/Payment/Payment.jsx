@@ -1,19 +1,20 @@
-import React,{useState} from 'react'
+import React,{useEffect, useRef, useState} from 'react'
 import "./payment.css"
 import { Button,Radio,RadioGroup,Alert,AlertIcon,AlertTitle,AlertDescription, useToast } from '@chakra-ui/react'
 import {ChevronRightIcon} from "@chakra-ui/icons"
 import { useNavigate } from 'react-router-dom';
 
-let data=JSON.parse(localStorage.getItem("checkout-arr"))||[];
+
 const Payment = () => {
   const toast = useToast()
   let navigate = useNavigate(); 
 
 const [tot,setTot]=useState(0)
-  
+const id=useRef(null)
   const [rad, setRad]=useState(false)
-  
- let sum=0
+  let sum=0
+ useEffect(()=>{
+  let data=JSON.parse(localStorage.getItem("checkout-arr"))||[];
   if(data.length!==0){
     const totalcartprice=data.map((item)=>{
       return Number(item.mrpDecimal-item.discountDecimal)
@@ -23,6 +24,11 @@ const [tot,setTot]=useState(0)
     }
   }
   sum=sum.toFixed(2)
+setTot(sum)
+console.log(sum,'summmm');
+ },[])
+ 
+ 
 
 
 
@@ -37,13 +43,21 @@ const [tot,setTot]=useState(0)
     duration: 2000,
     isClosable: true,
   })
-
-  setTimeout(() => {
+  setTot(0)
+  id.current=setTimeout(() => {
     navigate("/")
   }, 2000);
 localStorage.clear('checkout-arr')
+
+
+
   
   }
+  useEffect(()=>{
+    return ()=>{
+      clearTimeout(id.current)
+    }
+  },[])
   return (
     <div>
       <div id='navbar'>
@@ -190,17 +204,17 @@ localStorage.clear('checkout-arr')
             <div id="amountdesc">
               <div className='cartvalue'>
               <div><h1>Cart Value</h1></div>
-              <div>{sum}</div>
+              <div>{tot}</div>
               </div>
               <div className='cartvalue'>
                   <div><h1>Delivery charges</h1></div>
-                  <div>{sum==0?0:129}</div>
+                  <div>{tot==0?0:129}</div>
               </div>
             </div>
             <div id='totalpaidamount'>
               <div className='cartvalue'>
                   <div><h1>Amount to be paid</h1></div>
-                  <div>{sum<=0?"0":(sum+129)}</div>
+                  <div>{tot<=0?"0":(tot+129)}</div>
               </div>
               
             </div>

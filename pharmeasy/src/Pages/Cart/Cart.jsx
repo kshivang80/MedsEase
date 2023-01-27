@@ -12,13 +12,21 @@ import {
     Spacer,
     Button,
     ButtonGroup, 
+    useToast
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
-import { Link } from 'react-router-dom'
+
+import { Link, } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 // import CartItem from '../../Components/CartItem/CartItem'
 
 const Cart = () => { 
+  let navigate = useNavigate(); 
+
+  const toast = useToast()
+
+
   let data=JSON.parse(localStorage.getItem("checkout-arr"))||[]
   const [sum1,setSum1]=useState(0)
   const totalcartitem=data.length;
@@ -37,7 +45,30 @@ sum=total.toFixed(2)
 
 
 
-  }
+}
+
+const handlePayment=()=>{
+    
+ 
+  toast({
+    title: 'Added Successfully',
+    description: "Item is added in Cart",
+    status: 'success',
+    duration: 9000,
+    isClosable: true,
+    position: 'top'
+  })
+  
+ setTimeout(() => {
+    navigate("/Payment")
+  }, 1000);
+
+}
+
+
+
+
+
 
     return (
         <div >
@@ -96,10 +127,11 @@ sum=total.toFixed(2)
                         <h1>Cart Total:{sum}</h1>
                       </div>
                       <div id='cartTotalButton' style={{padding:"10px"}}>
-                        <Link to="/Payment">
-                        <button  
+                        
+                        <button 
+                         onClick={handlePayment}
                          disabled={sum=0}
-                        style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button></Link>
+                        style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button>
                       </div>
                     </div>
               </div>

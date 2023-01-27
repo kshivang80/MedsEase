@@ -30,6 +30,7 @@ const clearref=useRef()
       status: 'success',
       duration: 2000,
       isClosable: true,
+      position: 'top'
     })
 
     clearref.current=setTimeout(() => {

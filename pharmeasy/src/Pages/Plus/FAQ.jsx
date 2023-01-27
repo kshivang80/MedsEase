@@ -19,9 +19,9 @@ export default function FAQ({arr}) {
               <div className={Styles.title} onClick={() => allContent(index)}>
                 <h4>{elem.ques}</h4>
                 {content === index ? (
-                  <AiOutlineDown className={Styles.icon} />
-                ) : (
                   <AiOutlineUp className={Styles.icon} />
+                ) : (
+                  <AiOutlineDown className={Styles.icon} />
                 )}
               </div>
               <div

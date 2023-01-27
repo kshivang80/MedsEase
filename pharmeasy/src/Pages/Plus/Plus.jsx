@@ -241,7 +241,7 @@ const PlusFAQ = [
     ans1: "Your PharmEasy Plus membership is valid for 2 months from the date of purchase of the program.",
   },
   {
-    ques: "When will|get the cashback?",
+    ques: "When will get the cashback?",
     type: 1,
     ans1: "Cashback will be credited into your PharmEasy wallet within 48 hours of order delivery.",
   },

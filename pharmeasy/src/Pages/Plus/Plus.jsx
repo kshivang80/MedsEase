@@ -7,12 +7,44 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import { useNavigate } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Plus = () => {
+  const navigate=useNavigate()
+  const [range, setrange] = useState(1);
+  const [saving, setsaving] = useState(200);
+  const [total, settotal] = useState(1000);
+
+  useEffect(() => {
+    if (range === "0") setrange("1")
+    if (range === "4") setrange("3")
+    totalSaving(range)
+  }, [range])
+  
+  const totalSaving = (range) => {
+    // if (range === "0") setrange("1")
+    // if (range === "4") setrange("3")
+    let test = 500; let cons = 200;
+    if (range === "1") {
+      setsaving(2 * (2000 * 0.05));
+      settotal(saving + test + cons + saving - 100);
+    }
+    if (range === "2") {
+      setsaving(2 * (3000 * 0.05));
+      settotal(saving + test + cons + saving - 100);
+    }
+    if (range === "3") {
+      setsaving(2 * (4000 * 0.05));
+      settotal(saving + test + cons + saving - 100);
+    }
+  }
+
   return (
     <div id={Styles.AllPlus}>
       <div className={Styles.plus}>
@@ -131,7 +163,7 @@ const Plus = () => {
               <hr />
               <hr />
               <br />
-              <button>Add to Cart</button>
+              <button onClick={()=>navigate("/Cart")}>Add to Cart</button>
             </div>
             <br />
             <br />
@@ -140,16 +172,27 @@ const Plus = () => {
               <div>
                 <div>
                   <p>If Your spending on medicine is</p>
-                  <input type="range" />
+                  <input type="range" min={0} max={4} step={1} value={range} onChange={(e) => { setrange(e.target.value); totalSaving(e.target.value) }} className={Styles.range} list="markers" />
+                  <datalist id="markers">
+  <option></option>
+  <option value="1" label="₹2000/month
+" style={{color:range==="1" ? "black": "gray"}}></option>
+  <option value="2" label="₹3000/month
+" style={{color:range==="2" ? "black": "gray"}}></option>
+  <option value="3" label="₹4000/month
+" style={{color:range==="3" ? "black": "gray"}}></option>
+  <option></option>
+ 
+</datalist>
                   <h1>As a Plus member, you will save upto</h1>
                   <br />
-                  <div>₹1200</div>
+                  <div>₹{total}</div>
                 </div>
                 <div>
                   <p>Break down</p>
                   <div>
                     <p>5% Cashback on Medicines</p>
-                    <p>₹300</p>
+                    <p>₹{saving}</p>
                   </div>
                   <div>
                     <p>50% Cashback on Lab Tests*</p>
@@ -157,7 +200,7 @@ const Plus = () => {
                   </div>
                   <div>
                     <p>Savings on Shipping & Convenience Charges</p>
-                    <p>₹200</p>
+                    <p>₹{saving-100}</p>
                   </div>
                   <div>
                     <p>Savings on Doctor Consultation**</p>
@@ -165,7 +208,7 @@ const Plus = () => {
                   </div>
                   <div>
                     <p>Total 2 Months Savings</p>
-                    <p>₹1200</p>
+                    <p>₹{total}</p>
                   </div>
                   <p>*Assuming you get a lab test done every 2 months</p>
                   <p>**Assuming you consult a doctor every 2 months</p>

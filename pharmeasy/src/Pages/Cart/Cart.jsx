@@ -25,13 +25,13 @@ const Cart = () => {
 let sum=0;  
   if(data!==null){
 
-    const totalcartprice=data.map((item)=>{
+    const totalcartprice=data?.map((item)=>{
    return  Number(item.mrpDecimal-item.discountDecimal)
      
     })
-    let total=totalcartprice.reduce((acc,cur)=>{
+    let total=totalcartprice?.reduce((acc,cur)=>{
       return acc+cur
-    })
+    },0)
     
 sum=total.toFixed(2)
 

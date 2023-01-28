@@ -530,7 +530,7 @@ const Home = () => {
       {/* ************** Plus Image ***********/}
 
       <Box h="200px" w="95%" margin="auto" cursor="pointer">
-        <Link to="/Plus">
+        <Link to="/plus">
         <Image src={Plus} w="100%" h="100%" margin="auto" cursor={"pointer"}/></Link>
       </Box>
 

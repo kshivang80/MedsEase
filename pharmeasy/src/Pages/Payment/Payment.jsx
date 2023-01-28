@@ -16,7 +16,7 @@ const id=useRef(null)
  useEffect(()=>{
   let data=JSON.parse(localStorage.getItem("checkout-arr"))||[];
   if(data.length!==0){
-    const totalcartprice=data.map((item)=>{
+    const totalcartprice=data?.map((item)=>{
       return Number(item.mrpDecimal-item.discountDecimal)
     })
     for(let i=0;i<totalcartprice.length;i++){

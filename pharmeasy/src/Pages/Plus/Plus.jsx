@@ -5,6 +5,13 @@ import { AiOutlineRight } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
 const Plus = () => {
   return (
     <div id={Styles.AllPlus}>
@@ -172,8 +179,19 @@ const Plus = () => {
               <p>Still not sure?</p>
               <p>Hear from some of our PLUS members</p>
             </div>
-            <div className={Styles.plusMembers}>
-              <div>
+            {/* <div className={Styles.plusMembers}> */}
+            <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        id={Styles.plusMembers}
+        className={`${Styles.mySwiper} ${Styles.plusMembers}`}
+              >
+                <SwiperSlide>
+              <div style={{paddingBottom:"10px"}}>
                 <p>Rahul Singh</p>
                 <h2>Saved ₹3782 in 6 months</h2>
                 <div>
@@ -182,7 +200,8 @@ const Plus = () => {
                   extra cashback on every order too! It makes ordering monthly
                   medicines a truly satisfying experience.”
                 </div>
-              </div>
+                  </div></SwiperSlide>
+                <SwiperSlide>
               <div>
                 <p>Preeti Sharma</p>
                 <h2>Saved ₹2142 in 3 months</h2>
@@ -192,7 +211,8 @@ const Plus = () => {
                   than this! Also, since lockdown, I didn't have to step out for
                   my medical and healthcare needs anymore.”
                 </div>
-              </div>
+                  </div></SwiperSlide>
+                  <SwiperSlide>
               <div>
                 <p>Ashok Bhagia</p>
                 <h2>Saved ₹1527 in 3 months</h2>
@@ -202,18 +222,21 @@ const Plus = () => {
                   consultations with my Plus membership. I've made extra savings
                   on all my medicine orders & lab test bookings too.”
                 </div>
-              </div>
+                  </div></SwiperSlide>
+                  <SwiperSlide>
               <div>
                   <p>Rahul Singh</p>
                   <h2>Saved ₹3782 in 6 months</h2>
                   <div>I must admit that I've made huge savings since I became a member of Pharmeasy Plus. There's not just free deliveries but extra cashback on every order too! It makes ordering monthly medicines a truly satisfying experience.”</div>
-                </div>
+                  </div></SwiperSlide>
+                  <SwiperSlide>
                 <div>
                   <p>Preeti Sharma</p>
                   <h2>Saved ₹2142 in 3 months</h2>
                   <div>I feel like a premium customer as a PharmEasy plus member. All the extra discounts, free deliveries, it can't get any better than this! Also, since lockdown, I didn't have to step out for my medical and healthcare needs anymore.”</div>
-                </div>         
-            </div>
+                </div>  </SwiperSlide>  
+                </Swiper>
+            {/* </div> */}
           </div>
         </div>
       <FAQ arr={PlusFAQ}/>

@@ -96,7 +96,7 @@ sum=total.toFixed(2)
                         <h1>Cart Total:{sum}</h1>
                       </div>
                       <div id='cartTotalButton' style={{padding:"10px"}}>
-                        <Link to="/Payment">
+                        <Link to="/payment">
                         <button  
                          disabled={sum=0}
                         style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button></Link>

@@ -1,4 +1,4 @@
-import { Grid, Box, Center, Stack, Select, Text,useMediaQuery } from "@chakra-ui/react";
+import { Grid, Box, Center, Stack, Select, Text, useMediaQuery } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
@@ -13,7 +13,7 @@ import InputSearch from "./Comp/InputSearch";
 
 export default function ProductPage() {
   const [searchparams, setSearchParams] = useSearchParams();
-  const [text,setText]=useState('')
+  const [text, setText] = useState('')
   const { data, loading } = useSelector((store) => {
     return {
       data: store.reducer.dataOnfetch,
@@ -28,23 +28,23 @@ export default function ProductPage() {
   }, []);
 
 
-  const [option,setOption]=useState('')
+  const [option, setOption] = useState('')
 
-  const handelSort=(e)=>{
-setOption(e.target.value)
+  const handelSort = (e) => {
+    setOption(e.target.value)
   }
 
 
-  useEffect(()=>{
-    const param={}
-    param._sort=option
+  useEffect(() => {
+    const param = {}
+    param._sort = option
     setSearchParams(param)
 
-  },[option])
+  }, [option])
 
 
   const [show] = useMediaQuery('(min-width: 1200px)')
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     // console.log(data);
 
@@ -73,26 +73,26 @@ setOption(e.target.value)
 
   const handelChange = (e) => {
     setText(e.target.value);
-  
+
   };
- 
+
 
 
   useEffect(() => {
     const param = {};
     param._sort = option;
     setSearchParams(param);
-   
+
   }, [option]);
 
   return (
     <>
       <Center m='auto' >
-        <Box display={"flex"} gap="100px">
-        {show? <Box mt="30px" w="300px">
+        <Box display={"flex"} gap="80px">
+          {show ? <Box mt="30px" w="400px" >
             {" "}
-           {show?<Filter/>:null}
-          </Box>:null}
+            {show ? <Filter /> : null}
+          </Box> : null}
           <Box>
             <Box
               h="100px"
@@ -101,33 +101,42 @@ setOption(e.target.value)
               justifyContent="space-between">
               <Box>
                 {" "}
-              { show? <Box> <Text fontSize={"2xl"} color="grey">
-                Health Care Product
-              </Text></Box>:null}
-               
+                {show ? <Box> <Text fontSize={"2xl"} color="grey">
+                  Health Care Product
+                </Text></Box> : null}
+
               </Box>
-             <Box>
-             {   show?null:<InputSearch  placeholder={"Search"} onchange={(e) => handelChange(e)} />}
-                </Box>
+              <Box>
+                {show ? null : <InputSearch placeholder={"Search"} onchange={(e) => handelChange(e)} />}
+              </Box>
 
               <Box
-                w="300px"
+                w="600px"
+               
                 display="flex"
-                gap={10}
-                justifyContent="center"
+                gap={8}
+                justifyContent="flex-end"
                 alignItems={"center"}>
-                <Text fontSize={"xl"} color="grey">
-                  SortBy:
-                </Text>
+                <Box w="100px" >
+                  <Text fontSize={"xl"} color="grey">
+                    SortBy:
+                  </Text>
+
+                </Box>
+                <Box  w="300px" >
                 <Select onChange={handelSort}>
                   <option>Popularity</option>
                   <option value={"asc"}>Price Low to high</option>
                   <option value={"desc"}>Price High to Low</option>
                   <option value={"discountPercent"}>Discount %</option>
                 </Select>
+
+                </Box>
+
+               
               </Box>
             </Box>
-          { loading?<Loading/>:<Grid    templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} gridGap={10}>
+            {loading ? <Loading /> : <Grid  templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} gridGap={10}>
               {data &&
                 data.map((elm) => {
                   return (

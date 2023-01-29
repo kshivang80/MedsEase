@@ -26,18 +26,18 @@ export default function SingleCard({ item }) {
         h="300px"
        border={'1px solid grey'}
        _hover={{border:"1px solid black"}}
-       
+         textAlign="center"
         borderRadius={10}
         className="top-container">
         <Image w="100px" h="150px" src={item.images} mt="10%" />
-        <Text as="b" color={"grey"} border="1px solid red" w="200px" noOfLines={1}>
+        <Text as="b" color={"grey"}  w="200px" noOfLines={1}>
           {item.name}
         </Text>
         <Box display={"flex"} className="main-box">
           {item.discountPercent == "0" ? (
-            <Box border="1px solid red" display={"flex"}>
-              <Text fontSize={15}  as="del">MRP : </Text>{" "}
-              <Text fontSize={15}  as="del" fontWeight="bold">
+            <Box  display={"flex"}>
+              <Text fontSize={15}  as="del" mt="5px">MRP : </Text>{" "}
+              <Text fontSize={15}  as="del" mt="5px" fontWeight="bold">
                 {item.mrpDecimal}
               </Text>
             </Box>

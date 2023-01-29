@@ -16,7 +16,7 @@ This is a collaborative project to clone a e-commerce website, working model, fe
 # Product-Page
 ![image](https://user-images.githubusercontent.com/103144321/215338915-b9ee0a60-4b81-41a5-8be6-4625be750a1d.png)
 
-# Sigle-Product-Page
+# Single-Product-Page
 ![image](https://user-images.githubusercontent.com/103144321/215338937-acb932a7-21ca-473d-8c08-c2fad4e28736.png)
 
 # Cart-Page

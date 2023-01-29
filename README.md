@@ -8,7 +8,9 @@ To create a e-commerce web model for Pharmacy , for user to search, choose medic
 This is a collaborative project to clone a e-commerce website, working model, featuring  medicine shopping. Various features like searching category wise data, psuedo-purchasing cart items. Responsive website on range of screens from smarphones to large screens.
 
 
-## Some snapshots of the UI
+
+
+## Some Snapshots of the UI
 
 # Home-Page
 ![image](https://user-images.githubusercontent.com/103144321/215338870-01b13727-3f6f-46d0-b8c7-00f0fab2a5ac.png)

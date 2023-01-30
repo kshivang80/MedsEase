@@ -30,6 +30,7 @@ const clearref=useRef()
       status: 'success',
       duration: 2000,
       isClosable: true,
+      position: 'top'
     })
 
     clearref.current=setTimeout(() => {
@@ -92,7 +93,7 @@ const clearref=useRef()
                   <Text as="del" color={"gray.500"}>
                     MRP: {items.mrpDecimal}
                   </Text>
-                 <Box className="box-img2"   > <Image className="ct-image" w='full'  src={edit3} /></Box>
+                 <Box className="box-img2"   > <Image className="ct-image"  w="118px"   h="30px"  src={edit3} /></Box>
                   <Text fontSize={"14px"} className="ct-text">
                     {items.discountPercent}% OFF
                   </Text>

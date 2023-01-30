@@ -47,14 +47,21 @@ console.log(sum,'summmm');
     status: 'success',
     duration: 2000,
     isClosable: true,
+    position: 'top'
   })
   setTot(0)
   id.current=setTimeout(() => {
     navigate("/")
   }, 2000);
+
     localStorage.clear('checkout-arr')
     dispatch({ type: "reset" })
     setprice(0)
+
+
+localStorage.clear('checkout-arr')
+
+
 
 
   
@@ -64,6 +71,8 @@ console.log(sum,'summmm');
       clearTimeout(id.current)
     }
   },[])
+
+
   return (
     <div>
       <div id='navbar'>

@@ -50,8 +50,9 @@
   /* border: 1px solid red; */
 
   height: 160px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   overflow: hidden;
   border-radius: 10px;
   justify-content: space-between;
@@ -548,6 +549,7 @@
   /* border: 1px solid blue; */
   height: 20%;
   text-align: center;
+ 
 }
 
 .Featuredbottom > p {
@@ -790,13 +792,15 @@
 .Customers {
   /* border: 1px solid red; */
 
-  height: 300px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  height: 320px;
+  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   overflow: hidden;
   border-radius: 10px;
   justify-content: space-between;
   margin-top: 35px;
+  padding:10px
   /* background-color  :#F2FFF8;
       */
 }
@@ -815,6 +819,10 @@
 
 .Customersbottom {
   /* border: 1px solid blue; */
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:10px;
+ 
   width: 92%;
   height: 80%;
   margin: auto;

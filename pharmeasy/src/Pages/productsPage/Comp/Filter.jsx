@@ -38,9 +38,12 @@ export default function Filter() {
 
   useEffect(() => {
     let params = {};
-    params.categoryId = catagorie;
+    if(catagorie){
+      params.categoryId = catagorie;
+    }
+   
     setSearchParams(params);
-  }, [catagorie]);
+  }, [catagorie,setSearchParams]);
 
   const dispatch = useDispatch();
 
@@ -96,13 +99,13 @@ export default function Filter() {
 
   return (
     <Box>
-      <Text as="b" color="grey" fontSize={"2xl"}>
+      <Text as="b" color="grey" fontSize={"3xl"}>
         Filter
       </Text>
 
       <Box>
-        <Text fontWeight={"bold"} color="grey" mt="40px">
-          Catagorie
+        <Text fontWeight={"bold"} color="grey" mt="40px" fontSize='xl'>
+        Category
         </Text>
         <Box display={"flex"} justifyContent="space-between" mt="20px">
           <Text>Personal Care</Text>
@@ -111,13 +114,13 @@ export default function Filter() {
         <Box border={"1px solid grey"} mt="20px"></Box>
 
         <Box mt="20px">
-          <Text as={"b"} color="gray.600">
-            Sub Catagorie
+          <Text as={"b"} color="gray.600" fontSize='xl'>
+            Sub  Categories
           </Text>
-          <Box mt="30px" border={"1px solid grey"}></Box>
+          <Box mt="20px" border={"1px solid grey"}></Box>
           <Box display={"flex"} flexDirection="column" gap={10} mt="30px">
             <Box display={"flex"} justifyContent="space-between">
-              <Text fontSize={"10px"} as="b" color={"grey"}>
+              <Text fontSize={"16px"} as="b" color={"grey"}>
                 Medicine
               </Text>
               <Text pl="200px" color={"grey"}>
@@ -130,7 +133,7 @@ export default function Filter() {
               />
             </Box>
             <Box display={"flex"} justifyContent="space-between">
-              <Text fontSize={"10px"} as="b" color={"grey"}>
+              <Text fontSize={"16px"} as="b" color={"grey"}>
                 Personal Care
               </Text>
               <Text pl="170px" color={"grey"}>
@@ -143,7 +146,7 @@ export default function Filter() {
               />
             </Box>
             <Box display={"flex"} justifyContent="space-between">
-              <Text fontSize={"10px"} as="b" color={"grey"}>
+              <Text fontSize={"16px"} as="b" color={"grey"}>
                 {" "}
                 Immunity Booster
               </Text>
@@ -161,45 +164,45 @@ export default function Filter() {
         <Box border="1px solid grey" bg="grey" mt="20px"></Box>
 
         <Box mt="20px">
-          <Text color={"gray.700"} as="b">
+          <Text color={"gray.700"} as="b" fontSize={"20px"}>
             Brand
           </Text>
         </Box>
 
-        <Box mt="20px" display={"flex"}>
+        <Box mt="20px" display={"flex"} >
           <Box className="searchbar">
             {" "}
             <InputSearch onchange={(e) => handelChange(e)} />
           </Box>
-          <Box className="lense-img">
+          <Box className="lense-img" marginTop="20px">
             {" "}
-            <Image src={magnifyLense} w="40px" />
+            {/* <Image src={magnifyLense} w="40px" /> */}
           </Box>
         </Box>
 
-        <Box mt="30px" bg="grey" border={"1px solid grey"}></Box>
+        <Box mt="50px" bg="grey" border={"1px solid grey"}></Box>
 
-        <Box mt="20px">
-          <Text as="b" color={"gray.600"}>
+        <Box mt="30px">
+          <Text as="b" color={"gray.600"} fontSize={"20px"}>
             Price
           </Text>
         </Box>
 
         <Box display={"flex"} flexDirection="column" gap={10} mt="30px">
           <Box display={"flex"} justifyContent="space-between">
-            <Text fontSize={"10px"} as="b" color={"grey"}>
+            <Text fontSize={"16px"} as="b" color={"grey"} >
               100-199
             </Text>
             <CheckBox />
           </Box>
           <Box display={"flex"} justifyContent="space-between">
-            <Text fontSize={"10px"} as="b" color={"grey"}>
+            <Text fontSize={"16px"} as="b" color={"grey"} >
               200-299
             </Text>
             <CheckBox />
           </Box>
           <Box display={"flex"} justifyContent="space-between">
-            <Text fontSize={"10px"} as="b" color={"grey"}>
+            <Text fontSize={"16px"} as="b" color={"grey"}>
               {" "}
               300-above
             </Text>

@@ -26,53 +26,53 @@ const Footer = () => {
       <MediaQuery minWidth={992}>
         <Stack direction="horizontal" justify="space-between">
           <Stack gap="10px">
-            <Text fontSize="16px" fontWeight="700">
+            <Text fontSize="20px" fontWeight="700">
               Company
             </Text>
             {Company.map((el, i) => (
-              <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+              <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                 {el.link}
               </Text>
             ))}
-            <Text fontSize="16px" fontWeight="700" paddingTop="20px">
+            <Text fontSize="20px" fontWeight="700" paddingTop="20px">
               Our Services
             </Text>
             {OurServices.map((el, i) => (
-              <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+              <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                 {el.link}
               </Text>
             ))}
           </Stack>
           <Stack gap="10px">
-            <Text fontSize="16px" fontWeight="700">
+            <Text fontSize="20px" fontWeight="700">
               Featured Categories
             </Text>
             {Categories.map((el, i) => (
-              <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+              <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                 {el.link}
               </Text>
             ))}
           </Stack>
           <Stack gap="10px">
-            <Text fontSize="16px" fontWeight="700">
+            <Text fontSize="20px" fontWeight="700">
               Need Help
             </Text>
             {NeedHelp.map((el, i) => (
-              <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+              <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                 {el.link}
               </Text>
             ))}
-            <Text fontSize="16px" fontWeight="700" paddingTop="20px">
+            <Text fontSize="20px" fontWeight="700" paddingTop="20px">
               Policy Info
             </Text>
             {PolicyInfo.map((el, i) => (
-              <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+              <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                 {el.link}
               </Text>
             ))}
           </Stack>
           <Stack gap="10px" marginRight="20px">
-            <Text fontSize="16px" fontWeight="700">
+            <Text fontSize="20px" fontWeight="700">
               Follow us on
             </Text>
             <Stack direction="row" gap="25px">
@@ -92,7 +92,7 @@ const Footer = () => {
           </Stack>
         </Stack>
         <Stack gap="10px" marginBottom="40px" marginTop="60px">
-          <Text fontSize="16px" fontWeight="700">
+          <Text fontSize="20px" fontWeight="700">
             Our Payment Partners
           </Text>
           <Stack direction={["row", "column"]} justify="space-between">
@@ -105,7 +105,7 @@ const Footer = () => {
                 <Image key={i} src={el.img} height="18px" />
               ))}
             </Stack>
-            <Text fontSize="14px">© 2022 PharmEasy. All Rights Reserved</Text>
+            <Text fontSize="16px">© 2022 PharmEasy. All Rights Reserved</Text>
           </Stack>
         </Stack>
       </MediaQuery>
@@ -130,7 +130,7 @@ const Footer = () => {
             </h2>
             <AccordionPanel pb={4}>
               {Company.map((el, i) => (
-                <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+                <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                   {el.link}
                 </Text>
               ))}
@@ -153,7 +153,7 @@ const Footer = () => {
             </h2>
             <AccordionPanel pb={4}>
               {OurServices.map((el, i) => (
-                <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+                <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                   {el.link}
                 </Text>
               ))}
@@ -176,7 +176,7 @@ const Footer = () => {
             </h2>
             <AccordionPanel pb={4}>
               {Categories.map((el, i) => (
-                <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+                <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                   {el.link}
                 </Text>
               ))}
@@ -199,7 +199,7 @@ const Footer = () => {
             </h2>
             <AccordionPanel pb={4}>
               {NeedHelp.map((el, i) => (
-                <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+                <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                   {el.link}
                 </Text>
               ))}
@@ -222,7 +222,7 @@ const Footer = () => {
             </h2>
             <AccordionPanel pb={4}>
               {PolicyInfo.map((el, i) => (
-                <Text key={i} fontSize="14px" fontWeight="500" cursor="pointer">
+                <Text key={i} fontSize="16px" fontWeight="500" cursor="pointer">
                   {el.link}
                 </Text>
               ))}

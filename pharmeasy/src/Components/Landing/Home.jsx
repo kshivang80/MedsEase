@@ -613,7 +613,7 @@ const Home = () => {
                 bg="#E8F7FD"
                 borderRadius="15px"
                 box-shadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px">
-                <Box h="17%">
+                <Box h="17%" paddingLeft="10px" paddingTop="4px">
                   <Button
                     marginTop="5px"
                     marginLeft="4px"
@@ -624,7 +624,7 @@ const Home = () => {
                     {item.off}
                   </Button>
                 </Box>
-                <Box h="23%">
+                <Box h="23%" paddingLeft="10px" >
                   <Text
                     as="b"
                     color="#30363C"
@@ -634,7 +634,7 @@ const Home = () => {
                     {item.name}
                   </Text>
                 </Box>
-                <Box h="20%">
+                <Box h="20%" paddingLeft="10px">
                   <Text
                     noOfLines={[1, 2]}
                     marginLeft="4px"
@@ -645,7 +645,7 @@ const Home = () => {
                 </Box>
 
                 <Box display="flex" h="40%">
-                  <Box w="50%">
+                  <Box w="50%" paddingLeft="10px">
                     <br />
                     <br />
                     <Text marginLeft="6px" as="b" color="#6E787E" fontSize="lg">
@@ -1061,13 +1061,14 @@ const Home = () => {
       {/* What Our Customers have to Say */}
 
       <Box className="CustomersTopMain">
-        <Box className="LiveTest2-wellness">
+        <Box className="LiveTest2-wellness" style={{}}>
           <p
             style={{
               fontSize: "26px",
               color: "#30363C",
               width: "auto",
               fontWeight: "bolder",
+              
             }}>
             {" "}
             What Our Customers have to Say
@@ -1090,7 +1091,7 @@ const Home = () => {
                   <Text
                     marginLeft="8px"
                     fontSize="xl"
-                    noOfLines={[1, 8, 8]}
+                    noOfLines={[1, 7, 7]}
                     color="#4F585E">
                     {item.des}
                   </Text>

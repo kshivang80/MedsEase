@@ -1,7 +1,8 @@
 import React from "react";
 import Styles from "./FAQ.module.css";
-import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { useState } from "react";
+import {Box} from "@chakra-ui/react"
 export default function FAQ({arr}) {
   const [content, setContent] = useState(null);
   function allContent(i) {
@@ -18,11 +19,12 @@ export default function FAQ({arr}) {
             <div className={Styles.FAQ}>
               <div className={Styles.title} onClick={() => allContent(index)}>
                 <h4>{elem.ques}</h4>
+                <Box w="20px">
                 {content === index ? (
-                  <AiOutlineUp className={Styles.icon} />
+                  <RiArrowDropUpLine className={Styles.icon} size={25}/>
                 ) : (
-                  <AiOutlineDown className={Styles.icon} />
-                )}
+                  <RiArrowDropDownLine className={Styles.icon} size={25}/>
+                )}</Box>
               </div>
               <div
                 className={

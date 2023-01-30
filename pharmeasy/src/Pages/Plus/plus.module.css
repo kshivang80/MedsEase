@@ -1,8 +1,8 @@
-*{
+#AllPlus *{
   box-sizing: border-box;
 }
 #AllPlus{
-  /* border: 2px solid red; */
+  border: 0.01px solid transparent;
   width: 100%;
   position: relative;
   /* top: 50px; */
@@ -53,7 +53,6 @@
   .plus2{
     padding: 25px 100px; 
     width: 90%;
-    
   }
   .img2 {
     width: 450px;
@@ -62,18 +61,43 @@
     width: 200px;
     height: 70px;
     }
+    .plus,#AllPlus{
+      margin: 0;
+      padding-top: 0;
+    }
+  }
+  @media screen and (max-width: 430px) and (min-width:0){
+    .plus,#AllPlus{
+      margin: 0;
+      padding-top: 0;
+    }
+    .plus2{
+    padding: 10px; 
+    width: 90%;
+  }
+  .img2 {
+    width: 200px;
+    height: 150px;
+  }
+  .img1 {
+    width: 100px;
+    height: 40px;
+    }
+  
 }
 .main {
   max-width: 1024px;
   /* border: 2px solid yellow; */
   margin: auto;
-  padding-top: 30px;
+  /* padding-top: 30px; */
   min-height: 50vh;
   box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 @media screen and (min-width: 430px) and (max-width:768px){
   .main{
     max-width: 90%;
+
   }
 }
 .main2 {
@@ -147,6 +171,28 @@
     padding: 0;
   }
 }
+@media screen and (max-width:430px) and (min-width:0) {
+  .inmain1{
+    width: 50%;
+    font-size: 12px;
+    font-weight: 800;
+    /* color: red; */
+  }
+  .inmain2>.part_main{
+    font-size: 18px;
+  }
+  .inmain2>.part_main>.strong{
+    font-size: 25px;
+  }
+  .inmain2{
+    margin-bottom: 42px;
+    width: 100%;
+    min-height: 40px;
+    padding: 0;
+    margin-top: 6.5vh;
+  }
+}
+
 .inmain3 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background: #fff;
@@ -185,6 +231,31 @@
   font-size: 18px;
   font-weight: 500;
 }
+@media screen and (min-width: 0px) and (max-width: 430px) {
+  .inmain3 {
+    width: 100%;
+    padding: 10px;
+  }
+  .inmain3 > div:nth-child(2),
+  .inmain3 > div:nth-child(6) {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  .inmain3 > div:nth-child(2) > div,
+  .inmain3 > div:nth-child(6) > div {
+    gap: 10px;
+  }
+  .inmain3 > h1 {
+    font-size: 24px;
+  }
+  .inmain3 > div:nth-child(2) > div > div > p:nth-child(1) {
+    font-size: 16px;
+  }
+  .inmain3 > h3 {
+    font-size: 20px;
+    margin-bottom: 1.5vh;
+  }
+}
 .inmain4 {
   width: 100%;
 }
@@ -211,6 +282,7 @@
   align-items: center;
   width: 10%;
 }
+
 /* .inmain4_1>div:nth-child(1)>.icon1{
     stroke-width: 10px;
 } */
@@ -242,6 +314,27 @@
   color: #8573e1;
   font-weight: 700;
 }
+@media screen and (min-width: 430px) and (max-width: 768px) {
+  .inmain4_1 > div:nth-child(1) {
+    width: 15%;
+  }
+  .inmain4_1 > div:nth-child(2) {
+    width: 15%;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 430px) {
+  .inmain4_1 > div:nth-child(1) {
+    width: 35%;
+  }
+  .inmain4_1 > div:nth-child(2) {
+    width: 28%;
+  }
+  .main{
+    padding: 0 2vh;
+    margin: 0;
+  }
+}
+
 .inmain4_2 > div {
   display: flex;
   justify-content: space-between;
@@ -284,14 +377,12 @@
   padding: 20px;
   gap: 20px;
 }
-.inmain5 > div > div:nth-child(1) {
+.inmain5>div>div{
   width: 50%;
+}
+/* .inmain5 > div > div:nth-child(1) {
   border-right: 1px solid rgb(242, 242, 242);
-}
-.inmain5 > div > div:nth-child(2) {
-  width: 50%;
-  /* border-right: 2px solid black; */
-}
+} */
 .inmain5 > div > div:nth-child(1) > p {
   font-weight: 700;
   font-size: 20px;
@@ -339,12 +430,42 @@ input[type="range"] {
   font-weight: 700;
   color: rgb(69, 68, 68);
   margin-bottom: 10px;
+  /* border: 1px solid red; */
 }
 .inmain5 > h1:nth-child(1) {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
   color: rgb(69, 68, 68);
+}
+@media screen and (min-width: 0) and (max-width: 430px) {
+  .inmain5 > h1:nth-child(1) {
+    font-size: 17px;
+  }
+  .inmain5 > div > div:nth-child(2) > div{
+  font-size: 14px;
+}
+.inmain5 > div > div:nth-child(2) > div + p,
+.inmain5 > div > div:nth-child(2) > p + p {
+  font-size: 10px;
+}
+  .inmain5 > div {
+    flex-direction: column;
+    padding: 10px; 
+  }
+  .inmain5 > div > div > h1 {
+    font-size: 16px;
+  }
+  .inmain5 > div >div{
+    width: 100%;
+  }
+.inmain5 > div > div > br + div {
+font-size: 20px;
+/* padding: 0; */
+display: flex;
+align-items: center;
+justify-content: center;
+}
 }
 .heading > p {
   font-size: 20px;
@@ -364,18 +485,21 @@ input[type="range"] {
 }
 .plusMembers > div {
   width: 33%;
+  box-sizing: border-box;
   height: auto;
-  flex: 0 0 33%;
+  /* flex: 0 0 33%; */
   margin: 5px; 
   scroll-snap-align: start;
 }
 .plusMembers > div>div:nth-child(2) > div>div,
 .plusMembers > div>div:nth-child(5) > div>div {
+  /* border: 1px solid red; */
   background-color: rgb(245, 243, 255);
   border-radius: 10px;
   text-align: left;
   padding: 15px;
   font-size: 14px;
+  /* width: 75%; */
   margin-bottom: 25px;
 }
 .plusMembers > div>div:nth-child(1) > div>div,
@@ -399,11 +523,31 @@ input[type="range"] {
   color: rgb(87, 87, 87);
   /* color: red */
 }
-
+@media screen and (min-width: 0) and (max-width: 430px) {
+  .plusMembers > div>div> div>div{
+    width: 95%;
+    position: none;
+    box-sizing: border-box;
+  }
+.heading > p+p {
+font-size: 14px;
+}
+.heading{
+padding: 0 1vh;
+}
+  .plusMembers > div{
+    margin: auto;
+    /* border: 1px solid red; */
+    width: 96%;
+    box-sizing: border-box;
+    /* padding: 2vh; */
+  }
+}
 .swiper {
   width: 100%;
   height: 100%;
   padding-bottom: 10px;
+  /* border: 1px solid red; */
 }
 
 .swiper-slide {
@@ -411,7 +555,7 @@ input[type="range"] {
   font-size: 18px;
   background: #fff;
   margin-top: 10px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   /* padding-bottom: 10px; */
 
   /* Center slide text vertically */
@@ -457,4 +601,25 @@ option {
 .range {
   width: 200px;
   margin: 0;
+}
+/* @media screen and (min-width: 0px) and (max-width: 430px) {
+  #plusMembers{
+    slidesPerView: 3;
+    spaceBetween: 10
+  } */
+/* } */
+.swiper-container {
+  width: 480px;
+}
+
+@media screen and (min-width: 0) {
+  .swiper-container {
+    width: 430px;
+  }
+}
+
+@media screen and (min-width: 430px) {
+  .swiper-container {
+    width: 1024px;
+  }
 }

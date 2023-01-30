@@ -31,7 +31,7 @@ const id=useRef(null)
   sum=sum.toFixed(2)
 setTot(sum)
 console.log(sum,'summmm');
- },[price])
+ },[])
  
  
 

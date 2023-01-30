@@ -3,9 +3,12 @@ import "./payment.css"
 import { Button,Radio,RadioGroup,Alert,AlertIcon,AlertTitle,AlertDescription, useToast } from '@chakra-ui/react'
 import {ChevronRightIcon} from "@chakra-ui/icons"
 import { useNavigate } from 'react-router-dom';
+import { shallowEqual, useSelector } from 'react-redux';
 
 
 const Payment = () => {
+  const [price, isMemberShip] = useSelector((a) => { return { price: a.Payreducer.price, isMemberShip: a.Payreducer.isMemberShip } }, shallowEqual)
+  console.log(price)
   const toast = useToast()
   let navigate = useNavigate(); 
 

@@ -14,13 +14,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useState } from "react";
 import { useEffect } from "react";
+import {useDispatch } from "react-redux"
+import { handlePayment } from "../../Redux/payment/action";
 
 const Plus = () => {
   const navigate=useNavigate()
   const [range, setrange] = useState(1);
   const [saving, setsaving] = useState(200);
   const [total, settotal] = useState(1000);
-
+  const dispatch = useDispatch()
   useEffect(() => {
     if (range === "0") setrange("1")
     if (range === "4") setrange("3")
@@ -71,7 +73,7 @@ const Plus = () => {
             </div>
             <div className={Styles.inmain2}>
               <div className={Styles.part_main}>
-                Enjoy benefits worth{" "}
+                Enjoy benefits worth
                 <strong className={Styles.strong}>₹1400</strong>
               </div>
             </div>
@@ -163,7 +165,7 @@ const Plus = () => {
               <hr />
               <hr />
               <br />
-              <button onClick={()=>navigate("/Cart")}>Add to Cart</button>
+              <button onClick={() => { navigate("/payment"); dispatch(handlePayment(149)) }}>Get MadsEase Plus</button>
             </div>
             <br />
             <br />
@@ -224,8 +226,22 @@ const Plus = () => {
             </div>
             {/* <div className={Styles.plusMembers}> */}
             <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
+              breakpoints={{
+                // when window width is >= 640px
+                430: {
+                  width: 430,
+                  slidesPerView: 1,
+                  spaceBetween:20
+                },
+                // when window width is >= 768px
+                768: {
+                  width: 1024,
+                  slidesPerView: 3,
+                  spaceBetween:30
+                },
+              }}
+        // slidesPerView={3}
+        
         pagination={{
           clickable: true,
         }}

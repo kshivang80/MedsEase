@@ -14,20 +14,38 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useState } from "react";
 import { useEffect } from "react";
-import {useDispatch } from "react-redux"
+import {useDispatch, useSelector } from "react-redux"
 import { handlePayment } from "../../Redux/payment/action";
+import { useToast } from "@chakra-ui/react";
 
 const Plus = () => {
   const navigate=useNavigate()
   const [range, setrange] = useState(1);
   const [saving, setsaving] = useState(200);
   const [total, settotal] = useState(1000);
+  const memberPlus=useSelector(a=>a.Payreducer.memberPlus)
   const dispatch = useDispatch()
+  const toast = useToast()
   useEffect(() => {
     if (range === "0") setrange("1")
     if (range === "4") setrange("3")
     totalSaving(range)
-  }, [range])
+  }, [range, memberPlus])
+
+  const handleMemberShipPlus = () => {
+    if(memberPlus){
+      toast({
+        title: 'MedsEase Plus',
+        description: "    You are already a member of MedsEase Plus",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+        position: 'top'
+      })
+    } else {
+       navigate("/payment"); dispatch(handlePayment(149)) 
+    }
+  }
   
   const totalSaving = (range) => {
     // if (range === "0") setrange("1")
@@ -165,7 +183,7 @@ const Plus = () => {
               <hr />
               <hr />
               <br />
-              <button onClick={() => { navigate("/payment"); dispatch(handlePayment(149)) }}>Get MadsEase Plus</button>
+              <button onClick={handleMemberShipPlus}>Get MadsEase Plus</button>
             </div>
             <br />
             <br />

@@ -3,12 +3,14 @@ import "./payment.css"
 import { Button,Radio,RadioGroup,Alert,AlertIcon,AlertTitle,AlertDescription, useToast } from '@chakra-ui/react'
 import {ChevronRightIcon} from "@chakra-ui/icons"
 import { useNavigate } from 'react-router-dom';
-import { shallowEqual, useSelector } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 
 const Payment = () => {
-  const [price, isMemberShip] = useSelector((a) => { return { price: a.Payreducer.price, isMemberShip: a.Payreducer.isMemberShip } }, shallowEqual)
-  console.log(price)
+  const dispatch=useDispatch()
+  const {price, isMemberShip} = useSelector((a) => { return { price: a.Payreducer.price, isMemberShip: a.Payreducer.isMemberShip } }, shallowEqual)
+  // console.log(price)
+  const [isprice, setprice]=useState(price)
   const toast = useToast()
   let navigate = useNavigate(); 
 
@@ -50,8 +52,9 @@ console.log(sum,'summmm');
   id.current=setTimeout(() => {
     navigate("/")
   }, 2000);
-localStorage.clear('checkout-arr')
-
+    localStorage.clear('checkout-arr')
+    dispatch({ type: "reset" })
+    setprice(0)
 
 
   
@@ -98,7 +101,7 @@ localStorage.clear('checkout-arr')
                     </div>
                   
                     <p>up to 3000 cashback points on a minimum transaction of Rs. 599. Valid once pre user</p>
-                    <Button mt="5px" mb="5px" color={"white"} backgroundColor="#10847e" onClick={handlePayment}>Pay Now</Button>
+                    <Button mt="5px" mb="5px" color={"white"} backgroundColor="#10847e" onClick={handlePayment}>Pay Now </Button>
                   </div>
                 </div>
 
@@ -119,7 +122,7 @@ localStorage.clear('checkout-arr')
                     </div>
                   
                     <p>Up to Rs.600 cashback on a minimum transaction of Rs.399. Valid only once per user</p>
-                    <Button mt="5px" mb="5px" color={"white"} backgroundColor="#10847e" onClick={handlePayment}>Pay Now</Button>
+                    <Button mt="5px" mb="5px" color={"white"} backgroundColor="#10847e" onClick={handlePayment}>Pay Now </Button>
                   </div>
                 </div>
 
@@ -140,7 +143,7 @@ localStorage.clear('checkout-arr')
                     </div>
                   
                     <p>Up to Rs.650 cashback on Mobikwik(m20).Valid only once & on orders above Rs.800</p>
-                    <Button mt="5px" mb="5px" color={"white"} backgroundColor="#10847e" onClick={handlePayment}>Pay Now</Button>
+                    <Button mt="5px" mb="5px" color={"white"} backgroundColor="#10847e" onClick={handlePayment}>Pay Now </Button>
                   </div>
                 </div>
               </RadioGroup>
@@ -209,6 +212,10 @@ localStorage.clear('checkout-arr')
               <div><h1>Cart Value</h1></div>
               <div>{tot}</div>
               </div>
+            {isMemberShip && <div className='cartvalue'>
+              <div><h1>Member Ship</h1></div>
+              <div>{isprice}</div>
+            </div>}
               <div className='cartvalue'>
                   <div><h1>Delivery charges</h1></div>
                   <div>{tot==0?0:129}</div>
@@ -217,7 +224,7 @@ localStorage.clear('checkout-arr')
             <div id='totalpaidamount'>
               <div className='cartvalue'>
                   <div><h1>Amount to be paid</h1></div>
-                  <div>{tot<=0?"0":(tot+129)}</div>
+                  <div>{isprice>0&&tot>0 ?(Number(tot)+129+Number(isprice)).toFixed(2):isprice>0 ? isprice:tot>0 ? (Number(tot)+129):0}</div>
               </div>
               
             </div>

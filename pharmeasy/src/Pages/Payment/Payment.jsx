@@ -8,7 +8,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 const Payment = () => {
   const dispatch=useDispatch()
-  const {price, isMemberShip} = useSelector((a) => { return { price: a.Payreducer.price, isMemberShip: a.Payreducer.isMemberShip } }, shallowEqual)
+  const {price, isMemberShip, memberPlus} = useSelector((a) => { return { price: a.Payreducer.price, isMemberShip: a.Payreducer.isMemberShip, memberPlus:a.Payreducer.memberPlus } }, shallowEqual)
   // console.log(price)
   const [isprice, setprice]=useState(price)
   const toast = useToast()
@@ -57,6 +57,9 @@ console.log(sum,'summmm');
     localStorage.clear('checkout-arr')
     dispatch({ type: "reset" })
     setprice(0)
+    if (price > 0 && isMemberShip) {
+      dispatch({ type: "pay" })
+    }
 
 
 localStorage.clear('checkout-arr')

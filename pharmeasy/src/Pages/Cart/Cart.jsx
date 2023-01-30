@@ -128,14 +128,11 @@ const handlePayment=()=>{
                       </div>
                       <div id='cartTotalButton' style={{padding:"10px"}}>
                         
+                        <Link to="/payment">
                         <button 
                          onClick={handlePayment}
-
-                        <Link to="/payment">
-                        <button  
-
                          disabled={sum=0}
-                        style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button>
+                        style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button></Link>
                       </div>
                     </div>
               </div>

@@ -33,13 +33,13 @@ const Cart = () => {
 let sum=0;  
   if(data!==null){
 
-    const totalcartprice=data.map((item)=>{
+    const totalcartprice=data?.map((item)=>{
    return  Number(item.mrpDecimal-item.discountDecimal)
      
     })
-    let total=totalcartprice.reduce((acc,cur)=>{
+    let total=totalcartprice?.reduce((acc,cur)=>{
       return acc+cur
-    })
+    },0)
     
 sum=total.toFixed(2)
 
@@ -60,7 +60,7 @@ const handlePayment=()=>{
   })
   
  setTimeout(() => {
-    navigate("/Payment")
+    navigate("/payment")
   }, 1000);
 
 }
@@ -130,6 +130,10 @@ const handlePayment=()=>{
                         
                         <button 
                          onClick={handlePayment}
+
+                        <Link to="/payment">
+                        <button  
+
                          disabled={sum=0}
                         style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button>
                       </div>

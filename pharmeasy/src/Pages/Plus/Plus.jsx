@@ -5,7 +5,48 @@ import { AiOutlineRight } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+import { useNavigate } from "react-router-dom";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { useState } from "react";
+import { useEffect } from "react";
+import {useDispatch } from "react-redux"
+import { handlePayment } from "../../Redux/payment/action";
+
 const Plus = () => {
+  const navigate=useNavigate()
+  const [range, setrange] = useState(1);
+  const [saving, setsaving] = useState(200);
+  const [total, settotal] = useState(1000);
+  const dispatch = useDispatch()
+  useEffect(() => {
+    if (range === "0") setrange("1")
+    if (range === "4") setrange("3")
+    totalSaving(range)
+  }, [range])
+  
+  const totalSaving = (range) => {
+    // if (range === "0") setrange("1")
+    // if (range === "4") setrange("3")
+    let test = 500; let cons = 200;
+    if (range === "1") {
+      setsaving(2 * (2000 * 0.05));
+      settotal(saving + test + cons + saving - 100);
+    }
+    if (range === "2") {
+      setsaving(2 * (3000 * 0.05));
+      settotal(saving + test + cons + saving - 100);
+    }
+    if (range === "3") {
+      setsaving(2 * (4000 * 0.05));
+      settotal(saving + test + cons + saving - 100);
+    }
+  }
+
   return (
     <div id={Styles.AllPlus}>
       <div className={Styles.plus}>
@@ -32,7 +73,7 @@ const Plus = () => {
             </div>
             <div className={Styles.inmain2}>
               <div className={Styles.part_main}>
-                Enjoy benefits worth{" "}
+                Enjoy benefits worth
                 <strong className={Styles.strong}>₹1400</strong>
               </div>
             </div>
@@ -124,7 +165,7 @@ const Plus = () => {
               <hr />
               <hr />
               <br />
-              <button>Add to Cart</button>
+              <button onClick={() => { navigate("/payment"); dispatch(handlePayment(149)) }}>Get MadsEase Plus</button>
             </div>
             <br />
             <br />
@@ -133,16 +174,27 @@ const Plus = () => {
               <div>
                 <div>
                   <p>If Your spending on medicine is</p>
-                  <input type="range" />
+                  <input type="range" min={0} max={4} step={1} value={range} onChange={(e) => { setrange(e.target.value); totalSaving(e.target.value) }} className={Styles.range} list="markers" />
+                  <datalist id="markers">
+  <option></option>
+  <option value="1" label="₹2000/month
+" style={{color:range==="1" ? "black": "gray"}}></option>
+  <option value="2" label="₹3000/month
+" style={{color:range==="2" ? "black": "gray"}}></option>
+  <option value="3" label="₹4000/month
+" style={{color:range==="3" ? "black": "gray"}}></option>
+  <option></option>
+ 
+</datalist>
                   <h1>As a Plus member, you will save upto</h1>
                   <br />
-                  <div>₹1200</div>
+                  <div>₹{total}</div>
                 </div>
                 <div>
                   <p>Break down</p>
                   <div>
                     <p>5% Cashback on Medicines</p>
-                    <p>₹300</p>
+                    <p>₹{saving}</p>
                   </div>
                   <div>
                     <p>50% Cashback on Lab Tests*</p>
@@ -150,7 +202,7 @@ const Plus = () => {
                   </div>
                   <div>
                     <p>Savings on Shipping & Convenience Charges</p>
-                    <p>₹200</p>
+                    <p>₹{saving-100}</p>
                   </div>
                   <div>
                     <p>Savings on Doctor Consultation**</p>
@@ -158,7 +210,7 @@ const Plus = () => {
                   </div>
                   <div>
                     <p>Total 2 Months Savings</p>
-                    <p>₹1200</p>
+                    <p>₹{total}</p>
                   </div>
                   <p>*Assuming you get a lab test done every 2 months</p>
                   <p>**Assuming you consult a doctor every 2 months</p>
@@ -172,8 +224,33 @@ const Plus = () => {
               <p>Still not sure?</p>
               <p>Hear from some of our PLUS members</p>
             </div>
-            <div className={Styles.plusMembers}>
-              <div>
+            {/* <div className={Styles.plusMembers}> */}
+            <Swiper
+              breakpoints={{
+                // when window width is >= 640px
+                430: {
+                  width: 430,
+                  slidesPerView: 1,
+                  spaceBetween:20
+                },
+                // when window width is >= 768px
+                768: {
+                  width: 1024,
+                  slidesPerView: 3,
+                  spaceBetween:30
+                },
+              }}
+        // slidesPerView={3}
+        
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        id={Styles.plusMembers}
+        className={`${Styles.mySwiper} ${Styles.plusMembers}`}
+              >
+                <SwiperSlide>
+              <div style={{paddingBottom:"10px"}}>
                 <p>Rahul Singh</p>
                 <h2>Saved ₹3782 in 6 months</h2>
                 <div>
@@ -182,7 +259,8 @@ const Plus = () => {
                   extra cashback on every order too! It makes ordering monthly
                   medicines a truly satisfying experience.”
                 </div>
-              </div>
+                  </div></SwiperSlide>
+                <SwiperSlide>
               <div>
                 <p>Preeti Sharma</p>
                 <h2>Saved ₹2142 in 3 months</h2>
@@ -192,7 +270,8 @@ const Plus = () => {
                   than this! Also, since lockdown, I didn't have to step out for
                   my medical and healthcare needs anymore.”
                 </div>
-              </div>
+                  </div></SwiperSlide>
+                  <SwiperSlide>
               <div>
                 <p>Ashok Bhagia</p>
                 <h2>Saved ₹1527 in 3 months</h2>
@@ -202,18 +281,21 @@ const Plus = () => {
                   consultations with my Plus membership. I've made extra savings
                   on all my medicine orders & lab test bookings too.”
                 </div>
-              </div>
+                  </div></SwiperSlide>
+                  <SwiperSlide>
               <div>
                   <p>Rahul Singh</p>
                   <h2>Saved ₹3782 in 6 months</h2>
                   <div>I must admit that I've made huge savings since I became a member of Pharmeasy Plus. There's not just free deliveries but extra cashback on every order too! It makes ordering monthly medicines a truly satisfying experience.”</div>
-                </div>
+                  </div></SwiperSlide>
+                  <SwiperSlide>
                 <div>
                   <p>Preeti Sharma</p>
                   <h2>Saved ₹2142 in 3 months</h2>
                   <div>I feel like a premium customer as a PharmEasy plus member. All the extra discounts, free deliveries, it can't get any better than this! Also, since lockdown, I didn't have to step out for my medical and healthcare needs anymore.”</div>
-                </div>         
-            </div>
+                </div>  </SwiperSlide>  
+                </Swiper>
+            {/* </div> */}
           </div>
         </div>
       <FAQ arr={PlusFAQ}/>
@@ -241,7 +323,7 @@ const PlusFAQ = [
     ans1: "Your PharmEasy Plus membership is valid for 2 months from the date of purchase of the program.",
   },
   {
-    ques: "When will|get the cashback?",
+    ques: "When will get the cashback?",
     type: 1,
     ans1: "Cashback will be credited into your PharmEasy wallet within 48 hours of order delivery.",
   },

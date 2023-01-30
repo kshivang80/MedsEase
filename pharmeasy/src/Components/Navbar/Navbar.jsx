@@ -64,13 +64,13 @@ const Navbar = () => {
             </div>
             <div className={styles.links2Icons}>
               <TbDiscount2 style={{ fontSize: "20px", marginRight: "10px" }} />
-              <Link to="/Offer" style={{ fontSize: "14px", fontWeight: "500" }}>
+              <Link to="/offer" style={{ fontSize: "14px", fontWeight: "500" }}>
                 Offers
               </Link>
             </div>
             <div className={styles.links2Icons}>
               <BsCart2 style={{ fontSize: "20px", marginRight: "10px" }} />
-              <Link to="/Cart" style={{ fontSize: "14px", fontWeight: "500" }}>
+              <Link to="/cart" style={{ fontSize: "14px", fontWeight: "500" }}>
                 Cart
               </Link>
             </div>

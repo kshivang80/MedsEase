@@ -1,24 +1,30 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { AiOutlineLogout } from "react-icons/ai";
 import { AiOutlineMobile } from "react-icons/ai";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineUser } from "react-icons/hi";
 import { TbDiscount2 } from "react-icons/tb";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Button } from "@chakra-ui/react";
+import { Button, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 import Pincode from '../PincodeDrawer/Pincode';
 import logo from '../../Assets/logo192.png'; 
 import Login from '../Login/Login';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { logOutSuccess } from '../../Redux/AuthReducer/action';
 
 const Navbar = () => {
+  const dispatch=useDispatch()
+  // const [user, setUser] = useState(false);
   const navigate = useNavigate();
+  const isAuth=useSelector((a)=>a.AuthReducer.isAuth)
   const handleClick = () => {
     navigate("/")
   }
-
   return (
     <div
       style={{
@@ -41,10 +47,10 @@ const Navbar = () => {
           />
         </div>
         <div className={styles.LinkDiv}>
-          <div style={{ display: "flex", alignItems: "center" }}>
+          {/* <div style={{ display: "flex", alignItems: "center" }}> */}
             <Pincode />
-            <MdKeyboardArrowDown className={styles.downArrowIcon} />
-          </div>
+            {/* <MdKeyboardArrowDown className={styles.downArrowIcon} /> */}
+          {/* </div> */}
           <div className={styles.links2}>
             <div className={styles.download}>
               <Link
@@ -59,8 +65,10 @@ const Navbar = () => {
               </Link>
             </div>
             <div className={`${styles.links2Icons} ${styles.login}`}>
-              <HiOutlineUser style={{ fontSize: "20px", marginRight: "0px" }} />
-              <Login />
+              {!isAuth ? <><HiOutlineUser style={{ fontSize: "20px", marginRight: "0px" }} />
+              <Login /></>:<>
+              <Text as="p" className={styles.user}>Hello, User</Text>
+              <Button onClick={()=>dispatch(logOutSuccess())} className={styles.logOut} colorScheme={"teal"}><AiOutlineLogout/>LogOut</Button></>}
             </div>
             <div className={styles.links2Icons}>
               <TbDiscount2 style={{ fontSize: "20px", marginRight: "10px" }} />

@@ -16,6 +16,8 @@ import {
 } from "@chakra-ui/react";
 import { FcHome, FcShipped, FcTodoList } from "react-icons/fc";
 import axios from "axios";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import styles from "../Navbar/navbar.module.css";
 
 const data = [
   {
@@ -56,25 +58,27 @@ const Pincode = () => {
   };
 
   return (
-    <div>
+    <div onClick={onOpen} style={{ display: "flex", alignItems: "center" }}>
+      <div>
       {text === "Select Pincode" ? (
         <Button
           ref={btnRef}
           color="gray.700"
-          onClick={onOpen}
+          // onClick={onOpen}
           variant="ghost"
           bg="white"
           height="40px"
           borderTopEndRadius="none"
           borderBottomEndRadius="none"
           >
-          {text}
+            {text}
+      <MdKeyboardArrowDown className={styles.downArrowIcon} />
         </Button>
       ) : (
         <Button
           ref={btnRef}
           color="#30363c"
-          onClick={onOpen}
+          // onClick={onOpen}
           variant="ghost"
           bg="white"
           height="40px"
@@ -87,7 +91,8 @@ const Pincode = () => {
           <span
             style={{ fontSize: "12px", color: "#4F585E", fontWeight: "400" }}>
             Delivery to
-          </span>
+              </span>
+      <MdKeyboardArrowDown className={styles.downArrowIcon} />
           <br />
           {text}
         </Button>
@@ -170,6 +175,8 @@ const Pincode = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+      </div>
+      {/* <MdKeyboardArrowDown className={styles.downArrowIcon} /> */}
     </div>
   );
 };

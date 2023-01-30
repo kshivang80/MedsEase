@@ -12,6 +12,12 @@ const loginSuccess=(token)=>{
        payload:token
     }
 };
+const logOutSuccess=()=>{
+    return {
+       type:types.USER_lOGOUT_SUCCESS,
+       
+    }
+};
 
 const loginError=()=>{
     return {
@@ -19,4 +25,4 @@ const loginError=()=>{
     }
 };
 
-export {loginRequest,loginSuccess,loginError}
+export {loginRequest,loginSuccess,loginError,logOutSuccess}

@@ -19,7 +19,6 @@ import {
   loginSuccess,
 } from "../../Redux/AuthReducer/action";
 import { useNavigate } from "react-router-dom";
-
 const Login = () => {
   const btnRef = useRef();
   const dispatch = useDispatch();
@@ -28,7 +27,6 @@ const Login = () => {
   const [useremail, setUserEmail] = useState("");
   const [userpassword, setUserPassword] = useState("");
   const [hello, setHello] = useState("Hello, Log In");
-
   const handleLogin = () => {
     if (useremail) {
       const payload = {
@@ -41,14 +39,16 @@ const Login = () => {
         .then((r) => {
           console.log("recived data from login", r.data);
           dispatch(loginSuccess(r.data));
-          setHello("Hello, User");
+          // setHello("Hello, User");
           navigate("/");
+          onClose();
         })
         .catch((e) => {
           dispatch(loginError());
         });
-    }
+      }
   };
+  
 
   return (
     <>
@@ -67,7 +67,8 @@ const Login = () => {
       <Drawer
         isOpen={isOpen}
         placement="right"
-        onClose={onClose}
+        onClose = {onClose}
+        // onClose={close}
         finalFocusRef={btnRef}>
         <DrawerOverlay />
         <DrawerContent>
@@ -99,7 +100,7 @@ const Login = () => {
               colorScheme="blue"
               bgColor={"#10847e"}
               onClick={handleLogin}
-              m="2">
+              m="2" >
               Login
             </Button>
           </DrawerBody>

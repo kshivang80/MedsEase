@@ -27,7 +27,7 @@
     padding-left: 10px;
 }
 .downArrowIcon {
-    background-color: white;
+    background-color: transparent;
     display: flex;
     align-items: center;
     height: 40px;
@@ -85,3 +85,13 @@
         display: block;
     }
 }
+.user{
+    margin-right: 2vh;
+    font-weight: 600;
+}
+.logOut{
+    display: flex;
+    gap: 1vh;
+    align-items: center;
+    font-weight: 700;
+    }

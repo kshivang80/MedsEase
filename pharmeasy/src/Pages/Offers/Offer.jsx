@@ -1,13 +1,15 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react'
 import FAQ from '../Plus/FAQ';
 import Code from './code';
+import Styles from "./code.module.css";
 
 export default function Offer() {
   return (
-    <div>
-      {/* <FAQ arr={offerFAQ}/> */}
+    <Box className={Styles.offerPage}>
       <Code/>
-    </div>
+      <FAQ arr={offerFAQ}/>
+    </Box>
   )
 }
 const offerFAQ=[

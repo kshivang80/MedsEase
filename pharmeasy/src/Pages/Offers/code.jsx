@@ -4,9 +4,20 @@ import Styles from "./code.module.css";
 import OfferItem from "./OfferItem";
 
 export default function Code() {
-  const [content, setContent] = useState(null);
+  const [content, setContent] = useState(1);
+  const [offer, setOffer] = useState(CodeData);
+
+  const filterOffer = (value, filterType) => {
+    setContent(value)
+    if (filterType === "All") {
+      setOffer(CodeData)
+    } else {
+      const filterData = CodeData.filter((el) => el.type === filterType)
+      setOffer(filterData)
+    }
+  }
   return (
-    <><div className={Styles.coupenHeading}>
+    <div className={Styles.coupenHeading}>
       <h1>PharmEasy Offers & Coupon Codes</h1>
       <br />
       <div className={Styles.ans}><p>
@@ -37,15 +48,15 @@ export default function Code() {
       <br />
       <h2>Hurry! Avail these exclusive PharmEasy offers now.</h2>
       <Box className={Styles.btn}>
-        <Button>All</Button>
-        <Button>Payment</Button>
-        <Button>Medicine</Button>
-        <Button>Diagnostic</Button>
-        <Button>Healthcare</Button>
+        <Button onClick={() => filterOffer(1, "All")} colorScheme={content === 1 ? "teal" : ""} color={content === 1 ? "white" : "black"}>All {content===1 ? `(${offer.length})`:""}</Button>
+        <Button onClick={()=>filterOffer(2, "Payment")} colorScheme= {content===2 ? "teal":""} color={content===2 ? "white":"black"}>Payment {content===2 ? `(${offer.length})`:""}</Button>
+        <Button onClick={()=>filterOffer(3, "Medicine")} colorScheme= {content===3 ? "teal":""} color={content===3 ? "white":"black"}>Medicine {content===3 ? `(${offer.length})`:""}</Button>
+        <Button onClick={()=>filterOffer(4, "Diagnostic")} colorScheme= {content===4 ? "teal":""} color={content===4 ? "white":"black"}>Diagnostic {content===4 ? `(${offer.length})`:""}</Button>
+        <Button onClick={()=>filterOffer(5, "Healthcare")} colorScheme= {content===5 ? "teal":""} color={content===5 ? "white":"black"}>Healthcare {content===5 ? `(${offer.length})`:""}</Button>
       </Box>
-      <Box className={Styles.allItems}>{CodeData.map((el) => <OfferItem Data={el} />)}</Box>
+      <Box className={Styles.allItems}>{offer.map((el) => <OfferItem Data={el} />)}</Box>
     </div>
-    </>
+    
   );
 }
 
@@ -848,7 +859,7 @@ const CodeData = [
       "This offer is valid in selected cities only.",
       "The cashback is valid for only 60 days, starting from the day it is credited.",
     ],
-    type: "Daignostic",
+    type: "Diagnostic",
     required: true,
   },
   {
@@ -889,7 +900,7 @@ const CodeData = [
       "This offer is valid in selected cities only.",
       "The cashback is valid for only 60 days, starting from the day it is credited.",
     ],
-    type: "Daignostic",
+    type: "Diagnostic",
     required: true,
   },
   {
@@ -928,7 +939,7 @@ const CodeData = [
       "This offer is valid in selected cities only.",
       "The cashback is valid for only 60 days, starting from the day it is credited.",
     ],
-    type: "Daignostic",
+    type: "Diagnostic",
     required: true,
   },
   {

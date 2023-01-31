@@ -1,9 +1,24 @@
-import { Box, Image, Text } from '@chakra-ui/react'
+import { Box, Image, Text, useToast } from '@chakra-ui/react'
 import React from 'react'
 import styles from "./OfferItems.module.css"
-import {IoIosArrowForward} from "react-icons/io"
+import { IoIosArrowForward } from "react-icons/io"
+import copy from "copy-to-clipboard"
 
-export default function OfferItem() {
+export default function OfferItem({Data}) {
+  const toast=useToast()
+  const copyToClipboard = (copyCode) => {
+    copy(copyCode);
+    // alert(`You have copied "${copyCode}"`);
+    toast({
+      title: 'You have copied',
+      description: copyCode,
+      status: 'success',
+      duration: 1000,
+      isClosable: true,
+      position: 'top'
+    })
+  }
+  
   return (
     <Box className={styles.offerItem}>
           <Box className={styles.offerItem1}>
@@ -16,18 +31,19 @@ export default function OfferItem() {
         </Box>
         <Box width="fit-content"><IoIosArrowForward className={styles.icon} size={25} fill="teal"/></Box>
       </Box>
-      <Box borderBottom="1px dashed"></Box>
           <Box className={styles.offerItem2}>
+        <Box borderBottom="1px dashed"></Box>
+        <Box display="flex">
         {Data.code==="No Code Required" ?<><Text as="p">{Data.code}</Text>
               <Text as="p">Continue</Text></>: 
         <><Text as="p">Code: <span style={{color:"black", fontWeight:700}}>{Data.code}</span></Text>
-              <Text as="p">Copy Code</Text></>}
-      </Box>
+              <Text as="p" onClick={()=>copyToClipboard(Data.code)}>Copy Code</Text></>}
+      </Box></Box>
     </Box>
   )
 }
 
-const Data={
+const Data1={
     id: 1,
     title: "FLAT 15% OFF on medicines + up to Rs.250 cashback",
     content:

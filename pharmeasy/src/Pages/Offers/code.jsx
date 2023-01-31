@@ -1,10 +1,12 @@
+import { Box, Button } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Styles from "./code.module.css";
+import OfferItem from "./OfferItem";
 
 export default function Code() {
   const [content, setContent] = useState(null);
   return (
-    <div className={Styles.coupenHeading}>
+    <><div className={Styles.coupenHeading}>
       <h1>PharmEasy Offers & Coupon Codes</h1>
       <br />
       <div className={Styles.ans}><p>
@@ -34,7 +36,16 @@ export default function Code() {
       </h2>
       <br />
       <h2>Hurry! Avail these exclusive PharmEasy offers now.</h2>
+      <Box className={Styles.btn}>
+        <Button>All</Button>
+        <Button>Payment</Button>
+        <Button>Medicine</Button>
+        <Button>Diagnostic</Button>
+        <Button>Healthcare</Button>
+      </Box>
+      <Box className={Styles.allItems}>{CodeData.map((el) => <OfferItem Data={el} />)}</Box>
     </div>
+    </>
   );
 }
 

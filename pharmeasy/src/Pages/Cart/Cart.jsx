@@ -15,14 +15,16 @@ import {
     useToast
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import {useSelector} from "react-redux"
 
 
-import { Link, } from 'react-router-dom'
+import { Link, Navigate, } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 // import CartItem from '../../Components/CartItem/CartItem'
 
 const Cart = () => { 
   let navigate = useNavigate(); 
+  const isAuth=useSelector((a)=>a.AuthReducer.isAuth)
 
   const toast = useToast()
 
@@ -67,7 +69,17 @@ const handlePayment=()=>{
 
 
 
-
+  if (!isAuth) {
+    toast({
+      title: 'Please Login',
+      description: "Due to security reasons, please login",
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+      position: 'top'
+    })
+    return <Navigate to="/"/>
+}
 
 
     return (
@@ -128,11 +140,15 @@ const handlePayment=()=>{
                       </div>
                       <div id='cartTotalButton' style={{padding:"10px"}}>
                         
-                        <Link to="/payment">
+                       {data.length===0 ? 
+                        <button 
+                         onClick={() =>navigate("/product")}
+                    style={{ padding: "10px", backgroundColor: "#10847e", borderRadius: "8px", width: "100% ", color: "white" }}>Continue Shoping</button>: <Link to="/payment">
                         <button 
                          onClick={handlePayment}
                          disabled={sum=0}
-                        style={{padding:"10px",backgroundColor:"#10847e", borderRadius:"8px",width:"100% ",color:"white"}}>Proceed to Checkout</button></Link>
+                    style={{ padding: "10px", backgroundColor: "#10847e", borderRadius: "8px", width: "100% ", color: "white" }}>Proceed to Checkout</button></Link>}
+                
                       </div>
                     </div>
               </div>

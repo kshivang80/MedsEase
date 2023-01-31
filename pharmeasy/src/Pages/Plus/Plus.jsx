@@ -14,7 +14,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useState } from "react";
 import { useEffect } from "react";
-import {useDispatch, useSelector } from "react-redux"
+import {shallowEqual, useDispatch, useSelector } from "react-redux"
 import { handlePayment } from "../../Redux/payment/action";
 import { useToast } from "@chakra-ui/react";
 
@@ -23,7 +23,7 @@ const Plus = () => {
   const [range, setrange] = useState(1);
   const [saving, setsaving] = useState(200);
   const [total, settotal] = useState(1000);
-  const memberPlus=useSelector(a=>a.Payreducer.memberPlus)
+  const { memberPlus, isAuth } =useSelector(a=>{return {memberPlus:a.Payreducer.memberPlus, isAuth:a.AuthReducer.isAuth}},shallowEqual)
   const dispatch = useDispatch()
   const toast = useToast()
   useEffect(() => {
@@ -33,7 +33,8 @@ const Plus = () => {
   }, [range, memberPlus])
 
   const handleMemberShipPlus = () => {
-    if(memberPlus){
+    console.log(isAuth)
+    if(isAuth){if(memberPlus){
       toast({
         title: 'MedsEase Plus',
         description: "    You are already a member of MedsEase Plus",
@@ -44,6 +45,16 @@ const Plus = () => {
       })
     } else {
        navigate("/payment"); dispatch(handlePayment(149)) 
+    }
+    } else {
+      toast({
+        title: 'Please Login',
+        description: "Due to security reasons, please login",
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+        position: 'top'
+      })
     }
   }
   

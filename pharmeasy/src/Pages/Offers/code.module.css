@@ -36,3 +36,19 @@
     padding-bottom: 10px; */
     /* transition: all 0.1s cubic-bezier(1,0,1,0); */
 /* } */
+.allItems{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap: 2vh;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 2vh;
+}
+.btn>button{
+    border-radius:2vh;
+    height: 4vh;
+}

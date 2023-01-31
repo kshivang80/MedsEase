@@ -80,10 +80,12 @@ const Pincode = () => {
           color="#30363c"
           // onClick={onOpen}
           variant="ghost"
-          bg="white"
+              bg="white"
+              display="flex"
           height="40px"
           fontSize={"14px"}
           noOfLines={2}
+              alignItems="center"
           borderTopEndRadius="none"
           borderBottomEndRadius="none"
           textAlign="left"
@@ -92,7 +94,7 @@ const Pincode = () => {
             style={{ fontSize: "12px", color: "#4F585E", fontWeight: "400" }}>
             Delivery to
               </span>
-      <MdKeyboardArrowDown className={styles.downArrowIcon} />
+      {/* <MdKeyboardArrowDown className={styles.downArrowIcon} /> */}
           <br />
           {text}
         </Button>

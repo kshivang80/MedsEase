@@ -49,18 +49,7 @@ sum=total.toFixed(2)
 
 }
 
-const handlePayment=()=>{
-    
- 
-  toast({
-    title: 'Added Successfully',
-    description: "Item is added in Cart",
-    status: 'success',
-    duration: 9000,
-    isClosable: true,
-    position: 'top'
-  })
-  
+const handlePayment=()=>{  
  setTimeout(() => {
     navigate("/payment")
   }, 1000);

@@ -12,6 +12,30 @@ const loginSuccess=(token)=>{
        payload:token
     }
 };
+
+const loginError=()=>{
+   return {
+      type:types.USER_lOGIN_ERROR
+   }
+};
+const registerRequest=()=>{
+     return {
+        type:types.USER_REGISTER_REQUEST
+     }
+};
+
+const registerSuccess=(token)=>{
+    return {
+       type:types.USER_REGISTER_SUCCESS,
+       payload:token
+    }
+};
+
+const registerError=()=>{
+   return {
+      type:types.USER_REGISTER_ERROR
+   }
+};
 const logOutSuccess=()=>{
     return {
        type:types.USER_lOGOUT_SUCCESS,
@@ -19,10 +43,4 @@ const logOutSuccess=()=>{
     }
 };
 
-const loginError=()=>{
-    return {
-       type:types.USER_lOGIN_ERROR
-    }
-};
-
-export {loginRequest,loginSuccess,loginError,logOutSuccess}
+export {loginRequest,loginSuccess,loginError,logOutSuccess,registerError,registerRequest,registerSuccess}

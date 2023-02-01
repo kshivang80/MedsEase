@@ -50,7 +50,7 @@ const Home = () => {
         <Slider {...settings}>
           {Discover.map((item) => (
             <div className="card">
-              <Link to="/product">
+              <Link to={item.name==="PLUS" ? "/plus" :item.name==="Offers" ? "/offer" : "/product"}>
                 <div className="cardtop">
                   <img src={item.image} />
                 </div>

@@ -14,7 +14,7 @@ import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { getProductUrl } from "../../../Redux/Redux-Product/action";
 import CheckBox from "../checkBox/CheckBox";
 import InputSearch from "../Comp/InputSearch";
-import magnifyLense from "../img/magnifyLense.webp";
+
 import "../pro.css";
 import { get_url_success_fn } from "../../../Redux/Redux-Product/action";
 
@@ -55,13 +55,13 @@ export default function Filter() {
         ? (x = "discountPercent")
         : (x = "salePriceDecimal");
 
-      console.log(sort, "sprt");
-let _order
+      // console.log(sort, "sprt");
+      let _order;
       const getparams = {
         params: {
           categoryId: intcatagorie,
           _sort: sort && x,
-          _order: sort && sort=='discountPercent'?_order='desc':sort,
+          _order: sort && sort == "discountPercent" ? (_order = "desc") : sort,
         },
       };
 
@@ -109,8 +109,8 @@ let _order
       </Text>
 
       <Box>
-        <Text fontWeight={"bold"} color="grey" mt="40px" fontSize='xl'>
-        Category
+        <Text fontWeight={"bold"} color="grey" mt="40px" fontSize="xl">
+          Category
         </Text>
         <Box display={"flex"} justifyContent="space-between" mt="20px">
           <Text>Personal Care</Text>
@@ -119,12 +119,12 @@ let _order
         <Box border={"1px solid grey"} mt="20px"></Box>
 
         <Box mt="20px">
-          <Text as={"b"} color="gray.600" fontSize='xl'>
-            Sub  Categories
+          <Text as={"b"} color="gray.600" fontSize="xl">
+            Sub Categories
           </Text>
           <Box mt="20px" border={"1px solid grey"}></Box>
           <Box display={"flex"} flexDirection="column" gap={10} mt="30px">
-            <Box display={"flex"} justifyContent="space-between">
+            <Box display={"flex"} justifyContent="space-evenly">
               <Text fontSize={"16px"} as="b" color={"grey"}>
                 Medicine
               </Text>
@@ -137,11 +137,11 @@ let _order
                 onchange={handelFilter}
               />
             </Box>
-            <Box display={"flex"} justifyContent="space-between">
+            <Box display={"flex"} justifyContent="space-evenly">
               <Text fontSize={"16px"} as="b" color={"grey"}>
                 Personal Care
               </Text>
-              <Text pl="170px" color={"grey"}>
+              <Text pl="160px" color={"grey"}>
                 ({cata2.length})
               </Text>
               <CheckBox
@@ -155,7 +155,7 @@ let _order
                 {" "}
                 Immunity Booster
               </Text>
-              <Text pl="150px" color={"grey"}>
+              <Text pl="130px" color={"grey"}>
                 ({cata3.length})
               </Text>
               <CheckBox
@@ -174,16 +174,15 @@ let _order
           </Text>
         </Box>
 
-        <Box className="search-parent">
+        {/* <Box className="search-parent" border={"1px solid red"}> */}
           <Box className="searchbar">
             {" "}
             <InputSearch onchange={(e) => handelChange(e)} />
           </Box>
-          <Box className="lense-img" marginTop="20px">
-            {" "}
-            <Image src={magnifyLense} />
-          </Box>
-        </Box>
+          {/* <Box className="lense-img" marginTop="20px"> */}{" "}
+          {/* <Image src={magnifyLense} w="40px" /> */}
+          {/* </Box> */}
+        {/* </Box> */}
 
         <Box mt="50px" bg="grey" border={"1px solid grey"}></Box>
 
@@ -195,13 +194,13 @@ let _order
 
         <Box display={"flex"} flexDirection="column" gap={10} mt="30px">
           <Box display={"flex"} justifyContent="space-between">
-            <Text fontSize={"16px"} as="b" color={"grey"} >
+            <Text fontSize={"16px"} as="b" color={"grey"}>
               100-199
             </Text>
             <CheckBox />
           </Box>
           <Box display={"flex"} justifyContent="space-between">
-            <Text fontSize={"16px"} as="b" color={"grey"} >
+            <Text fontSize={"16px"} as="b" color={"grey"}>
               200-299
             </Text>
             <CheckBox />

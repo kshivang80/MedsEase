@@ -26,13 +26,6 @@ const Plus = () => {
   const dispatch = useDispatch()
   const toast = useToast()
   useEffect(() => {
-<<<<<<< HEAD
-    if (range === "0") setrange("1");
-    if (range === "4") setrange("3");
-    totalSaving(range);
-  }, [range]);
-
-=======
     if (range === "0") setrange("1")
     if (range === "4") setrange("3")
     totalSaving(range)
@@ -64,7 +57,6 @@ const Plus = () => {
     }
   }
   
->>>>>>> 8fb29ea24a5f485231b586a77fa1ba2e703d8f73
   const totalSaving = (range) => {
     // if (range === "0") setrange("1")
     // if (range === "4") setrange("3")
@@ -202,11 +194,7 @@ const Plus = () => {
               <hr />
               <hr />
               <br />
-<<<<<<< HEAD
-              <button onClick={() => navigate("/Cart")}>Add to Cart</button>
-=======
               <button onClick={handleMemberShipPlus}>Get MadsEase Plus</button>
->>>>>>> 8fb29ea24a5f485231b586a77fa1ba2e703d8f73
             </div>
             <br />
             <br />
@@ -290,19 +278,6 @@ const Plus = () => {
             </div>
             {/* <div className={Styles.plusMembers}> */}
             <Swiper
-<<<<<<< HEAD
-              slidesPerView={3}
-              spaceBetween={30}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Pagination]}
-              id={Styles.plusMembers}
-              className={`${Styles.mySwiper} ${Styles.plusMembers}`}
-            >
-              <SwiperSlide>
-                <div style={{ paddingBottom: "10px" }}>
-=======
               breakpoints={{
                 // when window width is >= 640px
                 430: {
@@ -361,7 +336,6 @@ const Plus = () => {
                   </div></SwiperSlide>
                   <SwiperSlide>
               <div>
->>>>>>> 8fb29ea24a5f485231b586a77fa1ba2e703d8f73
                   <p>Rahul Singh</p>
                   <h2>Saved ₹3782 in 6 months</h2>
                   <div>

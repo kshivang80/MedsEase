@@ -31,7 +31,12 @@ border: 2px solid grey;
 .searchbar{
     position: absolute;
     z-index: 1;
+    
 }
+
+
+
+
 .lense-img{
     position: relative;
    

@@ -82,7 +82,7 @@ This is a collaborative project to clone a e-commerce website, working model, fe
 
 4) Manmohan       - Add to cart ,Products Page, Single Page
 
-5) Suman          - Plush Page, Offer page  
+5) Suman          - Plush Page, Offer page, Register Page  
 
 
 ## Members:

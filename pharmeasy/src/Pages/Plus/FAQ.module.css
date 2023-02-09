@@ -21,8 +21,6 @@ margin:auto;
 }
 .icon{
     color:teal;
-    size:20px; 
-    stroke-width:100px;
 }
 .ans{
     padding:0px 15px;
@@ -31,12 +29,16 @@ margin:auto;
     color: gray;
     /* transition: all 0.5s cubic-bezier(0,1,0,1); */
 }
-.ans.show{
+.show{
     height: auto;
     margin-top: -20px;
     max-height: 100%;
     padding-top: 20px;
+    /* padding-left:1vh ; */
     font-size: 14px;
     padding-bottom: 10px;
     /* transition: all 0.1s cubic-bezier(1,0,1,0); */
+}
+.show>ul, .show>ol{
+    padding-left: 1vh;
 }

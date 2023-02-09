@@ -13,19 +13,58 @@ import { useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 import { useEffect } from "react";
+import {shallowEqual, useDispatch, useSelector } from "react-redux"
+import { handlePayment } from "../../Redux/payment/action";
+import { useToast } from "@chakra-ui/react";
 
 const Plus = () => {
   const navigate = useNavigate();
   const [range, setrange] = useState(1);
   const [saving, setsaving] = useState(200);
   const [total, settotal] = useState(1000);
-
+  const { memberPlus, isAuth } =useSelector(a=>{return {memberPlus:a.Payreducer.memberPlus, isAuth:a.AuthReducer.isAuth}},shallowEqual)
+  const dispatch = useDispatch()
+  const toast = useToast()
   useEffect(() => {
+<<<<<<< HEAD
     if (range === "0") setrange("1");
     if (range === "4") setrange("3");
     totalSaving(range);
   }, [range]);
 
+=======
+    if (range === "0") setrange("1")
+    if (range === "4") setrange("3")
+    totalSaving(range)
+  }, [range, memberPlus])
+
+  const handleMemberShipPlus = () => {
+    console.log(isAuth)
+    if(isAuth){if(memberPlus){
+      toast({
+        title: 'MedsEase Plus',
+        description: "    You are already a member of MedsEase Plus",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+        position: 'top'
+      })
+    } else {
+       navigate("/payment"); dispatch(handlePayment(149)) 
+    }
+    } else {
+      toast({
+        title: 'Please Login',
+        description: "Due to security reasons, please login",
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+        position: 'top'
+      })
+    }
+  }
+  
+>>>>>>> 8fb29ea24a5f485231b586a77fa1ba2e703d8f73
   const totalSaving = (range) => {
     // if (range === "0") setrange("1")
     // if (range === "4") setrange("3")
@@ -71,7 +110,7 @@ const Plus = () => {
             </div>
             <div className={Styles.inmain2}>
               <div className={Styles.part_main}>
-                Enjoy benefits worth{" "}
+                Enjoy benefits worth
                 <strong className={Styles.strong}>₹1400</strong>
               </div>
             </div>
@@ -163,7 +202,11 @@ const Plus = () => {
               <hr />
               <hr />
               <br />
+<<<<<<< HEAD
               <button onClick={() => navigate("/Cart")}>Add to Cart</button>
+=======
+              <button onClick={handleMemberShipPlus}>Get MadsEase Plus</button>
+>>>>>>> 8fb29ea24a5f485231b586a77fa1ba2e703d8f73
             </div>
             <br />
             <br />
@@ -247,6 +290,7 @@ const Plus = () => {
             </div>
             {/* <div className={Styles.plusMembers}> */}
             <Swiper
+<<<<<<< HEAD
               slidesPerView={3}
               spaceBetween={30}
               pagination={{
@@ -258,6 +302,66 @@ const Plus = () => {
             >
               <SwiperSlide>
                 <div style={{ paddingBottom: "10px" }}>
+=======
+              breakpoints={{
+                // when window width is >= 640px
+                430: {
+                  width: 430,
+                  slidesPerView: 1,
+                  spaceBetween:20
+                },
+                // when window width is >= 768px
+                768: {
+                  width: 1024,
+                  slidesPerView: 3,
+                  spaceBetween:30
+                },
+              }}
+        // slidesPerView={3}
+        
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        id={Styles.plusMembers}
+        className={`${Styles.mySwiper} ${Styles.plusMembers}`}
+              >
+                <SwiperSlide>
+              <div style={{paddingBottom:"10px"}}>
+                <p>Rahul Singh</p>
+                <h2>Saved ₹3782 in 6 months</h2>
+                <div>
+                  I must admit that I've made huge savings since I became a
+                  member of Pharmeasy Plus. There's not just free deliveries but
+                  extra cashback on every order too! It makes ordering monthly
+                  medicines a truly satisfying experience.”
+                </div>
+                  </div></SwiperSlide>
+                <SwiperSlide>
+              <div>
+                <p>Preeti Sharma</p>
+                <h2>Saved ₹2142 in 3 months</h2>
+                <div>
+                  I feel like a premium customer as a PharmEasy plus member. All
+                  the extra discounts, free deliveries, it can't get any better
+                  than this! Also, since lockdown, I didn't have to step out for
+                  my medical and healthcare needs anymore.”
+                </div>
+                  </div></SwiperSlide>
+                  <SwiperSlide>
+              <div>
+                <p>Ashok Bhagia</p>
+                <h2>Saved ₹1527 in 3 months</h2>
+                <div>
+                  With the ongoing pandemic, online doctor consultation is the
+                  need of the hour. I've enjoyed the benefit of FREE doctor
+                  consultations with my Plus membership. I've made extra savings
+                  on all my medicine orders & lab test bookings too.”
+                </div>
+                  </div></SwiperSlide>
+                  <SwiperSlide>
+              <div>
+>>>>>>> 8fb29ea24a5f485231b586a77fa1ba2e703d8f73
                   <p>Rahul Singh</p>
                   <h2>Saved ₹3782 in 6 months</h2>
                   <div>

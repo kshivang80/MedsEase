@@ -23,6 +23,7 @@ export default function Filter() {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const intcatagorie = searchParams.getAll("categoryId");
+
   const [catagorie, setCatogorie] = useState(intcatagorie || []);
   const location = useLocation();
   const handelFilter = (e) => {
@@ -37,30 +38,40 @@ export default function Filter() {
   };
 
   useEffect(() => {
-    let params = {};
-    params.categoryId = catagorie;
-    setSearchParams(params);
-  }, [catagorie]);
+    let param = {};
+    param.categoryId = catagorie;
+    param._sort = searchParams.get("_sort");
+    setSearchParams(param);
+    //console.log(param, "paramsssss");
+  }, [catagorie, searchParams]);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const sort = searchParams.get("_sort");
+    if (data.length || location) {
+      let sort = searchParams.get("_sort");
+      let x;
+      sort == "discountPercent"
+        ? (x = "discountPercent")
+        : (x = "salePriceDecimal");
 
-    const getparams = {
-      params: {
-        categoryId: searchParams.getAll("categoryId"),
-        _sort: sort && "salePriceDecimal",
-        _order: sort,
-      },
-    };
+      console.log(sort, "sprt");
+let _order
+      const getparams = {
+        params: {
+          categoryId: intcatagorie,
+          _sort: sort && x,
+          _order: sort && sort=='discountPercent'?_order='desc':sort,
+        },
+      };
 
-    dispatch(getProductUrl(getparams));
-  }, [location]);
+      dispatch(getProductUrl(getparams));
+    }
+  }, [location, dispatch]);
 
   let data = useSelector((store) => store.reducer.dataOnfetch);
 
-  const [suggestion, setSuggestion] = useState([]);
+  //const [suggestion, setSuggestion] = useState([]);
   const handelChange = (e) => {
     setText(e.target.value);
   };
@@ -89,9 +100,6 @@ export default function Filter() {
     if (arr.length > 0) {
       dispatch(get_url_success_fn(arr));
     }
-    
-
-    
   }, [text]);
 
   return (
@@ -166,14 +174,14 @@ export default function Filter() {
           </Text>
         </Box>
 
-        <Box mt="20px" display={"flex"}>
+        <Box className="search-parent">
           <Box className="searchbar">
             {" "}
             <InputSearch onchange={(e) => handelChange(e)} />
           </Box>
           <Box className="lense-img">
             {" "}
-            <Image src={magnifyLense} w="40px" />
+            <Image src={magnifyLense} />
           </Box>
         </Box>
 

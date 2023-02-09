@@ -16,9 +16,12 @@ export default function SingleCard({ item }) {
 
   return (
     <>
+
+     
       <Box
      
         display={"flex"}
+        
         flexDirection="column"
         alignItems={"center"}
         boxShadow={"xs"}

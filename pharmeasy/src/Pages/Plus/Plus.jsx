@@ -10,27 +10,27 @@ import { Pagination } from "swiper";
 import { useNavigate } from "react-router-dom";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+
 import { useState } from "react";
 import { useEffect } from "react";
 
 const Plus = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [range, setrange] = useState(1);
   const [saving, setsaving] = useState(200);
   const [total, settotal] = useState(1000);
 
   useEffect(() => {
-    if (range === "0") setrange("1")
-    if (range === "4") setrange("3")
-    totalSaving(range)
-  }, [range])
-  
+    if (range === "0") setrange("1");
+    if (range === "4") setrange("3");
+    totalSaving(range);
+  }, [range]);
+
   const totalSaving = (range) => {
     // if (range === "0") setrange("1")
     // if (range === "4") setrange("3")
-    let test = 500; let cons = 200;
+    let test = 500;
+    let cons = 200;
     if (range === "1") {
       setsaving(2 * (2000 * 0.05));
       settotal(saving + test + cons + saving - 100);
@@ -43,7 +43,7 @@ const Plus = () => {
       setsaving(2 * (4000 * 0.05));
       settotal(saving + test + cons + saving - 100);
     }
-  }
+  };
 
   return (
     <div id={Styles.AllPlus}>
@@ -163,7 +163,7 @@ const Plus = () => {
               <hr />
               <hr />
               <br />
-              <button onClick={()=>navigate("/Cart")}>Add to Cart</button>
+              <button onClick={() => navigate("/Cart")}>Add to Cart</button>
             </div>
             <br />
             <br />
@@ -172,18 +172,41 @@ const Plus = () => {
               <div>
                 <div>
                   <p>If Your spending on medicine is</p>
-                  <input type="range" min={0} max={4} step={1} value={range} onChange={(e) => { setrange(e.target.value); totalSaving(e.target.value) }} className={Styles.range} list="markers" />
+                  <input
+                    type="range"
+                    min={0}
+                    max={4}
+                    step={1}
+                    value={range}
+                    onChange={(e) => {
+                      setrange(e.target.value);
+                      totalSaving(e.target.value);
+                    }}
+                    className={Styles.range}
+                    list="markers"
+                  />
                   <datalist id="markers">
-  <option></option>
-  <option value="1" label="₹2000/month
-" style={{color:range==="1" ? "black": "gray"}}></option>
-  <option value="2" label="₹3000/month
-" style={{color:range==="2" ? "black": "gray"}}></option>
-  <option value="3" label="₹4000/month
-" style={{color:range==="3" ? "black": "gray"}}></option>
-  <option></option>
- 
-</datalist>
+                    <option></option>
+                    <option
+                      value="1"
+                      label="₹2000/month
+"
+                      style={{ color: range === "1" ? "black" : "gray" }}
+                    ></option>
+                    <option
+                      value="2"
+                      label="₹3000/month
+"
+                      style={{ color: range === "2" ? "black" : "gray" }}
+                    ></option>
+                    <option
+                      value="3"
+                      label="₹4000/month
+"
+                      style={{ color: range === "3" ? "black" : "gray" }}
+                    ></option>
+                    <option></option>
+                  </datalist>
                   <h1>As a Plus member, you will save upto</h1>
                   <br />
                   <div>₹{total}</div>
@@ -200,7 +223,7 @@ const Plus = () => {
                   </div>
                   <div>
                     <p>Savings on Shipping & Convenience Charges</p>
-                    <p>₹{saving-100}</p>
+                    <p>₹{saving - 100}</p>
                   </div>
                   <div>
                     <p>Savings on Doctor Consultation**</p>
@@ -224,65 +247,80 @@ const Plus = () => {
             </div>
             {/* <div className={Styles.plusMembers}> */}
             <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        id={Styles.plusMembers}
-        className={`${Styles.mySwiper} ${Styles.plusMembers}`}
-              >
-                <SwiperSlide>
-              <div style={{paddingBottom:"10px"}}>
-                <p>Rahul Singh</p>
-                <h2>Saved ₹3782 in 6 months</h2>
-                <div>
-                  I must admit that I've made huge savings since I became a
-                  member of Pharmeasy Plus. There's not just free deliveries but
-                  extra cashback on every order too! It makes ordering monthly
-                  medicines a truly satisfying experience.”
-                </div>
-                  </div></SwiperSlide>
-                <SwiperSlide>
-              <div>
-                <p>Preeti Sharma</p>
-                <h2>Saved ₹2142 in 3 months</h2>
-                <div>
-                  I feel like a premium customer as a PharmEasy plus member. All
-                  the extra discounts, free deliveries, it can't get any better
-                  than this! Also, since lockdown, I didn't have to step out for
-                  my medical and healthcare needs anymore.”
-                </div>
-                  </div></SwiperSlide>
-                  <SwiperSlide>
-              <div>
-                <p>Ashok Bhagia</p>
-                <h2>Saved ₹1527 in 3 months</h2>
-                <div>
-                  With the ongoing pandemic, online doctor consultation is the
-                  need of the hour. I've enjoyed the benefit of FREE doctor
-                  consultations with my Plus membership. I've made extra savings
-                  on all my medicine orders & lab test bookings too.”
-                </div>
-                  </div></SwiperSlide>
-                  <SwiperSlide>
-              <div>
+              slidesPerView={3}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              id={Styles.plusMembers}
+              className={`${Styles.mySwiper} ${Styles.plusMembers}`}
+            >
+              <SwiperSlide>
+                <div style={{ paddingBottom: "10px" }}>
                   <p>Rahul Singh</p>
                   <h2>Saved ₹3782 in 6 months</h2>
-                  <div>I must admit that I've made huge savings since I became a member of Pharmeasy Plus. There's not just free deliveries but extra cashback on every order too! It makes ordering monthly medicines a truly satisfying experience.”</div>
-                  </div></SwiperSlide>
-                  <SwiperSlide>
+                  <div>
+                    I must admit that I've made huge savings since I became a
+                    member of Pharmeasy Plus. There's not just free deliveries
+                    but extra cashback on every order too! It makes ordering
+                    monthly medicines a truly satisfying experience.”
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
                 <div>
                   <p>Preeti Sharma</p>
                   <h2>Saved ₹2142 in 3 months</h2>
-                  <div>I feel like a premium customer as a PharmEasy plus member. All the extra discounts, free deliveries, it can't get any better than this! Also, since lockdown, I didn't have to step out for my medical and healthcare needs anymore.”</div>
-                </div>  </SwiperSlide>  
-                </Swiper>
+                  <div>
+                    I feel like a premium customer as a PharmEasy plus member.
+                    All the extra discounts, free deliveries, it can't get any
+                    better than this! Also, since lockdown, I didn't have to
+                    step out for my medical and healthcare needs anymore.”
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <p>Ashok Bhagia</p>
+                  <h2>Saved ₹1527 in 3 months</h2>
+                  <div>
+                    With the ongoing pandemic, online doctor consultation is the
+                    need of the hour. I've enjoyed the benefit of FREE doctor
+                    consultations with my Plus membership. I've made extra
+                    savings on all my medicine orders & lab test bookings too.”
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <p>Rahul Singh</p>
+                  <h2>Saved ₹3782 in 6 months</h2>
+                  <div>
+                    I must admit that I've made huge savings since I became a
+                    member of Pharmeasy Plus. There's not just free deliveries
+                    but extra cashback on every order too! It makes ordering
+                    monthly medicines a truly satisfying experience.”
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <p>Preeti Sharma</p>
+                  <h2>Saved ₹2142 in 3 months</h2>
+                  <div>
+                    I feel like a premium customer as a PharmEasy plus member.
+                    All the extra discounts, free deliveries, it can't get any
+                    better than this! Also, since lockdown, I didn't have to
+                    step out for my medical and healthcare needs anymore.”
+                  </div>
+                </div>{" "}
+              </SwiperSlide>
+            </Swiper>
             {/* </div> */}
           </div>
         </div>
-      <FAQ arr={PlusFAQ}/>
+        <FAQ arr={PlusFAQ} />
       </div>
     </div>
   );

@@ -21,11 +21,21 @@
 border: 2px solid grey;
 }
 
+.search-parent{
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+}
+
 .searchbar{
     position: absolute;
     z-index: 1;
 }
 .lense-img{
     position: relative;
-    left:200px
+   
+    width:20%
 }
+
+

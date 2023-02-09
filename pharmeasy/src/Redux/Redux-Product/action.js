@@ -50,7 +50,7 @@ export function getProduct(params) {
 }
 
 export function getProductUrl(params) {
-  // console.log(params);
+  // console.log(params, "params in action");
   return function (dispatch) {
     dispatch(get_url_req_fn());
     return axios

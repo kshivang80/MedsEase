@@ -41,6 +41,7 @@ export default function ProductPage() {
   const [option, setOption] = useState("");
 
   const handelSort = (e) => {
+    
     setOption(e.target.value);
   };
 
@@ -49,6 +50,8 @@ export default function ProductPage() {
     param._sort = option;
     setSearchParams(param);
   }, [option]);
+
+  
 
   const [show] = useMediaQuery("(min-width: 1200px)");
   const navigate = useNavigate();
@@ -96,14 +99,14 @@ export default function ProductPage() {
               h="100px"
               display={"flex"}
               alignItems="center"
-              justifyContent="space-between"
-              
-              
+              w={{ base: "80%", md: "60%", lg: "100%" }}
+              ml={{ base: "10%", md: "10%", lg: "0%" }}
+              justifyContent="space-around"
             >
-              <Box>
+              <Box w={{ base: "0%", md: "60%", lg: "100%" }}>
                 {" "}
                 {show ? (
-                  <Box>
+                  <Box w="100%">
                     {" "}
                     <Text fontSize={"2xl"} color="grey">
                       Health Care Product
@@ -111,7 +114,7 @@ export default function ProductPage() {
                   </Box>
                 ) : null}
               </Box>
-              <Box ml={100}>
+              <Box w={{ base: "50%", md: "60%", lg: "100%" }}>
                 {show ? null : (
                   <InputSearch
                     placeholder={"Search"}
@@ -121,25 +124,21 @@ export default function ProductPage() {
               </Box>
 
               <Box
-                w="600px"
                 display="flex"
-                gap={8}
-                justifyContent="flex-end"
+                gap={{ base: "10px", md: "5px", lg: "20px" }}
+                justifyContent="center"
                 alignItems={"center"}
+                w={{ base: "50%", md: "60%", lg: "100%" }}
               >
-                <Box w="100px">
-                  <Text fontSize={"xl"} color="grey">
-                    SortBy:
-                  </Text>
-                </Box>
-                <Box w="300px">
-                  <Select onChange={handelSort}>
-                    <option>Popularity</option>
-                    <option value={"asc"}>Price Low to high</option>
-                    <option value={"desc"}>Price High to Low</option>
-                    <option value={"discountPercent"}>Discount %</option>
-                  </Select>
-                </Box>
+                <Text fontSize={"xl"} color="grey">
+                  SortBy:
+                </Text>
+                <Select onChange={handelSort}>
+                  <option>Popularity</option>
+                  <option value={"asc"}>Price Low to high</option>
+                  <option value={"desc"}>Price High to Low</option>
+                  <option value={"discountPercent"}>Discount %</option>
+                </Select>
               </Box>
             </Box>
             {loading ? (

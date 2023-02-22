@@ -21,6 +21,11 @@ import { get_url_success_fn } from "../../../Redux/Redux-Product/action";
 export default function Filter() {
   const [text, setText] = useState("");
 
+  const [cata1, setcata1] = useState(0);
+  const [cata2, setcata2] = useState(0);
+  const [cata3, setcata3] = useState(0);
+  const [count, setcount] = useState(0);
+
   const [searchParams, setSearchParams] = useSearchParams();
   const intcatagorie = searchParams.getAll("categoryId");
 
@@ -35,6 +40,8 @@ export default function Filter() {
       newCatagorie.push(e.target.value);
     }
     setCatogorie(newCatagorie);
+
+    setcount(count + 1);
   };
 
   useEffect(() => {
@@ -71,15 +78,12 @@ export default function Filter() {
 
   let data = useSelector((store) => store.reducer.dataOnfetch);
 
-  //const [suggestion, setSuggestion] = useState([]);
   const handelChange = (e) => {
     setText(e.target.value);
   };
-  const navigate = useNavigate();
-
-  const cata1 = data.filter((elm) => elm.categoryId == "medicine");
-  const cata2 = data.filter((elm) => elm.categoryId == "personalNeed");
-  const cata3 = data.filter((elm) => elm.categoryId == "immunityBooster");
+  const a = data.filter((elm) => elm.categoryId == "medicine");
+  const b = data.filter((elm) => elm.categoryId == "personalNeed");
+  const c = data.filter((elm) => elm.categoryId == "immunityBooster");
 
   useEffect(() => {
     // console.log(data);
@@ -117,7 +121,6 @@ export default function Filter() {
           <CheckBox def={true} />
         </Box>
         <Box border={"1px solid grey"} mt="20px"></Box>
-
         <Box mt="20px">
           <Text as={"b"} color="gray.600" fontSize="xl">
             Sub Categories
@@ -129,7 +132,7 @@ export default function Filter() {
                 Medicine
               </Text>
               <Text pl="200px" color={"grey"}>
-                ({cata1.length})
+                ({a.length})
               </Text>
               <CheckBox
                 ckvalue={catagorie.includes("medicine")}
@@ -142,7 +145,7 @@ export default function Filter() {
                 Personal Care
               </Text>
               <Text pl="160px" color={"grey"}>
-                ({cata2.length})
+                ({b.length})
               </Text>
               <CheckBox
                 ckvalue={catagorie.includes("personalNeed")}
@@ -156,7 +159,7 @@ export default function Filter() {
                 Immunity Booster
               </Text>
               <Text pl="130px" color={"grey"}>
-                ({cata3.length})
+                ({c.length})
               </Text>
               <CheckBox
                 ckvalue={catagorie.includes("immunityBooster")}
@@ -167,31 +170,26 @@ export default function Filter() {
           </Box>
         </Box>
         <Box border="1px solid grey" bg="grey" mt="20px"></Box>
-
         <Box mt="20px">
           <Text color={"gray.700"} as="b" fontSize={"20px"}>
             Brand
           </Text>
         </Box>
-
         {/* <Box className="search-parent" border={"1px solid red"}> */}
-          <Box className="searchbar">
-            {" "}
-            <InputSearch onchange={(e) => handelChange(e)} />
-          </Box>
-          {/* <Box className="lense-img" marginTop="20px"> */}{" "}
-          {/* <Image src={magnifyLense} w="40px" /> */}
-          {/* </Box> */}
+        <Box className="searchbar">
+          {" "}
+          <InputSearch onchange={(e) => handelChange(e)} />
+        </Box>
+        {/* <Box className="lense-img" marginTop="20px"> */}{" "}
+        {/* <Image src={magnifyLense} w="40px" /> */}
         {/* </Box> */}
-
+        {/* </Box> */}
         <Box mt="50px" bg="grey" border={"1px solid grey"}></Box>
-
         <Box mt="30px">
           <Text as="b" color={"gray.600"} fontSize={"20px"}>
             Price
           </Text>
         </Box>
-
         <Box display={"flex"} flexDirection="column" gap={10} mt="30px">
           <Box display={"flex"} justifyContent="space-between">
             <Text fontSize={"16px"} as="b" color={"grey"}>

@@ -15,7 +15,7 @@ This is a collaborative project to clone a e-commerce website, working model, fe
 # Home-Page
 ![image](https://user-images.githubusercontent.com/103144321/215338870-01b13727-3f6f-46d0-b8c7-00f0fab2a5ac.png)
 
-# Product-Page
+# Product-Page ( Click on medicine, Lab test  for this page )
 ![image](https://user-images.githubusercontent.com/103144321/215338915-b9ee0a60-4b81-41a5-8be6-4625be750a1d.png)
 
 # Single-Product-Page
